@@ -4,14 +4,21 @@
   "workspaces": [
     "packages/*"
   ],
+  "preconstruct": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
-    "build": "lerna exec -- yarn run build",
+    "postinstall": "preconstruct dev",
+    "build": "preconstruct build",
     "prepare": "husky install",
     "commit": "git cz",
     "precommit": "pretty-quick --staged && lint-staged",
     "types:check": "tsc --skipLibCheck --noEmit"
   },
   "dependencies": {
+    "@preconstruct/cli": "^2.1.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
