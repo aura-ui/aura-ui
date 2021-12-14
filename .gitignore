@@ -1,0 +1,34 @@
+*.log
+.DS_Store
+node_modules
+packages/*/node_modules
+dist
+packages/*/dist
+packages/*/.next
+packages/*/coverage
+test-output.*
+*.cache
+storybook-static
+.env
+.env.*
+.eslintcache
+
+# Yarn
+yarn-error.log
+.pnp/
+.pnp.js
+# Yarn Integrity file
+.yarn-integrity
+
+# Yarn 2 build artifacts
+# https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+
+# Editor-specific
+.vscode
+.idea
