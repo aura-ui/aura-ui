@@ -1,0 +1,38 @@
+{
+  "extends": ["react-app", "plugin:jsx-a11y/recommended"],
+  "plugins": ["jsx-a11y"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "import/no-anonymous-default-export": [
+      1,
+      {
+        "allowObject": true
+      }
+    ],
+    "react/jsx-pascal-case": [
+      2,
+      {
+        "allowNamespace": true
+      }
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "prefer-const": [
+      1,
+      {
+        "destructuring": "all"
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "controlComponents": ["Checkbox"],
+        "depth": 3
+      }
+    ]
+  }
+}
