@@ -1,11 +1,18 @@
 {
   "extends": ["react-app", "plugin:jsx-a11y/recommended"],
   "plugins": ["jsx-a11y"],
-  "settings": {
-    "react": {
-      "version": "detect"
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 10,
+    "ecmaFeatures": {
+      "jsx": true
     }
   },
+  "parser": "@typescript-eslint/parser",
   "rules": {
     "import/no-anonymous-default-export": [
       1,
