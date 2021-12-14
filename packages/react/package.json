@@ -15,19 +15,16 @@
   "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
   "license": "MIT",
   "main": "dist/index.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
   "files": [
-    "lib"
+    "dist",
+    "README.md"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zephyr-ui/zephyr-ui.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "clean": "rm -rf dist"
   },
   "bugs": {
     "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
