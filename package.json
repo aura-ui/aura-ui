@@ -7,8 +7,8 @@
   "scripts": {
     "build": "lerna exec -- yarn run build",
     "prepare": "husky install",
-    "commit": "git cz",
-    "commit:pre": "pretty-quick --staged && lint-staged",
+    "cm": "git cz",
+    "precommit": "pretty-quick --staged && lint-staged",
     "types:check": "tsc --skipLibCheck --noEmit"
   },
   "devDependencies": {
