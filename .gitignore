@@ -12,6 +12,8 @@ storybook-static
 .env
 .env.*
 .eslintcache
+packages/*/tsconfig.tsbuildinfo
+tsconfig.tsbuildinfo
 
 # Yarn
 yarn-error.log
