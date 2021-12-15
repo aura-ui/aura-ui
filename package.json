@@ -18,7 +18,9 @@
     "precommit": "pretty-quick --staged && lint-staged",
     "types:check": "tsc --skipLibCheck --noEmit",
     "clean:package": "lerna exec -- rimraf lib __tests__",
-    "clean:build": "lerna exec -- rimraf dist"
+    "clean:build": "lerna exec -- rimraf dist",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@preconstruct/cli": "^2.1.5",
@@ -31,11 +33,16 @@
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/react": "^6.4.9",
     "@types/eslint": "^8.2.1",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
+    "babel-loader": "^8.2.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.4.1",
     "eslint-config-react-app": "^6.0.0",
