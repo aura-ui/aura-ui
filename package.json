@@ -15,7 +15,9 @@
     "prepare": "husky install",
     "commit": "git cz",
     "precommit": "pretty-quick --staged && lint-staged",
-    "types:check": "tsc --skipLibCheck --noEmit"
+    "types:check": "tsc --skipLibCheck --noEmit",
+    "clean:package": "lerna exec -- rimraf lib __tests__",
+    "clean:build": "lerna exec -- rimraf dist"
   },
   "dependencies": {
     "@preconstruct/cli": "^2.1.5",
