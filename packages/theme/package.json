@@ -1,0 +1,32 @@
+{
+  "name": "@zephyr-ui/theme",
+  "version": "0.0.0",
+  "description": "Default theme for Zephyr UI",
+  "keywords": [
+    "theme",
+    "theming",
+    "ui",
+    "dark-mode"
+  ],
+  "author": "Greg Ogun <gregogun97@gmail.com>",
+  "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
+  "license": "MIT",
+  "main": "dist/zephyr-ui-theme.cjs.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zephyr-ui/zephyr-ui.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
+  }
+}

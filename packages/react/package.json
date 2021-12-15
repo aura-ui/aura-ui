@@ -1,5 +1,5 @@
 {
-  "name": "react",
+  "name": "@zephyr-ui/react",
   "version": "0.0.0",
   "description": "Accessible, composable React UI components built with Stitches.js",
   "keywords": [
@@ -14,19 +14,25 @@
   "author": "Greg Ogun <gregogun97@gmail.com>",
   "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
   "license": "MIT",
-  "main": "dist/index.ts",
+  "main": "dist/zephyr-ui-react.cjs.js",
+  "module": "dist/zephyr-ui-react.esm.js",
+  "types": "dist/zephyr-ui-react.cjs.d.ts",
   "files": [
     "dist",
-    "README.md"
+    "src"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zephyr-ui/zephyr-ui.git"
   },
-  "scripts": {
-    "clean": "rm -rf dist"
-  },
   "bugs": {
     "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
+  },
+  "dependencies": {
+    "@zephyr-ui/layout": "^0.0.0"
+  },
+  "devDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

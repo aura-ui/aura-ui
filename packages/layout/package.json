@@ -1,0 +1,23 @@
+{
+  "name": "@zephyr-ui/layout",
+  "version": "0.0.0",
+  "description": "Zephyr UI layout components",
+  "author": "Greg Ogun <gregogun97@gmail.com>",
+  "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
+  "license": "MIT",
+  "main": "dist/zephyr-ui-layout.cjs.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zephyr-ui/zephyr-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
+  },
+  "devDependencies": {
+    "react": "^17.0.2"
+  }
+}
