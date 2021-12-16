@@ -18,8 +18,7 @@
     "precommit": "pretty-quick --staged && lint-staged",
     "types:check": "tsc --skipLibCheck --noEmit",
     "clean": "rimraf node_modules",
-    "clean:package": "lerna exec -- rimraf lib __tests__",
-    "clean:build": "lerna exec -- rimraf dist",
+    "clean-dist": "lerna exec -- rimraf dist",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
