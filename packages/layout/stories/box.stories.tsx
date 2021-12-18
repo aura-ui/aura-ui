@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import { Box } from './index';
+import { Box } from '../src';
 import * as React from 'react';
 
 export default {

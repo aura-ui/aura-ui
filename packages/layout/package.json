@@ -6,6 +6,8 @@
   "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
   "license": "MIT",
   "main": "dist/zephyr-ui-layout.cjs.js",
+  "module": "dist/zephyr-ui-layout.esm.js",
+  "types": "dist/zephyr-ui-layout.cjs.d.ts",
   "files": [
     "dist",
     "src"
@@ -17,10 +19,13 @@
   "bugs": {
     "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
   },
+  "dependencies": {
+    "@zephyr-ui/theme": "^0.0.0"
+  },
   "devDependencies": {
     "react": "^17.0.2"
   },
-  "dependencies": {
-    "@zephyr-ui/theme": "^0.0.0"
+  "peerDependencies": {
+    "react": "^17.0.2"
   }
 }
