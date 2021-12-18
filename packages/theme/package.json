@@ -13,7 +13,7 @@
   "license": "MIT",
   "main": "dist/zephyr-ui-theme.cjs.js",
   "module": "dist/zephyr-ui-theme.esm.js",
-  "types": "dist/zephyr-ui-theme.cjs.d.js",
+  "types": "dist/zephyr-ui-theme.cjs.d.ts",
   "files": [
     "dist",
     "src"
