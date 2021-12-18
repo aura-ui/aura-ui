@@ -23,6 +23,15 @@
     "incremental": true,
     "declarationMap": true
   },
-  "include": ["packages"],
-  "exclude": ["node_modules"]
+  "include": ["packages", "**/*.ts"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "compilerOptions": {
+      // Required
+      "module": "commonjs",
+      "esModuleInterop": true,
+      "moduleResolution": "node",
+      "resolveJsonModule": true
+    }
+  }
 }
