@@ -1,7 +1,4 @@
 import { NodePlopAPI, ActionType } from 'plop';
-import capitalize from 'lodash/capitalize';
-import camelCase from 'lodash/camelCase';
-import words from 'lodash/words';
 
 module.exports = function (plop: NodePlopAPI) {
   plop.setPlopfilePath('plop-templates/plopfile.hbs');
