@@ -1,0 +1,30 @@
+/**
+ * 📝 Notes for Contributors:
+ *
+ * - This template serves as a starting point for building on Radix components.
+ * - Add packages imported below and any other packages you need for the {{capitalize componentName}} component to package.json
+ * - Ensure you explore Radix documentation for {{capitalize componentName}} to ensure all necessary props can be passed through and also to help you decide on reasonable defaults and customizations.
+ *
+ * @see Radix docs for {{capitalize componentName}}: https://www.radix-ui.com/docs/primitives/components/{{dashCase componentName}}
+ */
+
+import * as React from "react"
+import { ComponentProps } from '@zephyr-ui/theme'
+import * as Radix{{ capitalize componentName }} from '@radix-ui/react-{{dashCase componentName}}'
+
+export type {{ capitalize componentName }}BaseProps = ComponentProps<typeof AspectRatioPrimitive.Root>
+
+export interface {{ capitalize componentName }}Props extends {{ capitalize componentName }}BaseProps {
+  children: React.ReactNode
+}
+
+export const {{ capitalize componentName }} = ({ children, ...props }: {{ capitalize componentName }}Props) => {
+  return (
+    <Radix{{capitalize componentName}}.Root {...props}>
+      {children}
+    </Radix{{capitalize componentName}}.Root>
+  )
+}
+
+
+

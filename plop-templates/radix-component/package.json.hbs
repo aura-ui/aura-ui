@@ -1,0 +1,30 @@
+{
+  "name": "@zephyr-ui/{{dashCase componentName}}",
+  "version": "0.0.0",
+  "description": "{{description}}",
+  "keywords": [
+    "{{componentName}}"
+  ],
+  "author": "Greg Ogun <me@gregogun.xyz>",
+  "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
+  "license": "MIT",
+  "main": "dist/zephyr-ui-{{dashCase componentName}}.cjs.js",
+  "module": "dist/zephyr-ui-{{dashCase componentName}}.esm.js",
+  "types": "dist/zephyr-ui-{{dashCase componentName}}.cjs.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zephyr-ui/zephyr-ui.git",
+    "directory": "packages/{{dashCase componentName}}"
+  },
+  "bugs": {
+    "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
+  }
+}

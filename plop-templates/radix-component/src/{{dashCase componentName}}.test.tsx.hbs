@@ -1,0 +1,20 @@
+/**
+ * 📝 Notes for Contributors:
+ *
+ * - Tests here should be to verify component functionality
+ * - No snapshot tests for components please! 🙂
+ *
+ * @see Testing Guide: ADD LINK HERE
+ */
+
+import * as React from "react"
+import { testA11y } from "@zephyr-ui/test-utils";
+import { {{capitalize componentName}} } from "../src";
+
+describe("<{{capitalize componentName}}/>", () => {
+  test("passes a11y test", async () => {
+    await testA11y(<{{capitalize componentName}}>Add children here if necessary</{{capitalize componentName}}>)
+  });
+});
+
+
