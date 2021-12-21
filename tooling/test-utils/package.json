@@ -1,0 +1,41 @@
+{
+  "name": "@zephyr-ui/test-utils",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Testing utilities for Zephyr UI components",
+  "keywords": [
+    "zephyr",
+    "test",
+    "test utils",
+    "testing",
+    "utils",
+    "testing library",
+    "react testing library"
+  ],
+  "author": "Greg Ogun <gregogun97@gmail.com>",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zephyr-ui/zephyr-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
+  },
+  "dependencies": {
+    "@zephyr-ui/react": "^0.0.0",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "7.0.2",
+    "@testing-library/user-event": "13.5.0",
+    "@types/jest-axe": "^3.5.3",
+    "jest-axe": "^5.0.1",
+    "react-test-renderer": "^17.0.2"
+  },
+  "devDependencies": {
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  }
+}
