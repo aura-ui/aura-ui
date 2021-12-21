@@ -1,10 +1,21 @@
+/**
+ * 📝 Notes for Contributors:
+ *
+ * - Ensure you write tests for component behavior defined in the proposal.
+ * - Ensure you write tests for the accessibility and interactions.
+ * - No snapshot tests for components please! 🙂
+ *
+ * @see Testing Guide: ADD LINK HERE
+ */
+
 import * as React from "react"
+import { testA11y } from "@zephyr-ui/test-utils";
+import { {{capitalize componentName}} } from "../src";
 
-export interface {{ capitalize componentName }}Props {}
-
-export const {{ capitalize componentName }} = (props: {{ capitalize componentName }}Props) => {
-  return <div/>;
-}
-
+describe("<{{capitalize componentName}}/>", () => {
+  test("passes a11y test", async () => {
+    await testA11y(<{{capitalize componentName}}>Add children here if necessary</{{capitalize componentName}}>)
+  });
+});
 
 
