@@ -10,6 +10,7 @@ module.exports = function (plop: NodePlopAPI) {
       .join('');
   });
 
+  // generator for non-radix components
   plop.setGenerator('component', {
     description: 'Generates a component package',
     prompts: [
@@ -30,6 +31,31 @@ module.exports = function (plop: NodePlopAPI) {
         destination: '../packages/{{dashCase componentName}}',
         base: 'component/',
         templateFiles: 'component/**',
+      },
+    ],
+  });
+
+  // generator for radix components
+  plop.setGenerator('radix-component', {
+    description: 'Generates a Radix component package',
+    prompts: [
+      {
+        type: 'input',
+        name: 'componentName',
+        message: 'Enter component name:',
+      },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'The description of this component:',
+      },
+    ],
+    actions: [
+      {
+        type: 'addMany',
+        destination: '../packages/{{dashCase componentName}}',
+        base: 'radix-component/',
+        templateFiles: 'radix-component/**',
       },
     ],
   });
