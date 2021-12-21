@@ -2,7 +2,8 @@
   "name": "zephyr-ui",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "tooling/*"
   ],
   "preconstruct": {
     "packages": [
@@ -42,10 +43,8 @@
     "@storybook/addon-links": "^6.4.9",
     "@storybook/react": "^6.4.9",
     "@swc-node/jest": "^1.4.3",
-    "@testing-library/react": "^12.1.2",
     "@types/eslint": "^8.2.1",
     "@types/jest": "^27.0.3",
-    "@types/jest-axe": "^3.5.3",
     "@types/lodash": "^4.14.178",
     "@types/node": "^17.0.0",
     "@types/react": "^17.0.37",
@@ -65,7 +64,6 @@
     "eslint-plugin-testing-library": "^5.0.1",
     "husky": "^7.0.0",
     "jest": "^27.4.5",
-    "jest-axe": "^5.0.1",
     "jest-environment-jsdom": "^27.4.4",
     "jest-watch-typeahead": "^1.0.0",
     "lerna": "^4.0.0",
