@@ -8,13 +8,12 @@
   "author": "Greg Ogun <me@gregogun.xyz>",
   "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
   "license": "MIT",
-  "main": "dist/zephyr-ui-{{dashCase componentName}}.cjs.js",
-  "module": "dist/zephyr-ui-{{dashCase componentName}}.esm.js",
-  "types": "dist/zephyr-ui-{{dashCase componentName}}.cjs.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "sideEffects": false,
   "files": [
-    "dist",
-    "src"
+    "dist/**"
   ],
   "publishConfig": {
     "access": "public"
@@ -26,5 +25,10 @@
   },
   "bugs": {
     "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
+  },
+    "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   }
 }

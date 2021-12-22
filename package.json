@@ -5,17 +5,13 @@
     "packages/*",
     "tooling/*"
   ],
-  "preconstruct": {
-    "packages": [
-      "packages/*"
-    ]
-  },
   "scripts": {
     "prepare": "husky install",
-    "postinstall": "preconstruct dev",
-    "bootstrap": "preconstruct validate",
-    "bootstrap:fix": "preconstruct fix",
-    "build": "preconstruct build",
+    "postinstall": "manypkg check",
+    "pkg": "manypkg run",
+    "fix:pkgs": "manypkg fix",
+    "bootstrap": "lerna bootstrap && turbo run dev",
+    "build": "turbo run build",
     "precommit": "pretty-quick --staged && lint-staged",
     "commit": "git cz",
     "format": "prettier --write \"**/*.{html,js,jsx,ts,tsx,json,md,mdx,yml}\"",
@@ -25,8 +21,8 @@
     "test:watch": "jest --maxWorkers=25% --watch --onlyChanged",
     "test:ci": "jest --color",
     "types:check": "tsc --skipLibCheck --noEmit",
-    "clean": "rimraf node_modules",
-    "clean-dist": "lerna exec -- rimraf dist",
+    "clean": "yarn clean:pkgs && rimraf node_modules",
+    "clean:pkgs": "manypkg exec rimraf node_modules dist",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "create:pkg": "plop --plopfile ./scripts/plopfile.ts && yarn format:pkg"
@@ -37,7 +33,7 @@
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
-    "@preconstruct/cli": "^2.1.5",
+    "@manypkg/cli": "^0.19.1",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
@@ -78,7 +74,24 @@
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.4",
     "ts-node": "^10.4.0",
+    "turbo": "^1.0.19",
     "typescript": "^4.5.4"
+  },
+  "turbo": {
+    "pipeline": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "dist/**"
+        ]
+      },
+      "dev": {
+        "cache": false
+      },
+      "clean": {}
+    }
   },
   "config": {
     "commitizen": {

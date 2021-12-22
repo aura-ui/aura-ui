@@ -11,23 +11,31 @@
   "author": "Greg Ogun <gregogun97@gmail.com>",
   "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
   "license": "MIT",
-  "main": "dist/zephyr-ui-theme.cjs.js",
-  "module": "dist/zephyr-ui-theme.esm.js",
-  "types": "dist/zephyr-ui-theme.cjs.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "files": [
-    "dist",
-    "src"
+    "dist/**"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zephyr-ui/zephyr-ui.git"
+    "url": "git+https://github.com/zephyr-ui/zephyr-ui.git",
+    "directory": "packages/theme"
   },
   "bugs": {
     "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
   },
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "clean": "rimraf node_modules dist"
+  },
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
-    "@stitches/react": "^1.2.6",
-    "next-themes": "^0.0.15"
+    "@stitches/react": "^1.2.6"
+  },
+  "devDependencies": {
+    "tsup": "^5.11.7"
   }
 }
