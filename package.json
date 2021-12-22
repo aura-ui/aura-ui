@@ -22,7 +22,7 @@
     "test:ci": "jest --color",
     "types:check": "tsc --skipLibCheck --noEmit",
     "clean": "yarn clean:pkgs && rimraf node_modules",
-    "clean:pkgs": "manypkg exec rimraf node_modules dist",
+    "clean:pkgs": "manypkg exec rimraf .turbo node_modules dist",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "create:pkg": "plop --plopfile ./scripts/plopfile.ts && yarn format:pkg"
