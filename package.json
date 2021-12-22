@@ -23,6 +23,7 @@
     "types:check": "tsc --skipLibCheck --noEmit",
     "clean": "yarn clean:pkgs && rimraf node_modules",
     "clean:pkgs": "manypkg exec rimraf .turbo node_modules dist",
+    "prestorybook": "yarn clean:pkgs && rimraf node_modules/.cache/storybook",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "create:pkg": "plop --plopfile ./scripts/plopfile.ts && yarn format:pkg"
