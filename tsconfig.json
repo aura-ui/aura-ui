@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "paths": {
+      // Emotion typedefs point to an empty file, which unsets all declarations
+      "@emotion/core": ["./types/emotion.d.ts"]
+    },
     "target": "es5",
     "module": "esnext",
     "lib": ["dom", "esnext"],
@@ -20,11 +24,10 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
-    "incremental": true,
     "declarationMap": true
   },
   "include": ["packages", "**/*.ts"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "types/emotion.d.ts"],
   "ts-node": {
     "compilerOptions": {
       // Required
