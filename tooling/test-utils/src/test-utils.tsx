@@ -3,7 +3,7 @@ import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import * as React from 'react';
 import { toHaveNoViolations, axe } from 'jest-axe';
 import { RunOptions } from 'axe-core';
-import { ThemeProvider } from '@zephyr-ui/react';
+// import { ThemeProvider } from '@zephyr-ui/react';
 
 // complete setup after adding theme provider to @zephyr-ui/theme
 // see https://testing-library.com/docs/react-testing-library/setup/ for help
@@ -55,12 +55,7 @@ export interface TestOptions extends Omit<RenderOptions, 'wrapper'> {
 const customRender = (
   ui: UI,
   { wrapper: Wrapper = ChildrenPassthrough, ...options }: TestOptions = {}
-): RenderResult =>
-  render(
-    <ThemeProvider>
-      <Wrapper>{ui}</Wrapper>
-    </ThemeProvider>
-  );
+): RenderResult => render(<Wrapper>{ui}</Wrapper>);
 
 export { customRender as render };
 export { axe };
