@@ -38,7 +38,6 @@
     "clean": "rimraf node_modules dist"
   },
   "dependencies": {
-    "@zephyr-ui/aspect-ratio": "^0.0.0",
     "@zephyr-ui/layout": "^0.0.0",
     "@zephyr-ui/theme": "^0.0.0"
   },
