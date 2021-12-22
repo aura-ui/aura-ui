@@ -33,8 +33,7 @@
   },
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
-    "@stitches/react": "^1.2.6",
-    "next-themes": "^0.0.15"
+    "@stitches/react": "^1.2.6"
   },
   "devDependencies": {
     "tsup": "^5.11.7"
