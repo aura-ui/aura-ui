@@ -29,6 +29,7 @@
     "clean": "rimraf node_modules dist"
   },
   "dependencies": {
+    "@radix-ui/react-aspect-ratio": "^0.1.2",
     "@zephyr-ui/theme": "^0.0.0"
   },
   "devDependencies": {
