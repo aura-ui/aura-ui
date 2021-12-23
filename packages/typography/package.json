@@ -1,0 +1,37 @@
+{
+  "name": "@zephyr-ui/typography",
+  "version": "0.0.0",
+  "description": "Zephyr UI typographic components",
+  "keywords": [
+    "Typography"
+  ],
+  "author": "Greg Ogun <me@gregogun.xyz>",
+  "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zephyr-ui/zephyr-ui.git",
+    "directory": "packages/typography"
+  },
+  "bugs": {
+    "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
+  },
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "dependencies": {
+    "@zephyr-ui/theme": "^0.0.0"
+  }
+}
