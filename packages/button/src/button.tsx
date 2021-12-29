@@ -7,6 +7,7 @@ import { useObjectRef } from '@react-aria/utils';
 import { ButtonIcon } from './button-icon';
 import { ButtonSpinner } from './button-spinner';
 import { SpinnerVariant } from '@zephyr-ui/spinner';
+import { dataAttr } from '@zephyr-ui/utils/src/dom';
 
 const noOpacity = css({ opacity: 0 });
 
@@ -41,7 +42,7 @@ const ButtonBase = styled('button', {
           boxShadow: 'inset 0 0 0 1px $$borderHover',
         },
 
-        '&:active': {
+        '&[data-active]': {
           bg: '$$bgActive',
         },
       },
@@ -54,7 +55,7 @@ const ButtonBase = styled('button', {
           boxShadow: 'inset 0 0 0 1px $$borderHover',
         },
 
-        '&:active': {
+        '&[data-active]': {
           bg: '$$bgActive',
         },
       },
@@ -66,7 +67,7 @@ const ButtonBase = styled('button', {
           bg: '$$bgHover',
         },
 
-        '&:active': {
+        '&[data-active]': {
           bg: '$$bgActive',
         },
       },
@@ -228,6 +229,7 @@ export const Button = React.forwardRef(
 
     return (
       <ButtonBase
+        data-active={dataAttr(isPressed)}
         size={props.size}
         rounded={props.rounded}
         variant={props.variant}
