@@ -34,6 +34,7 @@
   "dependencies": {
     "@react-aria/button": "^3.3.4",
     "@react-aria/utils": "^3.11.0",
+    "@zephyr-ui/spinner": "^0.0.0",
     "@zephyr-ui/theme": "^0.0.0",
     "@zephyr-ui/utils": "^0.0.0"
   },
