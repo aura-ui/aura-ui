@@ -1,0 +1,46 @@
+{
+  "name": "@zephyr-ui/spinner",
+  "version": "0.0.0",
+  "description": "A component used to display loading or indeterminate states in an application",
+  "keywords": [
+    "spinner"
+  ],
+  "author": "Greg Ogun <me@gregogun.xyz>",
+  "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zephyr-ui/zephyr-ui.git",
+    "directory": "packages/spinner"
+  },
+  "bugs": {
+    "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
+  },
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "dependencies": {
+    "@zephyr-ui/theme": "^0.0.0",
+    "@zephyr-ui/utils": "^0.0.0",
+    "@zephyr-ui/visually-hidden": "^0.0.0"
+  },
+  "devDependencies": {
+    "react": "^17.0.2",
+    "tsup": "^5.11.7"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  }
+}
