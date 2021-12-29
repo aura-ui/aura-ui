@@ -21,8 +21,8 @@
     "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
   },
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
     "clean": "rimraf node_modules dist"
   },
   "dependencies": {
