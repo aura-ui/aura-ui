@@ -6,10 +6,7 @@ import { useButton } from '@react-aria/button';
 import { useObjectRef } from '@react-aria/utils';
 import { ButtonIcon } from './button-icon';
 import { ButtonSpinner } from './button-spinner';
-import { SpinnerVariant } from '@zephyr-ui/spinner';
-import { dataAttr } from '@zephyr-ui/utils/src/dom';
-
-const noOpacity = css({ opacity: 0 });
+import { ariaAttr, dataAttr } from '@zephyr-ui/utils/src/dom';
 
 export type ButtonBaseProps = ComponentProps<typeof ButtonBase>;
 export type ButtonVariants = VariantProps<typeof ButtonBase>;
@@ -25,10 +22,16 @@ const ButtonBase = styled('button', {
   gap: '$1',
   color: '$$text',
 
-  '&:disabled': {
+  '&[aria-disabled="true"]': {
     pointerEvents: 'none',
     opacity: '50%',
     cursor: 'not-allowed',
+  },
+
+  '&[data-loading]': {
+    '& span': {
+      opacity: 0,
+    },
   },
 
   variants: {
@@ -217,10 +220,7 @@ export const Button = React.forwardRef(
     const { buttonProps, isPressed } = useButton(
       {
         ...(props as any),
-        onPress() {
-          onPress && onPress();
-        },
-        isDisabled: isDisabled || isLoading,
+        onPress: onPress,
       },
       buttonRef
     );
@@ -230,6 +230,8 @@ export const Button = React.forwardRef(
     return (
       <ButtonBase
         data-active={dataAttr(isPressed)}
+        data-loading={dataAttr(isLoading)}
+        aria-disabled={ariaAttr(isDisabled || isLoading)}
         size={props.size}
         rounded={props.rounded}
         variant={props.variant}
@@ -245,7 +247,7 @@ export const Button = React.forwardRef(
 
         {isLoading ? (
           loadingText || (
-            <span className={noOpacity()}>
+            <span>
               <ButtonContent {...contentProps} />
             </span>
           )
