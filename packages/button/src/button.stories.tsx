@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from './button';
-import { PlusIcon, TriangleDownIcon } from '@radix-ui/react-icons';
+import { PlusIcon, TriangleDownIcon, ArrowUpIcon } from '@radix-ui/react-icons';
 import { styled } from '@zephyr-ui/theme';
 import { Spinner } from '@zephyr-ui/spinner';
 
@@ -51,11 +51,16 @@ export const LoadingVariants = () => (
 );
 export const WithLeftIcon = () => (
   <Button variant="outline" leftIcon={<PlusIcon />}>
-    Add to cart
+    Add To Cart
   </Button>
 );
 export const WithRightIcon = () => (
   <Button variant="outline" rightIcon={<TriangleDownIcon />}>
     Add File
+  </Button>
+);
+export const LeftAndRightIcon = () => (
+  <Button variant="outline" leftIcon={<ArrowUpIcon />} rightIcon={<ArrowUpIcon />}>
+    Upload
   </Button>
 );
