@@ -7,149 +7,13 @@ import { useObjectRef } from '@react-aria/utils';
 import { ButtonIcon } from './button-icon';
 import { ButtonSpinner } from './button-spinner';
 import { ariaAttr, dataAttr } from '@zephyr-ui/utils/src/dom';
+import { button } from './button.styles';
 
 export type ButtonBaseProps = ComponentProps<typeof ButtonBase>;
 export type ButtonVariants = VariantProps<typeof ButtonBase>;
 
 const ButtonBase = styled('button', {
-  ...buttonResets,
-
-  // overridable locally scoped tokens
-  ...defaultColors,
-
-  display: 'flex',
-  justifyContent: 'center',
-  gap: '$1',
-  color: '$$text',
-
-  '&[aria-disabled="true"]': {
-    pointerEvents: 'none',
-    opacity: '50%',
-    cursor: 'not-allowed',
-  },
-
-  '&[data-loading]': {
-    '& span': {
-      opacity: 0,
-    },
-  },
-
-  variants: {
-    variant: {
-      subtle: {
-        bg: '$$bg',
-        boxShadow: 'inset 0 0 0 1px $$border',
-
-        '&:hover': {
-          bg: '$$bgHover',
-          boxShadow: 'inset 0 0 0 1px $$borderHover',
-        },
-
-        '&[data-active]': {
-          bg: '$$bgActive',
-        },
-      },
-      outline: {
-        bg: 'transparent',
-        boxShadow: 'inset 0 0 0 1px $$border',
-
-        '&:hover': {
-          bg: '$$bgHover',
-          boxShadow: 'inset 0 0 0 1px $$borderHover',
-        },
-
-        '&[data-active]': {
-          bg: '$$bgActive',
-        },
-      },
-      ghost: {
-        boxShadow: 'none',
-        bg: 'transparent',
-
-        '&:hover': {
-          bg: '$$bgHover',
-        },
-
-        '&[data-active]': {
-          bg: '$$bgActive',
-        },
-      },
-      solid: {
-        bg: '$$solid',
-        color: '$bg',
-
-        '&:hover': {
-          bg: '$$solidHover',
-        },
-      },
-    },
-
-    size: {
-      xs: {
-        px: '10px',
-        fontSize: '$xs',
-        height: '$7',
-      },
-      sm: {
-        px: '$3',
-        fontSize: '$sm',
-        height: '$8',
-      },
-      md: {
-        px: '$4',
-        fontSize: '$md',
-        height: '$9',
-      },
-      lg: {
-        px: '$6',
-        fontSize: '$lg',
-        height: '$12',
-      },
-    },
-
-    // adding soon
-
-    colorScheme: {
-      purple: {
-        $$bg: '$colors$violet3',
-        $$bgHover: '$colors$violet4',
-        $$bgActive: '$colors$violet5',
-        $$border: '$colors$violet7',
-        $$borderHover: '$colors$violet8',
-        $$solid: '$colors$violet9',
-        $$solidHover: '$colors$violet10',
-        $$text: '$colors$violet11',
-        $$textHiContrast: '$colors$violet12',
-      },
-    },
-
-    rounded: {
-      none: {
-        br: '0px',
-      },
-      xs: {
-        br: '$xs',
-      },
-      sm: {
-        br: '$sm',
-      },
-      md: {
-        br: '$md',
-      },
-      lg: {
-        br: '$lg',
-      },
-      full: {
-        br: '$full',
-      },
-    },
-  },
-
-  defaultVariants: {
-    variant: 'subtle',
-    size: 'md',
-    rounded: 'md',
-  },
+  ...button,
 });
 
 export interface ButtonProps extends ButtonBaseProps {
@@ -215,12 +79,14 @@ export const Button = React.forwardRef(
       spacing,
       spinner,
       spinnerPlacement = 'start',
+      ...rest
     } = props;
     const buttonRef = useObjectRef(ref);
     const { buttonProps, isPressed } = useButton(
       {
         ...(props as any),
-        onPress: onPress,
+        onClick: undefined,
+        onPress: props.onClick,
       },
       buttonRef
     );
@@ -237,6 +103,7 @@ export const Button = React.forwardRef(
         variant={props.variant}
         colorScheme={props.colorScheme}
         ref={buttonRef}
+        {...rest}
         {...buttonProps}
       >
         {isLoading && spinnerPlacement === 'start' && (
