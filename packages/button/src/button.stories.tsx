@@ -64,3 +64,6 @@ export const LeftAndRightIcon = () => (
     Upload
   </Button>
 );
+export const ClickEvent = () => (
+  <Button onClick={() => alert(`This uses react-aria's onPress under the hood!`)}>Click me!</Button>
+);
