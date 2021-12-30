@@ -6,18 +6,7 @@ type ButtonSpinnerBaseProps = ComponentProps<typeof ButtonSpinnerBase>;
 const ButtonSpinnerBase = styled('div', {
   display: 'flex',
   alignItems: 'center',
-
-  variants: {
-    state: {
-      spinner: {
-        px: '$4',
-      },
-    },
-  },
-
-  defaultVariants: {
-    state: 'spinner',
-  },
+  px: '$2',
 });
 
 interface ButtonSpinnerProps extends ButtonSpinnerBaseProps {
