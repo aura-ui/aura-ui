@@ -1,0 +1,17 @@
+export const buttonResets = {
+  cursor: 'pointer',
+  border: 0,
+  padding: 0,
+  margin: 0,
+  outline: 'none',
+  textDecoration: 'none',
+  alignItems: 'center',
+  appearance: 'none',
+  boxSizing: 'border-box',
+  display: 'inline-flex',
+  userSelect: 'none',
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
+  fontFamily: 'inherit',
+  fontWeight: '$medium',
+  lineHeight: 1,
+};

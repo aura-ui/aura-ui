@@ -450,6 +450,20 @@ const darkModeConfig = {
   },
 };
 
+const globalStyles = globalCss({
+  '*, *::before, *::after': {
+    boxSizing: 'inherit',
+  },
+  'html, body': {
+    padding: 0,
+    margin: 0,
+    fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
+  },
+});
+
+globalStyles();
+
 export const darkTheme = createTheme('dark-theme', darkModeConfig);
 export type CSS = Stitches.CSS<typeof config>;
 export type { ComponentProps, VariantProps, PropertyValue, ScaleValue } from '@stitches/react';

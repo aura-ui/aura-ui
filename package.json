@@ -14,8 +14,6 @@
     "build": "turbo run build",
     "precommit": "pretty-quick --staged && lint-staged",
     "commit": "git cz",
-    "format": "prettier --write \"**/*.{html,js,jsx,ts,tsx,json,md,mdx,yml}\"",
-    "format:pkg": "prettier --write \"./packages/**/*.{html,js,jsx,ts,tsx,json,md,mdx,yml}\"",
     "lint": "eslint packages/**/src/ --ext .ts,.tsx --config .eslintrc",
     "test": "jest --maxWorkers=50%",
     "test:watch": "jest --maxWorkers=25% --watch --onlyChanged",
@@ -26,7 +24,7 @@
     "prestorybook": "yarn clean && rimraf node_modules && yarn",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "create:pkg": "plop --plopfile ./scripts/plopfile.ts && yarn format:pkg"
+    "create:pkg": "plop --plopfile ./scripts/plopfile.ts"
   },
   "dependencies": {
     "@babel/core": "^7.16.5",
@@ -35,6 +33,7 @@
     "@babel/preset-react": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
     "@manypkg/cli": "^0.19.1",
+    "@radix-ui/react-icons": "^1.0.3",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
