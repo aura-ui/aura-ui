@@ -1,6 +1,6 @@
 {
   "name": "@zephyr-ui/typography",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.1-alpha.0",
   "description": "Zephyr UI typographic components",
   "keywords": [
     "Typography"
@@ -32,6 +32,6 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@zephyr-ui/theme": "^0.1.0-alpha.0"
+    "@zephyr-ui/theme": "^0.1.1-alpha.0"
   }
 }

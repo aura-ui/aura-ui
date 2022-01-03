@@ -1,6 +1,6 @@
 {
   "name": "@zephyr-ui/layout",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.1-alpha.0",
   "description": "Zephyr UI layout components",
   "author": "Greg Ogun <gregogun97@gmail.com>",
   "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@radix-ui/react-aspect-ratio": "^0.1.2",
-    "@zephyr-ui/theme": "^0.1.0-alpha.0"
+    "@zephyr-ui/theme": "^0.1.1-alpha.0"
   },
   "devDependencies": {
     "react": "^17.0.2",
