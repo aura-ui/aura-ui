@@ -1,6 +1,6 @@
 {
   "name": "@zephyr-ui/react",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "description": "Accessible, composable React UI components built with Stitches.js",
   "keywords": [
     "react",
@@ -38,8 +38,8 @@
     "clean": "rimraf node_modules dist"
   },
   "dependencies": {
-    "@zephyr-ui/layout": "^0.0.0",
-    "@zephyr-ui/theme": "^0.0.0"
+    "@zephyr-ui/layout": "^0.1.0-alpha.0",
+    "@zephyr-ui/theme": "^0.1.0-alpha.0"
   },
   "devDependencies": {
     "react": "^17.0.2",

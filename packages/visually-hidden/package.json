@@ -1,6 +1,6 @@
 {
   "name": "@zephyr-ui/visually-hidden",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "description": "A component that hides content from the screen in an accessible way.",
   "keywords": [
     "visually hidden"

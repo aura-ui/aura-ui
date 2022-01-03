@@ -1,6 +1,6 @@
 {
   "name": "@zephyr-ui/button",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "description": "The button component is used to trigger an action or event.",
   "keywords": [
     "button"
@@ -34,9 +34,9 @@
   "dependencies": {
     "@react-aria/button": "^3.3.4",
     "@react-aria/utils": "^3.11.0",
-    "@zephyr-ui/spinner": "^0.0.0",
-    "@zephyr-ui/theme": "^0.0.0",
-    "@zephyr-ui/utils": "^0.0.0"
+    "@zephyr-ui/spinner": "^0.1.0-alpha.0",
+    "@zephyr-ui/theme": "^0.1.0-alpha.0",
+    "@zephyr-ui/utils": "^0.1.0-alpha.0"
   },
   "devDependencies": {
     "react": "^17.0.2",
