@@ -1,12 +1,12 @@
 {
-  "name": "@zephyr-ui/spinner",
+  "name": "@float-ui/spinner",
   "version": "0.1.1-alpha.0",
   "description": "A component used to display loading or indeterminate states in an application",
   "keywords": [
     "spinner"
   ],
   "author": "Greg Ogun <me@gregogun.xyz>",
-  "homepage": "https://github.com/zephyr-ui/zephyr-ui#readme",
+  "homepage": "https://github.com/above-zero/float-ui#readme",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -20,11 +20,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zephyr-ui/zephyr-ui.git",
+    "url": "git+https://github.com/above-zero/float-ui.git",
     "directory": "packages/spinner"
   },
   "bugs": {
-    "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
+    "url": "https://github.com/above-zero/float-ui/issues"
   },
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",

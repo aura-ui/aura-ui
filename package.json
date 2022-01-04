@@ -1,5 +1,5 @@
 {
-  "name": "zephyr-ui",
+  "name": "float-ui",
   "private": true,
   "workspaces": [
     "packages/*",
