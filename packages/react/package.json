@@ -38,8 +38,8 @@
     "clean": "rimraf node_modules dist"
   },
   "dependencies": {
-    "@zephyr-ui/layout": "^0.1.1-alpha.0",
-    "@zephyr-ui/theme": "^0.1.1-alpha.0"
+    "@float-ui/layout": "^0.1.1-alpha.0",
+    "@float-ui/theme": "^0.1.1-alpha.0"
   },
   "devDependencies": {
     "react": "^17.0.2",

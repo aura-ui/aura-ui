@@ -32,9 +32,9 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@zephyr-ui/theme": "^0.1.1-alpha.0",
-    "@zephyr-ui/utils": "^0.1.1-alpha.0",
-    "@zephyr-ui/visually-hidden": "^0.1.1-alpha.0"
+    "@float-ui/theme": "^0.1.1-alpha.0",
+    "@float-ui/utils": "^0.1.1-alpha.0",
+    "@float-ui/visually-hidden": "^0.1.1-alpha.0"
   },
   "devDependencies": {
     "react": "^17.0.2",

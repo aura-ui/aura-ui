@@ -32,11 +32,11 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
+    "@float-ui/spinner": "^0.1.1-alpha.0",
+    "@float-ui/theme": "^0.1.1-alpha.0",
+    "@float-ui/utils": "^0.1.1-alpha.0",
     "@react-aria/button": "^3.3.4",
-    "@react-aria/utils": "^3.11.0",
-    "@zephyr-ui/spinner": "^0.1.1-alpha.0",
-    "@zephyr-ui/theme": "^0.1.1-alpha.0",
-    "@zephyr-ui/utils": "^0.1.1-alpha.0"
+    "@react-aria/utils": "^3.11.0"
   },
   "devDependencies": {
     "react": "^17.0.2",

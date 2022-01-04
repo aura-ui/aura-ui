@@ -1,8 +1,8 @@
 {
-  "name": "@zephyr-ui/test-utils",
+  "name": "@float-ui/test-utils",
   "version": "0.1.1-alpha.0",
   "private": true,
-  "description": "Testing utilities for Zephyr UI components",
+  "description": "Testing utilities for Float UI components",
   "keywords": [
     "zephyr",
     "test",
@@ -17,18 +17,18 @@
   "main": "src/index.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zephyr-ui/zephyr-ui.git"
+    "url": "git+https://github.com/above-zero/float-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/zephyr-ui/zephyr-ui/issues"
+    "url": "https://github.com/above-zero/float-ui/issues"
   },
   "dependencies": {
+    "@float-ui/react": "^0.1.1-alpha.0",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "7.0.2",
     "@testing-library/user-event": "13.5.0",
     "@types/jest-axe": "^3.5.3",
-    "@zephyr-ui/react": "^0.1.1-alpha.0",
     "jest-axe": "^5.0.1",
     "react-test-renderer": "^17.0.2"
   },
