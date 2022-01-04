@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { defaultColors, useObjectRef } from '@zephyr-ui/utils';
-import { ComponentProps, VariantProps, styled, PropertyValue, css } from '@zephyr-ui/theme';
+import { defaultColors, useObjectRef } from '@float-ui/utils';
+import { ComponentProps, VariantProps, styled, PropertyValue, css } from '@float-ui/theme';
 import { Button, ButtonProps, ButtonVariants } from '.';
 
 type OmittedProps = 'leftIcon' | 'rightIcon' | 'loadingText' | 'spacing' | 'spinnerPlacement';

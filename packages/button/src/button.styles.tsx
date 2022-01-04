@@ -1,5 +1,5 @@
-import { css } from '@zephyr-ui/theme';
-import { defaultColors } from '@zephyr-ui/utils';
+import { css } from '@float-ui/theme';
+import { defaultColors } from '@float-ui/utils';
 
 export const button = css({
   // resets

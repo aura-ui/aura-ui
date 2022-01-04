@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Spinner, SpinnerProps, SpinnerVariant, SpinnerVariants } from '@zephyr-ui/spinner';
-import { styled, ComponentProps } from '@zephyr-ui/theme';
+import { Spinner, SpinnerProps, SpinnerVariant, SpinnerVariants } from '@float-ui/spinner';
+import { styled, ComponentProps } from '@float-ui/theme';
 
 type ButtonSpinnerBaseProps = ComponentProps<typeof ButtonSpinnerBase>;
 const ButtonSpinnerBase = styled('div', {

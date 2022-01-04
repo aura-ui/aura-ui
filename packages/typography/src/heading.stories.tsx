@@ -1,4 +1,4 @@
-import { css } from '@zephyr-ui/theme';
+import { css } from '@float-ui/theme';
 import * as React from 'react';
 import { Heading } from './typography';
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, ComponentProps, VariantProps, CSS, styled } from '@zephyr-ui/theme';
+import { css, ComponentProps, VariantProps, CSS, styled } from '@float-ui/theme';
 
 type ButtonIconBaseProps = ComponentProps<typeof IconWrapper>;
 

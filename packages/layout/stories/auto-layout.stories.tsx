@@ -1,7 +1,5 @@
 import { AutoLayout, Container as ContainerBase } from '../src';
-import { Default as ContainerDefault } from '../stories/container.stories';
 import * as React from 'react';
-import { styled } from '@zephyr-ui/theme';
 
 export default {
   title: 'Components/Layout/AutoLayout',

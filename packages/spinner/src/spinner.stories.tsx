@@ -1,4 +1,4 @@
-import { styled } from '@zephyr-ui/theme';
+import { styled } from '@float-ui/theme';
 import * as React from 'react';
 import { Spinner } from './spinner';
 

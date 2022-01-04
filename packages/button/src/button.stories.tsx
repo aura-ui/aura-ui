@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Button } from './button';
 import { PlusIcon, TriangleDownIcon, ArrowUpIcon } from '@radix-ui/react-icons';
-import { styled } from '@zephyr-ui/theme';
-import { Spinner } from '@zephyr-ui/spinner';
+import { styled } from '@float-ui/theme';
+import { Spinner } from '@float-ui/spinner';
 
 export default {
   title: 'Components/Form/Button',

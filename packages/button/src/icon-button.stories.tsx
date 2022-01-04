@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { MagnifyingGlassIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons';
-import { styled } from '@zephyr-ui/theme';
-import { Spinner } from '@zephyr-ui/spinner';
+import { styled } from '@float-ui/theme';
 import { IconButton } from './icon-button';
 
 export default {

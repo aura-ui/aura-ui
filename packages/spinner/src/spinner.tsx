@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { ComponentProps, VariantProps, styled, keyframes } from '@zephyr-ui/theme';
-import { defaultColors } from '@zephyr-ui/utils';
-import { VisuallyHidden } from '@zephyr-ui/visually-hidden';
+import { ComponentProps, VariantProps, styled, keyframes } from '@float-ui/theme';
+import { defaultColors } from '@float-ui/utils';
+import { VisuallyHidden } from '@float-ui/visually-hidden';
 
 const spinner = keyframes({
   to: { transform: 'rotate(360deg)' },

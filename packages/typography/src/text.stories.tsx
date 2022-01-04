@@ -1,4 +1,4 @@
-import { css } from '@zephyr-ui/theme';
+import { css } from '@float-ui/theme';
 import * as React from 'react';
 import { Text, Paragraph, Quote, Small, Deleted, Code, Ins, Em, Strong, Mark } from './typography';
 
