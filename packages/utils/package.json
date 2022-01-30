@@ -1,9 +1,9 @@
 {
-  "name": "@float-ui/utils",
+  "name": "@aura-ui/utils",
   "version": "0.1.3-alpha.0",
-  "description": "Shared utilities, configs and types for Float UI components and hooks",
+  "description": "Shared utilities, configs and types for Aura UI components and hooks",
   "author": "Greg Ogun <gregogun97@gmail.com>",
-  "homepage": "https://github.com/above-zero/float-ui#readme",
+  "homepage": "https://github.com/above-zero/aura-ui#readme",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -17,11 +17,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/above-zero/float-ui.git",
+    "url": "git+https://github.com/above-zero/aura-ui.git",
     "directory": "packages/theme"
   },
   "bugs": {
-    "url": "https://github.com/above-zero/float-ui/issues"
+    "url": "https://github.com/above-zero/aura-ui/issues"
   },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --external react",

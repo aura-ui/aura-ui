@@ -1,5 +1,5 @@
 {
-  "name": "@float-ui/react",
+  "name": "@aura-ui/react",
   "version": "0.1.3-alpha.0",
   "description": "Accessible, composable React UI components built with Stitches.js",
   "keywords": [
@@ -12,7 +12,7 @@
     "radix-ui"
   ],
   "author": "Greg Ogun <gregogun97@gmail.com>",
-  "homepage": "https://github.com/above-zero/float-ui#readme",
+  "homepage": "https://github.com/above-zero/aura-ui#readme",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -26,11 +26,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/above-zero/float-ui.git",
+    "url": "git+https://github.com/above-zero/aura-ui.git",
     "directory": "packages/react"
   },
   "bugs": {
-    "url": "https://github.com/above-zero/float-ui/issues"
+    "url": "https://github.com/above-zero/aura-ui/issues"
   },
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
@@ -38,13 +38,13 @@
     "clean": "rimraf node_modules dist"
   },
   "dependencies": {
-    "@float-ui/button": "^0.1.3-alpha.0",
-    "@float-ui/layout": "^0.1.3-alpha.0",
-    "@float-ui/spinner": "^0.1.3-alpha.0",
-    "@float-ui/theme": "^0.1.3-alpha.0",
-    "@float-ui/typography": "^0.1.3-alpha.0",
-    "@float-ui/utils": "^0.1.3-alpha.0",
-    "@float-ui/visually-hidden": "^0.1.3-alpha.0"
+    "@aura-ui/button": "^0.1.3-alpha.0",
+    "@aura-ui/layout": "^0.1.3-alpha.0",
+    "@aura-ui/spinner": "^0.1.3-alpha.0",
+    "@aura-ui/theme": "^0.1.3-alpha.0",
+    "@aura-ui/typography": "^0.1.3-alpha.0",
+    "@aura-ui/utils": "^0.1.3-alpha.0",
+    "@aura-ui/visually-hidden": "^0.1.3-alpha.0"
   },
   "devDependencies": {
     "react": "^17.0.2",

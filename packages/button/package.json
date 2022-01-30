@@ -1,12 +1,12 @@
 {
-  "name": "@float-ui/button",
+  "name": "@aura-ui/button",
   "version": "0.1.3-alpha.0",
   "description": "The button component is used to trigger an action or event.",
   "keywords": [
     "button"
   ],
   "author": "Greg Ogun <me@gregogun.xyz>",
-  "homepage": "https://github.com/above-zero/float-ui#readme",
+  "homepage": "https://github.com/above-zero/aura-ui#readme",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -20,11 +20,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/above-zero/float-ui.git",
+    "url": "git+https://github.com/above-zero/aura-ui.git",
     "directory": "packages/button"
   },
   "bugs": {
-    "url": "https://github.com/above-zero/float-ui/issues"
+    "url": "https://github.com/above-zero/aura-ui/issues"
   },
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
@@ -32,9 +32,9 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@float-ui/spinner": "^0.1.3-alpha.0",
-    "@float-ui/theme": "^0.1.3-alpha.0",
-    "@float-ui/utils": "^0.1.3-alpha.0",
+    "@aura-ui/spinner": "^0.1.3-alpha.0",
+    "@aura-ui/theme": "^0.1.3-alpha.0",
+    "@aura-ui/utils": "^0.1.3-alpha.0",
     "@react-aria/button": "^3.3.4",
     "@react-aria/utils": "^3.11.0"
   },

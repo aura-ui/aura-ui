@@ -1,3 +1,3 @@
-# Zephyr UI
+# Aura UI
 
-A lightly opinionated library of accessible and highly composable React components, built with Stitches.
+A library of accessible and highly composable React components, built with Stitches, Radix UI and react-aria.

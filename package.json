@@ -1,5 +1,5 @@
 {
-  "name": "float-ui",
+  "name": "aura-ui",
   "private": true,
   "workspaces": [
     "packages/*",
