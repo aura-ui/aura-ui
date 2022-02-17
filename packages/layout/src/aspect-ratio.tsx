@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as AspectRatioPrimitive from '@radix-ui/react-aspect-ratio';
-import { ComponentProps, CSS } from '@float-ui/theme';
+import { ComponentProps, CSS } from '@aura-ui/theme';
 import { Container } from '../src/';
 
 type AspectRatioBaseProps = ComponentProps<typeof AspectRatioPrimitive.Root>;

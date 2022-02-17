@@ -1,11 +1,13 @@
-# `layout`
+# Button
 
-> TODO: description
+Aura UI layout components.
 
-## Usage
+## Installation ```sh yarn add @aura-ui/button
 
-```
-const layout = require('layout');
+# or npm i @aura-ui/button
 
-// TODO: DEMONSTRATE API
+```## Contribution Yes please! See the [contributing
+guidelines](https://github.com/aura-ui/aura-ui/blob/main/CONTRIBUTING.md) for details. ##
+Licence This project is licensed under the terms of the [MIT
+license](https://github.com/aura-ui/aura-ui/blob/main/LICENSE).
 ```

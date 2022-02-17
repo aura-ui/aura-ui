@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, ComponentProps, VariantProps } from '@float-ui/theme';
+import { styled, ComponentProps, VariantProps } from '@aura-ui/theme';
 
 export type GridProps = ComponentProps<typeof Grid>;
 

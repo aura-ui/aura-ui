@@ -1,4 +1,4 @@
-import { css } from '@float-ui/theme';
+import { css } from '@aura-ui/theme';
 import * as React from 'react';
 import { Heading } from './typography';
 

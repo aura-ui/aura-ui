@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { MagnifyingGlassIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons';
-import { styled } from '@float-ui/theme';
+import { styled } from '@aura-ui/theme';
 import { IconButton } from './icon-button';
 
 export default {

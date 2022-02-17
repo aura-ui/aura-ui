@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, ComponentProps, VariantProps, styled, CSS } from '@float-ui/theme';
+import { css, ComponentProps, VariantProps, styled, CSS } from '@aura-ui/theme';
 
 const text = css({
   // resets

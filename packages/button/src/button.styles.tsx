@@ -1,5 +1,5 @@
-import { css } from '@float-ui/theme';
-import { defaultColors } from '@float-ui/utils';
+import { css } from '@aura-ui/theme';
+import { defaultColors } from '@aura-ui/utils';
 
 export const button = css({
   // resets

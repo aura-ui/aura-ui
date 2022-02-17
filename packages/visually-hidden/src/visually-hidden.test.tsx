@@ -8,7 +8,7 @@
  */
 
 import * as React from 'react';
-import { testA11y } from '@float-ui/test-utils';
+import { testA11y } from '@aura-ui/test-utils';
 import { VisuallyHidden } from '../src';
 
 describe('<VisuallyHidden/>', () => {

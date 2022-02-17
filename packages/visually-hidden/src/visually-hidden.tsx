@@ -9,7 +9,7 @@
  */
 
 import * as React from 'react';
-import { ComponentProps } from '@float-ui/theme';
+import { ComponentProps } from '@aura-ui/theme';
 import * as RadixVisuallyHidden from '@radix-ui/react-visually-hidden';
 
 export type VisuallyHiddenBaseProps = ComponentProps<typeof RadixVisuallyHidden.Root>;

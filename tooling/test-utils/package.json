@@ -4,7 +4,7 @@
   "private": true,
   "description": "Testing utilities for Aura UI components",
   "keywords": [
-    "zephyr",
+    "aura",
     "test",
     "test utils",
     "testing",

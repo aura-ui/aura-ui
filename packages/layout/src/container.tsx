@@ -1,4 +1,4 @@
-import { styled, ComponentProps, VariantProps } from '@float-ui/theme';
+import { styled, ComponentProps, VariantProps } from '@aura-ui/theme';
 import * as React from 'react';
 
 type ContainerStyledProps = ComponentProps<typeof Container>;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ComponentProps, VariantProps, CSS, styled } from '@float-ui/theme';
+import { ComponentProps, VariantProps, CSS, styled } from '@aura-ui/theme';
 import { Flex } from '../src';
 
 export type AutoLayoutBaseProps = ComponentProps<typeof AutoLayoutBase>;

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Button } from './button';
 import { PlusIcon, TriangleDownIcon, ArrowUpIcon } from '@radix-ui/react-icons';
-import { styled } from '@float-ui/theme';
-import { Spinner } from '@float-ui/spinner';
+import { styled } from '@aura-ui/theme';
+import { Spinner } from '@aura-ui/spinner';
 
 export default {
   title: 'Components/Form/Button',
@@ -22,7 +22,7 @@ export const Ghost = () => <Button variant="ghost">Button</Button>;
 export const ColorScheme = () => <Button colorScheme="purple">Button</Button>;
 export const Loading = () => <Button isLoading>Send</Button>;
 export const LoadingWithText = () => (
-  <Button loadingText="Sending..." isLoading>
+  <Button loadingText="Submitting..." isLoading>
     Send
   </Button>
 );
