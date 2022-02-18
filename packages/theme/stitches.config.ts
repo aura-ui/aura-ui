@@ -443,6 +443,7 @@ const darkModeConfig = {
     subtleBorder: '$slate6',
     border: '$slate7',
     borderHover: '$slate8',
+    focus: '$slate8',
     solid: '$slate9',
     solidHover: '$slate10',
     loContrast: '$slate11',
