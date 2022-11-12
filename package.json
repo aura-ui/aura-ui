@@ -1,103 +1,32 @@
 {
   "name": "aura-ui",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "tooling/*"
-  ],
   "scripts": {
-    "prepare": "husky install",
-    "postinstall": "manypkg check",
-    "pkg": "manypkg run",
-    "fix:pkgs": "manypkg fix",
-    "bootstrap": "lerna bootstrap && turbo run dev",
+    "postinstall": "husky install",
     "build": "turbo run build",
-    "precommit": "pretty-quick --staged && lint-staged",
-    "commit": "git cz",
-    "lint": "eslint packages/**/src/ --ext .ts,.tsx --config .eslintrc",
-    "test": "jest --maxWorkers=50%",
-    "test:watch": "jest --maxWorkers=25% --watch --onlyChanged",
-    "test:ci": "jest --color",
-    "types:check": "tsc --skipLibCheck --noEmit",
-    "clean": "yarn clean:pkgs && rimraf node_modules",
-    "clean:pkgs": "manypkg exec rimraf .turbo node_modules dist",
-    "prestorybook": "yarn clean && rimraf node_modules && yarn",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "prettier": "prettier --write '**/*.{json,md,js,ts,jsx,tsx,yml,css}'",
+    "prestorybook": "pnpm clean && pnpm install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "create:pkg": "plop --plopfile ./scripts/plopfile.ts"
+    "version": "pnpm changeset version && pnpm install --lockfile-only",
+    "release": "pnpm changeset publish"
   },
-  "dependencies": {
-    "@babel/core": "^7.16.5",
-    "@babel/eslint-parser": "^7.16.5",
-    "@babel/preset-env": "^7.16.5",
-    "@babel/preset-react": "^7.16.5",
-    "@babel/preset-typescript": "^7.16.5",
-    "@commitlint/cli": "^16.0.1",
-    "@commitlint/config-conventional": "^16.0.0",
-    "@manypkg/cli": "^0.19.1",
-    "@radix-ui/react-icons": "^1.0.3",
-    "@storybook/addon-actions": "^6.4.19",
-    "@storybook/addon-essentials": "^6.4.19",
-    "@storybook/addon-links": "^6.4.19",
-    "@storybook/react": "^6.4.19",
-    "@swc-node/jest": "^1.4.3",
-    "@types/eslint": "^8.2.1",
-    "@types/jest": "^27.0.3",
-    "@types/lodash": "^4.14.178",
-    "@types/node": "^17.0.0",
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
-    "@types/shelljs": "^0.8.9",
-    "@typescript-eslint/eslint-plugin": "^5.7.0",
-    "@typescript-eslint/parser": "^5.7.0",
-    "babel-loader": "^8.2.3",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.4.1",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-flowtype": "^8.0.3",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-testing-library": "^5.0.1",
-    "husky": "^7.0.0",
-    "jest": "^27.4.5",
-    "jest-environment-jsdom": "^27.4.4",
-    "jest-watch-typeahead": "^1.0.0",
-    "lerna": "^4.0.0",
-    "lint-staged": "^12.1.2",
-    "lodash": "^4.17.21",
-    "plop": "^2.7.6",
-    "prettier": "^2.5.1",
-    "pretty-quick": "^3.1.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-test-renderer": "^17.0.2",
-    "rimraf": "^3.0.2",
-    "shelljs": "^0.8.4",
-    "ts-node": "^10.4.0",
-    "turbo": "^1.0.19",
-    "typescript": "^4.5.4"
-  },
-  "turbo": {
-    "pipeline": {
-      "build": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": [
-          "dist/**"
-        ]
-      },
-      "dev": {
-        "cache": false
-      },
-      "clean": {}
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+  "devDependencies": {
+    "@changesets/cli": "2.23.0",
+    "@storybook/addon-a11y": "6.5.13",
+    "@storybook/addon-actions": "6.5.13",
+    "@storybook/addon-essentials": "6.5.13",
+    "@storybook/addon-links": "6.5.13",
+    "@storybook/react": "6.5.13",
+    "husky": "8.0.1",
+    "lint-staged": "12.4.1",
+    "prettier": "2.6.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "turbo": "1.4.7",
+    "typescript": "4.7.4"
   }
 }

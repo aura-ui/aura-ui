@@ -1,5 +1,4 @@
-import { createStitches, PropertyValue, ScaleValue } from '@stitches/react';
-import type * as Stitches from '@stitches/react';
+import { createStitches, PropertyValue, ScaleValue, CSS as StitchesCSS } from '@stitches/react';
 
 import {
   gray,
@@ -466,5 +465,5 @@ const globalStyles = globalCss({
 globalStyles();
 
 export const darkTheme = createTheme('dark-theme', darkModeConfig);
-export type CSS = Stitches.CSS<typeof config>;
+export type CSS = StitchesCSS<typeof config>;
 export type { ComponentProps, VariantProps, PropertyValue, ScaleValue } from '@stitches/react';

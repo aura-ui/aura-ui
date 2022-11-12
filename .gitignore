@@ -37,3 +37,6 @@ yarn-error.log
 
 # verdaccio
 .verdaccio-db.json
+
+# turbo
+.turbo
