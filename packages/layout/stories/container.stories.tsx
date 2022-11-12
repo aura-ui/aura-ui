@@ -1,4 +1,4 @@
-import { Container, ContainerProps } from '../src';
+import { Container } from '../src';
 import * as React from 'react';
 
 export default {
@@ -10,7 +10,7 @@ export const Default = ({ children }: { children?: React.ReactNode }) => (
   <Container css={{ boxSize: '$32', bg: '$solid' }}>{children}</Container>
 );
 
-export const FullWidth = () => <Container css={{ width: '100%', height: '$32', bg: '$solid' }} />;
+export const FullWidth = () => <Container size="fullWidth" css={{ height: '$32', bg: '$solid' }} />;
 
 const CenteredChild = () => (
   <Container centerContent css={{ boxSize: '$16', bg: '$solid', color: '$bg' }}>
@@ -25,7 +25,7 @@ export const Centered = () => (
 );
 
 export const Content = () => (
-  <Container maxWidth="60ch">
+  <Container size="60ch">
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad eum optio at quod culpa tenetur
       voluptates, nemo accusantium. Quidem vero molestias saepe sint atque corporis quis accusamus
@@ -34,8 +34,38 @@ export const Content = () => (
   </Container>
 );
 
-export const ContentWider = () => (
-  <Container maxWidth="5xl">
+export const ContainerSize1 = () => (
+  <Container size="1">
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad eum optio at quod culpa tenetur
+      voluptates, nemo accusantium. Quidem vero molestias saepe sint atque corporis quis accusamus
+      laudantium similique soluta.
+    </p>
+  </Container>
+);
+
+export const ContainerSize2 = () => (
+  <Container size="2">
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad eum optio at quod culpa tenetur
+      voluptates, nemo accusantium. Quidem vero molestias saepe sint atque corporis quis accusamus
+      laudantium similique soluta.
+    </p>
+  </Container>
+);
+
+export const ContainerSize3 = () => (
+  <Container size="3">
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad eum optio at quod culpa tenetur
+      voluptates, nemo accusantium. Quidem vero molestias saepe sint atque corporis quis accusamus
+      laudantium similique soluta.
+    </p>
+  </Container>
+);
+
+export const ContainerSize4 = () => (
+  <Container size="4    ">
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad eum optio at quod culpa tenetur
       voluptates, nemo accusantium. Quidem vero molestias saepe sint atque corporis quis accusamus

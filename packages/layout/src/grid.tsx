@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, ComponentProps, VariantProps } from '@aura-ui/theme';
+import { styled, ComponentProps } from '@aura-ui/theme';
 
 export type GridProps = ComponentProps<typeof Grid>;
 
@@ -9,4 +9,8 @@ export type GridProps = ComponentProps<typeof Grid>;
  */
 export const Grid = styled('div', {
   display: 'grid',
+
+  variants: {
+    templateColumns: {},
+  },
 });

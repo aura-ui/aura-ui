@@ -26,17 +26,18 @@
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
-    "clean": "rimraf node_modules dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@aura-ui/theme": "^0.1.3-alpha.0",
-    "@radix-ui/react-aspect-ratio": "^0.1.2"
+    "@aura-ui/theme": "workspace:*",
+    "@radix-ui/react-aspect-ratio": "1.0.1"
   },
   "devDependencies": {
-    "react": "^17.0.2",
-    "tsup": "^5.11.7"
-  },
-  "peerDependencies": {
-    "react": "^17.0.2"
+    "@stitches/react": "1.2.8",
+    "@types/react": "17.0.37",
+    "@types/react-dom": "17.0.11",
+    "typescript": "4.7.4",
+    "tsup": "5.11.7",
+    "react": "17.0.2"
   }
 }

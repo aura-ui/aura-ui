@@ -16,13 +16,19 @@ const Image = styled('img', {
 const imgSrc = `https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=300&dpr=2&q=80`;
 const imgAlt = '3D Render by Sebastian Svenson';
 
-export const Default = () => (
+export const Full = () => (
   <AspectRatio>
     <Image src={imgSrc} alt={imgAlt} />
   </AspectRatio>
 );
 
-export const Wide = () => (
+export const CustomWidth = () => (
+  <AspectRatio maxWidth={500}>
+    <Image src={imgSrc} alt={imgAlt} />
+  </AspectRatio>
+);
+
+export const WideFull = () => (
   <AspectRatio ratio={16 / 9}>
     <Image src={imgSrc} alt={imgAlt} />
   </AspectRatio>
