@@ -65,7 +65,7 @@ export const ContainerSize3 = () => (
 );
 
 export const ContainerSize4 = () => (
-  <Container size="4">
+  <Container size="4    ">
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad eum optio at quod culpa tenetur
       voluptates, nemo accusantium. Quidem vero molestias saepe sint atque corporis quis accusamus
