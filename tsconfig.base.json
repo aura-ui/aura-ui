@@ -24,6 +24,7 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "outDir": "dist"
   }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled } from '@aura-ui/theme';
+import { styled } from '../stitches.config';
 
 /**
  * Flex is a layout component with a default property of ```display: flex```.

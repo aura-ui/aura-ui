@@ -1,0 +1,52 @@
+{
+  "name": "@aura-ui/react",
+  "version": "0.0.0",
+  "description": "Aura UI theme and components",
+  "keywords": [
+    "react",
+    "ui",
+    "stitches",
+    "radix-ui",
+    "react-components",
+    "accessible",
+    "components",
+    "library",
+    "design-system"
+  ],
+  "author": "Greg Ogun <gregogun97@gmail.com>",
+  "homepage": "https://github.com/aura-ui/aura-ui#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aura-ui/aura-ui.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/aura-ui/aura-ui/issues"
+  },
+  "scripts": {
+    "build": "tsup index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup index.ts --format esm,cjs --watch --dts --external react",
+    "clean": "rm -rf node_modules dist"
+  },
+  "dependencies": {
+    "@radix-ui/colors": "0.1.8",
+    "@stitches/react": "1.2.8",
+    "@types/react": "17.0.37",
+    "@types/react-dom": "17.0.11",
+    "typescript": "4.7.4"
+  },
+  "devDependencies": {
+    "tsup": "5.11.7"
+  }
+}

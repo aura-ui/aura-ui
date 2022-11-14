@@ -1,5 +1,5 @@
-import { Flex } from '../src';
-import { Default as ContainerDefault } from '../stories/container.stories';
+import { Flex } from '../components/Flex';
+import { Default as ContainerDefault } from './Container.stories';
 import * as React from 'react';
 
 export default {
@@ -22,7 +22,7 @@ export const Vertical = () => (
 );
 
 export const SpaceBetween = () => (
-  <Flex space="between">
+  <Flex justify="between">
     <ContainerDefault />
     <ContainerDefault />
   </Flex>

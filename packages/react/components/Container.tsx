@@ -1,5 +1,5 @@
-import { styled, ComponentProps, VariantProps } from '@aura-ui/theme';
 import * as React from 'react';
+import { styled } from '../stitches.config';
 
 /**
  * Container is a component intended for wrapping around other components and content alike.
@@ -8,20 +8,23 @@ import * as React from 'react';
 export const Container = styled('div', {
   variants: {
     size: {
-      '60ch': {
-        maxW: '60ch',
-      },
       1: {
-        maxW: '$32',
+        maxW: '$50',
       },
       2: {
-        maxW: '$40',
+        maxW: '$60',
       },
       3: {
-        maxW: '$64',
+        maxW: '$80',
       },
       4: {
-        maxW: '$96',
+        maxW: '$100',
+      },
+      5: {
+        maxW: '$120',
+      },
+      '60ch': {
+        maxW: '60ch',
       },
       fullWidth: {
         maxW: '100%',
@@ -34,5 +37,9 @@ export const Container = styled('div', {
         justifyContent: 'center',
       },
     },
+  },
+
+  defaultVariants: {
+    size: '60ch',
   },
 });
