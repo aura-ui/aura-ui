@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "preserveSymlinks": true,
+    "types": ["@stitches/react/types"],
+    // TODO: Remove the workaround whenever MS fixes the issue
+    // https://github.com/microsoft/TypeScript/issues/48212
+    "baseUrl": "./node_modules",
     "paths": {
       // Emotion typedefs point to an empty file, which unsets all declarations
       "@emotion/core": ["../../types/emotion.d.ts"]
