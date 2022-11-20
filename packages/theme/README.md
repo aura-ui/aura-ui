@@ -2,9 +2,9 @@
 
 Default theme for Aura UI.
 
-## Installation ```sh yarn add @aura-ui/theme
+## Installation ```sh pnpm install @aura-ui/theme
 
-# or npm i @aura-ui/theme
+# or yarn add @aura-ui/theme
 
 ```## Contribution Yes please! See the [contributing
 guidelines](https://github.com/aura-ui/aura-ui/blob/main/CONTRIBUTING.md) for details. ##
