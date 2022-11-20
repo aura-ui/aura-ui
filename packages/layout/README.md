@@ -2,9 +2,9 @@
 
 Aura UI layout components.
 
-## Installation ```sh yarn add @aura-ui/button
+## Installation ```sh pnpm install @aura-ui/button
 
-# or npm i @aura-ui/button
+# or yarn add @aura-ui/button
 
 ```## Contribution Yes please! See the [contributing
 guidelines](https://github.com/aura-ui/aura-ui/blob/main/CONTRIBUTING.md) for details. ##
