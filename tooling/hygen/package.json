@@ -1,0 +1,10 @@
+{
+  "name": "hygen-aura-react",
+  "version": "0.0.1",
+  "description": "Hygen scripts for generating packages for Aura UI components and utilities.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/aura-ui/aura-ui",
+  "license": "MIT"
+}
