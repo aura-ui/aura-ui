@@ -8,5 +8,5 @@ import { styled } from '@aura-ui/theme';
 export interface <%= h.capitalize(packageName) %>Props {}
 
 export const <%= h.capitalize(packageName) %> = () => {
-  return <div>Welcome (or welcome back) to Aura.</div>
+  return <div>Welcome to Aura.</div>
 }
