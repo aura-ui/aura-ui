@@ -143,7 +143,7 @@ export const RowSpan = () => (
 );
 
 export const PancakeStack = () => (
-  <Grid css={{ height: '100vh' }} layout="pancakeStack">
+  <Grid css={{ height: '100%', br: '$2', overflow: 'hidden' }} layout="pancakeStack">
     <Container size="fullWidth" css={{ backgroundColor: '$violet9', color: 'white', p: '$5' }}>
       Header
     </Container>
@@ -162,7 +162,7 @@ const HolyGrailGridItem = styled('div', {
 });
 
 export const HolyGrail = () => (
-  <Grid css={{ height: '100vh', br: '$2', overflow: 'hidden' }} layout="holyGrail">
+  <Grid css={{ height: '100%', br: '$2', overflow: 'hidden' }} layout="holyGrail">
     <HolyGrailGridItem css={{ backgroundColor: '$violet9' }} as="header">
       Header
     </HolyGrailGridItem>
