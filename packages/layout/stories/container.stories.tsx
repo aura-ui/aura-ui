@@ -1,31 +1,36 @@
 import { Container } from '../src';
 import * as React from 'react';
+import { CSS } from '@aura-ui/theme';
 
 export default {
   title: 'Components/Layout/Container',
   component: Container,
 };
 
-export const Default = ({ children }: { children?: React.ReactNode }) => (
-  <Container css={{ boxSize: '$32', bg: '$solid' }}>{children}</Container>
+export const DefaultNoContent = ({ children, css }: { children?: React.ReactNode; css?: CSS }) => (
+  <Container css={{ size: '$30', bg: '$violet9', color: 'white', br: '$2', ...css }}>
+    {children}
+  </Container>
 );
 
-export const FullWidth = () => <Container size="fullWidth" css={{ height: '$32', bg: '$solid' }} />;
+export const FullWidth = () => (
+  <Container size="fullWidth" css={{ height: '$30', bg: '$violet9', color: 'white', br: '$2' }} />
+);
 
 const CenteredChild = () => (
-  <Container centerContent css={{ boxSize: '$16', bg: '$solid', color: '$bg' }}>
+  <Container centerContent css={{ size: '$16', bg: '$violet9', color: 'white' }}>
     Child
   </Container>
 );
 
 export const Centered = () => (
-  <Container centerContent css={{ boxSize: '$32', bg: '$bgActive' }}>
+  <Container centerContent css={{ size: '$30', bg: '$violet5' }}>
     <CenteredChild />
   </Container>
 );
 
-export const Content = () => (
-  <Container size="60ch">
+export const DefaultWithContent = () => (
+  <Container>
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad eum optio at quod culpa tenetur
       voluptates, nemo accusantium. Quidem vero molestias saepe sint atque corporis quis accusamus
@@ -65,7 +70,7 @@ export const ContainerSize3 = () => (
 );
 
 export const ContainerSize4 = () => (
-  <Container size="4    ">
+  <Container size="4">
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad eum optio at quod culpa tenetur
       voluptates, nemo accusantium. Quidem vero molestias saepe sint atque corporis quis accusamus

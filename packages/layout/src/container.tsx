@@ -8,20 +8,20 @@ import * as React from 'react';
 export const Container = styled('div', {
   variants: {
     size: {
-      '60ch': {
-        maxW: '60ch',
-      },
       1: {
-        maxW: '$32',
+        maxW: '45ch',
       },
       2: {
-        maxW: '$40',
+        maxW: '50ch',
       },
       3: {
-        maxW: '$64',
+        maxW: '55ch',
       },
       4: {
-        maxW: '$96',
+        maxW: '60ch',
+      },
+      5: {
+        maxW: '65ch',
       },
       fullWidth: {
         maxW: '100%',
@@ -34,5 +34,9 @@ export const Container = styled('div', {
         justifyContent: 'center',
       },
     },
+  },
+
+  defaultVariants: {
+    size: '4',
   },
 });
