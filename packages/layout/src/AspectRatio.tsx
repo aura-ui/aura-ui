@@ -1,9 +1,31 @@
 import * as React from 'react';
 import * as AspectRatioPrimitive from '@radix-ui/react-aspect-ratio';
-import { ComponentProps, CSS } from '@aura-ui/theme';
+import { ComponentProps, CSS, styled, VariantProps } from '@aura-ui/theme';
 import { Container } from './Container';
 
-type AspectRatioBaseProps = ComponentProps<typeof AspectRatioPrimitive.Root>;
+const StyledAspectRation = styled(AspectRatioPrimitive.Root, {
+  variants: {
+    variant: {
+      square: {
+        aspectRatio: 1 / 1,
+      },
+      standard: {
+        aspectRatio: 4 / 3,
+      },
+      film: {
+        aspectRatio: 3 / 2,
+      },
+      hd: {
+        aspectRatio: 16 / 9,
+      },
+      cinemascope: {
+        aspectRatio: 21 / 9,
+      },
+    },
+  },
+});
+
+type AspectRatioBaseProps = ComponentProps<typeof StyledAspectRation>;
 
 export type AspectRatioProps = AspectRatioBaseProps & {
   children: React.ReactNode;
@@ -14,7 +36,7 @@ export type AspectRatioProps = AspectRatioBaseProps & {
 export const AspectRatio = ({ children, maxWidth, ...props }: AspectRatioProps) => {
   return (
     <Container css={{ maxW: maxWidth }}>
-      <AspectRatioPrimitive.Root {...props}>{children}</AspectRatioPrimitive.Root>
+      <StyledAspectRation {...props}>{children}</StyledAspectRation>
     </Container>
   );
 };
