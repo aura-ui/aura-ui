@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, ComponentProps, VariantProps } from '@aura-ui/theme';
+import { styled, ComponentProps } from '@aura-ui/theme';
 
 type StyledGridProps = ComponentProps<typeof StyledGrid>;
 
