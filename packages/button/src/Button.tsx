@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { styled, ComponentProps } from '@aura-ui/theme';
+import { ColorScheme, getContrastingColor } from '@aura-ui/utils';
 
 type ButtonBaseProps = ComponentProps<typeof ButtonBase>;
 
@@ -90,6 +91,7 @@ const ButtonBase = styled('button', {
     },
     variant: {
       subtle: {
+        color: '$$color',
         backgroundColor: '$$bg',
         boxShadow: 'inset 0 0 0 1px $$border',
 
@@ -104,6 +106,7 @@ const ButtonBase = styled('button', {
         },
       },
       outline: {
+        color: '$$color',
         backgroundColor: 'transparent',
         boxShadow: 'inset 0 0 0 1px $$border',
 
@@ -129,6 +132,7 @@ const ButtonBase = styled('button', {
         },
       },
       ghost: {
+        color: '$$color',
         backgroundColor: 'transparent',
 
         '&:hover': {
@@ -150,8 +154,46 @@ const ButtonBase = styled('button', {
 
 export interface ButtonProps extends ButtonBaseProps {
   children: React.ReactNode;
+
+  /**
+   * Change the color scheme of the button.
+   * @default "slate"
+   */
+  colorScheme?: ColorScheme;
+  /**
+   * Overrides the default `disabled` prop to prefer `aria-disabled` for screen readers.
+   */
+  disabled?: boolean;
 }
 
-export const Button = ({ children, ...props }: ButtonProps) => {
-  return <ButtonBase {...props}>{children}</ButtonBase>;
+export const Button = ({ children, colorScheme = 'slate', ...props }: ButtonProps) => {
+  return (
+    <ButtonBase
+      css={{
+        // themed default styles
+        $$bg: `$colors$${colorScheme}3`,
+        $$border: `$colors$${colorScheme}7`,
+        $$color: `$colors$${colorScheme}11`,
+
+        // themed hover styles
+        $$bgHover: `$colors$${colorScheme}4`,
+        $$borderHover: `$colors$${colorScheme}8`,
+
+        // themed active styles
+        $$bgActive: `$colors$${colorScheme}5`,
+        $$borderActive: `$colors$${colorScheme}8`,
+
+        // themed solid default styles
+        $$bgSolid: `$colors$${colorScheme}9`,
+        $$colorSolid: getContrastingColor(colorScheme),
+        // themed solid hover styles
+        $$bgSolidHover: `$colors$${colorScheme}10`,
+        // themed solid active styles
+        $$bgSolidActive: `$colors$${colorScheme}10`,
+      }}
+      {...props}
+    >
+      {children}
+    </ButtonBase>
+  );
 };

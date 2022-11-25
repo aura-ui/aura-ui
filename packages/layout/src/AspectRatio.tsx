@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as AspectRatioPrimitive from '@radix-ui/react-aspect-ratio';
-import { ComponentProps, CSS, styled, VariantProps } from '@aura-ui/theme';
+import { ComponentProps, CSS, styled } from '@aura-ui/theme';
 import { Container } from './Container';
 
 const StyledAspectRation = styled(AspectRatioPrimitive.Root, {

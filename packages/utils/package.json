@@ -1,7 +1,7 @@
 {
-  "name": "@aura-ui/button",
+  "name": "@aura-ui/utils",
   "version": "0.0.1",
-  "description": "A react button component, used to trigger an action.",
+  "description": "Shared utilities, configs and types for Aura UI components and hooks.",
   "author": "Greg Ogun <gregogun97@gmail.com>",
   "homepage": "https://github.com/aura-ui/aura-ui#readme",
   "license": "MIT",
@@ -18,7 +18,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aura-ui/aura-ui.git",
-    "directory": "packages/layout"
+    "directory": "packages/utils"
   },
   "bugs": {
     "url": "https://github.com/aura-ui/aura-ui/issues"
@@ -28,16 +28,8 @@
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
-  "dependencies": {
-    "@aura-ui/theme": "workspace:*",
-    "@aura-ui/utils": "workspace:*"
-  },
   "devDependencies": {
-    "@aura-ui/layout": "workspace:*",
-    "@types/react": "17.0.37",
-    "@types/react-dom": "17.0.11",
     "typescript": "4.7.4",
-    "tsup": "5.11.7",
-    "react": "17.0.2"
+    "tsup": "5.11.7"
   }
 }
