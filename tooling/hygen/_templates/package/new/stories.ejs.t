@@ -10,6 +10,4 @@ export default {
   component: <%= h.capitalize(packageName) %>,
 };
 
-export const Default = ({ children }: { children?: React.ReactNode }) => (
-  <<%= h.capitalize(packageName) %>>{children}</<%= h.capitalize(packageName) %>>
-);
+export const Default = () => <<%= h.capitalize(packageName) %> />
