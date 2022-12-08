@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled, ComponentProps } from '@aura-ui/theme';
-import { ColorScheme, getContrastingColor } from '@aura-ui/utils';
+import { ariaAttr, ColorScheme, getContrastingColor } from '@aura-ui/utils';
 
 type ButtonBaseProps = ComponentProps<typeof ButtonBase>;
 
@@ -61,7 +61,7 @@ const ButtonBase = styled('button', {
   // solid hover styles
   $$bgSolidHover: '$colors$slate10',
   // solid active styles
-  $$bgSolidActive: '$colors$slate11',
+  $$bgSolidActive: '$colors$slate10',
 
   // --------------------------------------------
 
@@ -166,34 +166,38 @@ export interface ButtonProps extends ButtonBaseProps {
   disabled?: boolean;
 }
 
-export const Button = ({ children, colorScheme = 'slate', ...props }: ButtonProps) => {
-  return (
-    <ButtonBase
-      css={{
-        // themed default styles
-        $$bg: `$colors$${colorScheme}3`,
-        $$border: `$colors$${colorScheme}7`,
-        $$color: `$colors$${colorScheme}11`,
+export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> =
+  React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+    const { children, colorScheme = 'slate', disabled, ...rest } = props;
+    return (
+      <ButtonBase
+        // ref={ref}
+        css={{
+          // themed default styles
+          $$bg: `$colors$${colorScheme}3`,
+          $$border: `$colors$${colorScheme}7`,
+          $$color: `$colors$${colorScheme}11`,
 
-        // themed hover styles
-        $$bgHover: `$colors$${colorScheme}4`,
-        $$borderHover: `$colors$${colorScheme}8`,
+          // themed hover styles
+          $$bgHover: `$colors$${colorScheme}4`,
+          $$borderHover: `$colors$${colorScheme}8`,
 
-        // themed active styles
-        $$bgActive: `$colors$${colorScheme}5`,
-        $$borderActive: `$colors$${colorScheme}8`,
+          // themed active styles
+          $$bgActive: `$colors$${colorScheme}5`,
+          $$borderActive: `$colors$${colorScheme}8`,
 
-        // themed solid default styles
-        $$bgSolid: `$colors$${colorScheme}9`,
-        $$colorSolid: getContrastingColor(colorScheme),
-        // themed solid hover styles
-        $$bgSolidHover: `$colors$${colorScheme}10`,
-        // themed solid active styles
-        $$bgSolidActive: `$colors$${colorScheme}10`,
-      }}
-      {...props}
-    >
-      {children}
-    </ButtonBase>
-  );
-};
+          // themed solid default styles
+          $$bgSolid: `$colors$${colorScheme}9`,
+          $$colorSolid: getContrastingColor(colorScheme),
+          // themed solid hover styles
+          $$bgSolidHover: `$colors$${colorScheme}10`,
+          // themed solid active styles
+          $$bgSolidActive: `$colors$${colorScheme}10`,
+        }}
+        aria-disabled={ariaAttr(disabled)}
+        {...rest}
+      >
+        {children}
+      </ButtonBase>
+    );
+  });
