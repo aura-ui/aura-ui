@@ -1,37 +1,30 @@
 import * as React from 'react';
-import { styled, ComponentProps } from '@aura-ui/theme';
-import { ariaAttr, ColorScheme, getContrastingColor } from '@aura-ui/utils';
+import { ComponentProps, styled } from '@aura-ui/theme';
+import { ColorScheme, getContrastingColor, ariaAttr } from '@aura-ui/utils';
 
-type ButtonBaseProps = ComponentProps<typeof ButtonBase>;
+type IconButtonBaseProps = ComponentProps<typeof IconButtonBase>;
 
-const ButtonBase = styled('button', {
-  // resets
-  all: 'unset',
+const IconButtonBase = styled('button', {
+  // Reset
   alignItems: 'center',
+  justifyContent: 'center',
+  appearance: 'none',
+  borderWidth: 0,
   boxSizing: 'border-box',
+  flexShrink: 0,
+  outline: 'none',
+  padding: 0,
+  textDecoration: 'none',
   userSelect: 'none',
-  '&::before': {
-    boxSizing: 'border-box',
-  },
-  '&::after': {
-    boxSizing: 'border-box',
-  },
 
   // custom reset
   display: 'inline-flex',
-  justifyContent: 'center',
-  lineHeight: '1',
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
+  WebkitTapHighlightColor: 'transparent',
+  lineHeight: 1,
 
-  // --------------------------------------------
-
-  // custom
+  //custom
   fontFamily: 'inherit',
-
-  '&:disabled': {
-    pointerEvents: 'none',
-    opacity: '50%',
-  },
+  br: '$2',
 
   '&[aria-disabled="true"]': {
     pointerEvents: 'none',
@@ -68,25 +61,28 @@ const ButtonBase = styled('button', {
   variants: {
     size: {
       1: {
-        br: '$1',
+        width: '$7',
         height: '$7',
         fontSize: '$1',
-        lineHeight: '$sizes$7',
-        px: '$3',
+        '& svg': {
+          size: '$3',
+        },
       },
       2: {
-        br: '$2',
+        width: '$9',
         height: '$9',
         fontSize: '$3',
-        lineHeight: '$sizes$9',
-        px: '$4',
+        '& svg': {
+          size: '$4',
+        },
       },
       3: {
-        br: '$2',
+        width: '$11',
         height: '$11',
-        fontSize: '$4',
-        lineHeight: '$sizes$11',
-        px: '$5',
+        fontSize: '$5',
+        '& svg': {
+          size: '$5',
+        },
       },
     },
     variant: {
@@ -152,7 +148,7 @@ const ButtonBase = styled('button', {
   },
 });
 
-export interface ButtonProps extends ButtonBaseProps {
+export interface IconButtonProps extends IconButtonBaseProps {
   children: React.ReactNode;
 
   /**
@@ -166,12 +162,12 @@ export interface ButtonProps extends ButtonBaseProps {
   disabled?: boolean;
 }
 
-export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> =
-  React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+export const IconButton: React.FC<IconButtonProps & React.HTMLAttributes<HTMLButtonElement>> =
+  React.forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
     const { children, colorScheme = 'slate', disabled, ...rest } = props;
     return (
-      <ButtonBase
-        // ref={ref}
+      <IconButtonBase
+        ref={ref}
         css={{
           // themed default styles
           $$bg: `$colors$${colorScheme}3`,
@@ -198,6 +194,6 @@ export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonEleme
         {...rest}
       >
         {children}
-      </ButtonBase>
+      </IconButtonBase>
     );
   });

@@ -62,4 +62,4 @@ export const ColorScheme = () => {
   );
 };
 
-export const Disabled = () => <Button aria-disabled>Button</Button>;
+export const Disabled = () => <Button aria-disabled>Disabled</Button>;
