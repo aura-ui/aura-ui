@@ -1,6 +1,6 @@
 {
   "name": "@aura-ui/theme",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.1",
   "description": "Default theme for Aura UI",
   "keywords": [
     "theme",
