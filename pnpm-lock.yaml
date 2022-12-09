@@ -76,6 +76,25 @@ importers:
       tsup: 5.11.7_typescript@4.7.4
       typescript: 4.7.4
 
+  packages/input:
+    specifiers:
+      '@aura-ui/layout': workspace:*
+      '@aura-ui/theme': workspace:*
+      '@types/react': 17.0.37
+      '@types/react-dom': 17.0.11
+      react: 17.0.2
+      tsup: 5.11.7
+      typescript: 4.7.4
+    dependencies:
+      '@aura-ui/layout': link:../layout
+      '@aura-ui/theme': link:../theme
+    devDependencies:
+      '@types/react': 17.0.37
+      '@types/react-dom': 17.0.11
+      react: 17.0.2
+      tsup: 5.11.7_typescript@4.7.4
+      typescript: 4.7.4
+
   packages/layout:
     specifiers:
       '@aura-ui/theme': workspace:*
