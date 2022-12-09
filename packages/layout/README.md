@@ -1,13 +1,44 @@
-# Button
+# Layout
 
-Aura UI layout components.
+Aura UI Layout components.
 
-## Installation ```sh pnpm install @aura-ui/button
+## Installation
 
-# or yarn add @aura-ui/button
+```sh
+npm install @aura-ui/layout
+# or
+yarn add @aura-ui/layout
+```
 
-```## Contribution Yes please! See the [contributing
-guidelines](https://github.com/aura-ui/aura-ui/blob/main/CONTRIBUTING.md) for details. ##
-Licence This project is licensed under the terms of the [MIT
-license](https://github.com/aura-ui/aura-ui/blob/main/LICENSE).
+## Import Components
+
+```jsx
+import { Box, Flex, Container } from '@aura-ui/layout';
+```
+
+## Usage
+
+### Box
+
+```
+  <Box>
+    <Paragraph>Hello, World.</Paragraph>
+  </Box>
+```
+
+### Flex
+
+```
+  <Flex>
+    <Paragraph>Hello,</Paragraph>
+    <Paragraph>World.</Paragraph>
+  </Flex>
+```
+
+### Flex
+
+```
+  <Container>
+    <Paragraph>Content goes here.</Paragraph>
+  </Container>
 ```
