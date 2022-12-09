@@ -1,6 +1,6 @@
 {
   "name": "@aura-ui/layout",
-  "version": "0.0.0",
+  "version": "0.0.1-beta.1",
   "description": "Aura UI layout components",
   "author": "Greg Ogun <gregogun97@gmail.com>",
   "homepage": "https://github.com/aura-ui/aura-ui#readme",
@@ -26,7 +26,8 @@
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "version": "pnpm version"
   },
   "dependencies": {
     "@aura-ui/theme": "workspace:*",
