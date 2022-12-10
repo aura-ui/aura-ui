@@ -11,7 +11,7 @@
     "prestorybook": "pnpm clean && pnpm install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "generate:package": "HYGEN_TMPLS=tooling/hygen/_templates npx hygen package new",
+    "generate:package": "npx hygen package new",
     "version": "pnpm changeset version && pnpm install --lockfile-only",
     "release": "pnpm changeset publish"
   },
