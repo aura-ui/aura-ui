@@ -1,5 +1,6 @@
 ---
-to: packages/<%= packageName %>/tsconfig.json
+to: packages/<%= h.dasherize(name) %>/tsconfig.json
+unless_exists: true
 ---
 
 {
