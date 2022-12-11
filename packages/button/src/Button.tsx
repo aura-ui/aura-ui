@@ -27,14 +27,17 @@ const ButtonBase = styled('button', {
 
   // custom
   fontFamily: 'inherit',
+  br: '$2',
 
   '&:disabled': {
     pointerEvents: 'none',
+    cursor: 'not-allowed',
     opacity: '50%',
   },
 
   '&[aria-disabled="true"]': {
     pointerEvents: 'none',
+    cursor: 'not-allowed',
     opacity: '50%',
   },
 
@@ -68,21 +71,18 @@ const ButtonBase = styled('button', {
   variants: {
     size: {
       1: {
-        br: '$1',
         height: '$7',
         fontSize: '$1',
         lineHeight: '$sizes$7',
         px: '$3',
       },
       2: {
-        br: '$2',
         height: '$9',
         fontSize: '$3',
         lineHeight: '$sizes$9',
         px: '$4',
       },
       3: {
-        br: '$2',
         height: '$11',
         fontSize: '$4',
         lineHeight: '$sizes$11',
@@ -171,7 +171,7 @@ export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonEleme
     const { children, colorScheme = 'slate', disabled, ...rest } = props;
     return (
       <ButtonBase
-        // ref={ref}
+        ref={ref}
         css={{
           // themed default styles
           $$bg: `$colors$${colorScheme}3`,
