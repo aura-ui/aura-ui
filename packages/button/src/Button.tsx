@@ -171,7 +171,7 @@ export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonEleme
     const { children, colorScheme = 'slate', disabled, ...rest } = props;
     return (
       <ButtonBase
-        // ref={ref}
+        ref={ref}
         css={{
           // themed default styles
           $$bg: `$colors$${colorScheme}3`,

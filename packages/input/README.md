@@ -10,25 +10,18 @@ npm install @aura-ui/input
 yarn add @aura-ui/input
 ```
 
-```## Contribution
-Yes we'd love you to contribute! See the [contributing
-guidelines](https://github.com/aura-ui/aura-ui/blob/main/CONTRIBUTING.md) for details. ##
-Licence This project is licensed under the terms of the [MIT
-license](https://github.com/aura-ui/aura-ui/blob/main/LICENSE).
-```
-
 ## Import Components
 
 ```jsx
-import {
-Input
-} from '@aura-ui/input'
+import { TextField } from '@aura-ui/input';
 ```
 
 ## Component
 
-`Input`: Describe what the component does here.
+`Input`: A component used to accept data from the user.
 
 ## Usage
 
-Add any usage examples here.
+```jsx
+<TextField placeholder="Default" />
+```
