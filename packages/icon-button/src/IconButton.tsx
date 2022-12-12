@@ -189,6 +189,14 @@ export const IconButton: React.FC<IconButtonProps & React.HTMLAttributes<HTMLBut
           $$bgSolidHover: `$colors$${colorScheme}10`,
           // themed solid active styles
           $$bgSolidActive: `$colors$${colorScheme}10`,
+
+          //focus styling
+          '&:focus:not(&[aria-disabled="true"])': {
+            boxShadow:
+              props.variant === 'solid'
+                ? 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8'
+                : `inset 0px 0px 0px 1px $colors$${colorScheme}8, 0px 0px 0px 1px $colors$${colorScheme}8`,
+          },
         }}
         aria-disabled={ariaAttr(disabled)}
         {...rest}
