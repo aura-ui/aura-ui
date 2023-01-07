@@ -81,7 +81,7 @@ const IconButtonBase = styled('button', {
         height: '$11',
         fontSize: '$5',
         '& svg': {
-          size: '$5',
+          size: '$4',
         },
       },
     },

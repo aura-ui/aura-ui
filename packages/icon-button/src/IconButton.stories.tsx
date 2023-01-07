@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { IconButton } from './IconButton';
-import { ArrowUpIcon } from '../../../assets/icons/ArrowUpIcon';
 import { Flex } from '@aura-ui/layout';
+import { HiArrowUp } from 'react-icons/hi';
 
 export default {
   title: 'Components/Form/IconButton',
@@ -10,7 +10,7 @@ export default {
 
 export const Default = () => (
   <IconButton>
-    <ArrowUpIcon />
+    <HiArrowUp />
   </IconButton>
 );
 
@@ -18,15 +18,15 @@ export const Sizes = () => {
   return (
     <Flex gap="2">
       <IconButton size="1">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton size="2">
         {' '}
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton size="3">
         {' '}
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
     </Flex>
   );
@@ -36,16 +36,16 @@ export const Variant = () => {
   return (
     <Flex gap="2">
       <IconButton variant="subtle">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton variant="outline">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton variant="solid">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton variant="ghost">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
     </Flex>
   );
@@ -61,61 +61,61 @@ export const ColorScheme = () => {
       gap="2"
     >
       <IconButton colorScheme="tomato">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="red">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="crimson">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="pink">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="plum">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="purple">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="violet">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="indigo">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="blue">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="sky">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="cyan">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="teal">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="mint">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="green">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="grass">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="lime">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="yellow">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="amber">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="orange">
-        <ArrowUpIcon />
+        <HiArrowUp />
       </IconButton>
     </Flex>
   );
@@ -123,6 +123,6 @@ export const ColorScheme = () => {
 
 export const Disabled = () => (
   <IconButton disabled>
-    <ArrowUpIcon />
+    <HiArrowUp />
   </IconButton>
 );

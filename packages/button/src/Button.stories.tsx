@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Button } from './Button';
 import { Flex } from '@aura-ui/layout';
+import { FaAirbnb, FaTwitter, FaDribbble, FaAmazon, FaSpotify, FaTwitch } from 'react-icons/fa';
 
 export default {
   title: 'Components/Form/Button',
@@ -63,3 +64,40 @@ export const ColorScheme = () => {
 };
 
 export const Disabled = () => <Button aria-disabled>Disabled</Button>;
+
+export const WithIcon = () => {
+  return (
+    <Flex
+      css={{
+        flexWrap: 'wrap',
+        maxW: 400,
+      }}
+      gap="2"
+    >
+      <Button variant="solid" colorScheme="blue">
+        <FaTwitter />
+        Twitter
+      </Button>
+      <Button variant="outline" colorScheme="red">
+        <FaAirbnb />
+        Airbnb
+      </Button>
+      <Button variant="solid" colorScheme="green">
+        <FaSpotify />
+        Spotify
+      </Button>
+      <Button colorScheme="pink">
+        <FaDribbble />
+        Dribbble
+      </Button>
+      <Button variant="solid" colorScheme="amber">
+        <FaAmazon />
+        Amazon
+      </Button>
+      <Button variant="outline" colorScheme="violet">
+        <FaTwitch />
+        Twitch
+      </Button>
+    </Flex>
+  );
+};
