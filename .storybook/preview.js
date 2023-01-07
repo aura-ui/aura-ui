@@ -4,6 +4,21 @@ import { darkTheme } from '../packages/theme';
 export const decorators = [
   (Story, context) => {
     let { scheme } = context.globals;
+
+    const html = document.getElementsByTagName('html');
+
+    if (scheme === 'dark') {
+      for (const item of html) {
+        item.classList.remove('light-theme');
+        item.classList.add('dark-theme');
+      }
+    } else {
+      for (const item of html) {
+        item.classList.remove('dark-theme');
+        item.classList.add('light-theme');
+      }
+    }
+
     return (
       <Box
         css={{
