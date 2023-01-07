@@ -27,6 +27,7 @@ const ButtonBase = styled('button', {
 
   // custom
   fontFamily: 'inherit',
+  fontWeight: '$6',
   br: '$2',
 
   '&:disabled': {
@@ -75,18 +76,33 @@ const ButtonBase = styled('button', {
         fontSize: '$1',
         lineHeight: '$sizes$7',
         px: '$3',
+        gap: '$1',
+
+        '& svg': {
+          size: '$3',
+        },
       },
       2: {
         height: '$9',
-        fontSize: '$3',
+        fontSize: '$2',
         lineHeight: '$sizes$9',
         px: '$4',
+        gap: '$2',
+
+        '& svg': {
+          size: '$4',
+        },
       },
       3: {
         height: '$11',
-        fontSize: '$4',
+        fontSize: '$3',
         lineHeight: '$sizes$11',
         px: '$5',
+        gap: '$2',
+
+        '& svg': {
+          size: '$4',
+        },
       },
     },
     variant: {

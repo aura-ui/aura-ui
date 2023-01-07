@@ -271,6 +271,7 @@ export const { styled, css, config, theme, createTheme, reset, getCssText, globa
         10: '40px',
         11: '44px',
         12: '48px',
+        14: '56px',
         16: '64px',
         20: '80px',
         30: '120px',
