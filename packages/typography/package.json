@@ -1,6 +1,6 @@
 {
   "name": "@aura-ui/typography",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A flexible component that can render both text and headings.",
   "author": "Greg Ogun <gregogun97@gmail.com>",
   "homepage": "https://github.com/aura-ui/aura-ui#readme",

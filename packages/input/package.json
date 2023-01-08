@@ -1,6 +1,6 @@
 {
   "name": "@aura-ui/input",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A react input component, used to accept data from the user.",
   "author": "Greg Ogun <gregogun97@gmail.com>",
   "homepage": "https://github.com/aura-ui/aura-ui#readme",
