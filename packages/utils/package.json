@@ -1,6 +1,6 @@
 {
   "name": "@aura-ui/utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Shared utilities, configs and types for Aura UI components and hooks.",
   "author": "Greg Ogun <gregogun97@gmail.com>",
   "homepage": "https://github.com/aura-ui/aura-ui#readme",

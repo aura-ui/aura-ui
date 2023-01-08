@@ -1,6 +1,6 @@
 {
   "name": "@aura-ui/dropdown-menu",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Displays a menu containing a set of actions or functions, triggered by a button.",
   "author": "Greg Ogun <gregogun97@gmail.com>",
   "homepage": "https://github.com/aura-ui/aura-ui#readme",
@@ -29,11 +29,11 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "version": "pnpm version",
     "bootstrap": "npx pin-latest . --exact --write"
-      },
+  },
   "dependencies": {
     "@aura-ui/theme": "workspace:*",
     "@radix-ui/react-dropdown-menu": "latest"
-      },
+  },
   "devDependencies": {
     "@types/react": "17.0.37",
     "@types/react-dom": "17.0.11",
