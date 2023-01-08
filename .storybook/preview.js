@@ -1,5 +1,5 @@
-import { Box } from '../packages/layout';
-import { darkTheme } from '../packages/theme';
+import { Box } from '../packages/react';
+import { darkTheme } from '../packages/react';
 
 export const decorators = [
   (Story, context) => {
