@@ -10,6 +10,8 @@ export default {
 
 export const Default = () => <Button>Default</Button>;
 
+export const WithBorder = () => <Button border>Default With Border</Button>;
+
 export const Sizes = () => {
   return (
     <Flex gap="2">
@@ -40,25 +42,63 @@ export const ColorScheme = () => {
       }}
       gap="2"
     >
-      <Button colorScheme="tomato">Tomato</Button>
-      <Button colorScheme="red">Red</Button>
-      <Button colorScheme="crimson">Crimson</Button>
-      <Button colorScheme="pink">Pink</Button>
-      <Button colorScheme="plum">Plum</Button>
-      <Button colorScheme="purple">Purple</Button>
-      <Button colorScheme="violet">Violet</Button>
-      <Button colorScheme="indigo">Indigo</Button>
-      <Button colorScheme="blue">Blue</Button>
-      <Button colorScheme="sky">Sky</Button>
-      <Button colorScheme="cyan">Cyan</Button>
-      <Button colorScheme="teal">Teal</Button>
-      <Button colorScheme="mint">Mint</Button>
-      <Button colorScheme="green">Green</Button>
-      <Button colorScheme="grass">Grass</Button>
-      <Button colorScheme="lime">Lime</Button>
-      <Button colorScheme="yellow">Yellow</Button>
-      <Button colorScheme="amber">Amber</Button>
-      <Button colorScheme="orange">Orange</Button>
+      <Button border colorScheme="tomato">
+        Tomato
+      </Button>
+      <Button border colorScheme="red">
+        Red
+      </Button>
+      <Button border colorScheme="crimson">
+        Crimson
+      </Button>
+      <Button border colorScheme="pink">
+        Pink
+      </Button>
+      <Button border colorScheme="plum">
+        Plum
+      </Button>
+      <Button border colorScheme="purple">
+        Purple
+      </Button>
+      <Button border colorScheme="violet">
+        Violet
+      </Button>
+      <Button border colorScheme="indigo">
+        Indigo
+      </Button>
+      <Button border colorScheme="blue">
+        Blue
+      </Button>
+      <Button border colorScheme="sky">
+        Sky
+      </Button>
+      <Button border colorScheme="cyan">
+        Cyan
+      </Button>
+      <Button border colorScheme="teal">
+        Teal
+      </Button>
+      <Button border colorScheme="mint">
+        Mint
+      </Button>
+      <Button border colorScheme="green">
+        Green
+      </Button>
+      <Button border colorScheme="grass">
+        Grass
+      </Button>
+      <Button border colorScheme="lime">
+        Lime
+      </Button>
+      <Button border colorScheme="yellow">
+        Yellow
+      </Button>
+      <Button border colorScheme="amber">
+        Amber
+      </Button>
+      <Button border colorScheme="orange">
+        Orange
+      </Button>
     </Flex>
   );
 };

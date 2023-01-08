@@ -109,16 +109,13 @@ const ButtonBase = styled('button', {
       subtle: {
         color: '$$color',
         backgroundColor: '$$bg',
-        boxShadow: 'inset 0 0 0 1px $$border',
 
         '&:hover': {
           backgroundColor: '$$bgHover',
-          boxShadow: 'inset 0 0 0 1px $$borderHover',
         },
 
         '&:active': {
           backgroundColor: '$$bgActive',
-          boxShadow: 'inset 0 0 0 1px $$borderActive',
         },
       },
       outline: {
@@ -160,7 +157,25 @@ const ButtonBase = styled('button', {
         },
       },
     },
+    border: {
+      true: {},
+    },
   },
+  compoundVariants: [
+    {
+      variant: 'subtle',
+      border: true,
+      css: {
+        boxShadow: 'inset 0 0 0 1px $$border',
+        '&:hover': {
+          boxShadow: 'inset 0 0 0 1px $$borderHover',
+        },
+        '&:active': {
+          boxShadow: 'inset 0 0 0 1px $$borderActive',
+        },
+      },
+    },
+  ],
 
   defaultVariants: {
     size: '2',
