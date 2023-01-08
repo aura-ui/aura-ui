@@ -29,19 +29,6 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "version": "pnpm version"
   },
-  "dependencies": {
-    "@aura-ui/button": "workspace:*",
-    "@aura-ui/checkbox": "workspace:*",
-    "@aura-ui/dialog": "workspace:*",
-    "@aura-ui/dropdown-menu": "workspace:*",
-    "@aura-ui/icon-button": "workspace:*",
-    "@aura-ui/input": "workspace:*",
-    "@aura-ui/label": "workspace:*",
-    "@aura-ui/layout": "workspace:*",
-    "@aura-ui/theme": "workspace:*",
-    "@aura-ui/typography": "workspace:*",
-    "@aura-ui/utils": "workspace:*"
-  },
   "devDependencies": {
     "@types/react": "17.0.37",
     "@types/react-dom": "17.0.11",
