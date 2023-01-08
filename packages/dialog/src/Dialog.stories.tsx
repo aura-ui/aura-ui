@@ -47,17 +47,21 @@ export const Default = () => {
               </Typography>
             </DialogTitle>
             <DialogDescription asChild>
-              <Typography css={{ width: '90%' }}>
+              <Typography css={{ width: '90%', mt: '$1' }}>
                 Short description of the action required.
               </Typography>
             </DialogDescription>
-            <Flex css={{ mt: '$5' }} gap="3" direction="column">
+            <Flex css={{ mt: '$8' }} gap="5" direction="column" justify="center">
               <Flex gap="1" direction="column">
-                <Typography>Name</Typography>
+                <Typography css={{ color: '$slate10' }} size="2">
+                  Name
+                </Typography>
                 <TextField type="text" placeholder="John Smith" />
               </Flex>
               <Flex gap="1" direction="column">
-                <Typography>Email</Typography>
+                <Typography css={{ color: '$slate10' }} size="2">
+                  Email
+                </Typography>
                 <TextField type="email" placeholder="johnsmith@me.com" />
               </Flex>
             </Flex>

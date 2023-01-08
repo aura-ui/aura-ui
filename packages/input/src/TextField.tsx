@@ -27,10 +27,10 @@ const TextFieldBase = styled('input', {
     minWidth: 200,
     br: '$2',
     px: '$4',
-    color: '$slate11',
+    color: '$slate12',
 
     '&::placeholder': {
-      color: '$slate8',
+      color: '$slate9',
     },
 
     '&:focus': {
@@ -73,12 +73,14 @@ const TextFieldBase = styled('input', {
     variant: {
       subtle: {
         '&[type]': {
-          backgroundColor: '$slate2',
+          backgroundColor: '$slate3',
         },
-        boxShadow: 'inset 0 0 0 1px $colors$slate7',
       },
       outline: {
         boxShadow: 'inset 0 0 0 1px $colors$slate7',
+        '&:hover': {
+          boxShadow: 'inset 0 0 0 1px $colors$slate8',
+        },
       },
       ghost: {
         '&:hover': {
@@ -90,6 +92,10 @@ const TextFieldBase = styled('input', {
           boxShadow: 'none',
           br: 0,
           borderBottom: '1px solid $colors$slate7',
+
+          '&:hover': {
+            borderBottom: '1px solid $colors$slate8',
+          },
 
           '&:focus': {
             boxShadow: 'none',
@@ -118,6 +124,9 @@ const TextFieldBase = styled('input', {
         },
       },
     },
+    border: {
+      true: {},
+    },
   },
 
   compoundVariants: [
@@ -144,6 +153,16 @@ const TextFieldBase = styled('input', {
         '&:focus': {
           boxShadow: 'none',
           borderBottom: '2px solid $colors$red8',
+        },
+      },
+    },
+    {
+      variant: 'subtle',
+      border: true,
+      css: {
+        boxShadow: 'inset 0 0 0 1px $colors$slate7',
+        '&:hover': {
+          boxShadow: 'inset 0 0 0 1px $colors$slate8',
         },
       },
     },
