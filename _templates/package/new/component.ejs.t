@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.dasherize(name) %>/src/<%= h.changeCase.pascal(name) %>.tsx
+to: packages/react/src/<%= h.changeCase.pascal(name) %>.tsx
 unless_exists: true
 ---
 import * as React from 'react';
@@ -25,7 +25,7 @@ type <%= h.changeCase.pascal(name) %>Props = ComponentProps<typeof <%= h.changeC
 
 export const Styled<%= h.changeCase.pascal(name) %> = styled(<%= h.changeCase.pascal(name) %>Primitive.Root)
 
-// For more information on usage, see https://www.radix-ui.com/docs/primitives/components/<%= h.dasherize(name) %>
+// For more information on installation and usage, see https://www.radix-ui.com/docs/primitives/components/<%= h.dasherize(name) %>
 
 <% } -%>
 
