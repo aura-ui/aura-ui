@@ -4,60 +4,71 @@ import {
   DialogClose,
   DialogContent,
   DialogDescription,
+  DialogOverlay,
+  DialogPortal,
   DialogTitle,
   DialogTrigger,
 } from './Dialog';
 import { Typography } from '../../typography';
 import { Button } from '../../button';
 import { TextField } from '../../input';
-import { Flex, Box } from '../../layout';
+import { Flex, Grid } from '../../layout';
+import { IconButton } from '../../icon-button';
+import { RxCross1 } from 'react-icons/rx';
 
 export default {
   title: 'Components/Overlay/Dialog',
   component: Dialog,
-  decorators: [useColorScheme],
 };
-
-function useColorScheme(Story: any, context: any) {
-  return (
-    <Box>
-      <Story />
-    </Box>
-  );
-}
 
 export const Default = () => {
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button>Open Dialog</Button>
-      </DialogTrigger>
-      <DialogContent>
-        <DialogTitle asChild>
-          <Typography contrast="hiContrast" size="6" weight="6">
-            Dialog title
-          </Typography>
-        </DialogTitle>
-        <DialogDescription asChild>
-          <Typography css={{ width: '90%' }}>Short description of the action required.</Typography>
-        </DialogDescription>
-        <Flex css={{ mt: '$5' }} gap="3" direction="column">
-          <Flex gap="1" direction="column">
-            <Typography>Name</Typography>
-            <TextField type="text" placeholder="John Smith" />
-          </Flex>
-          <Flex gap="1" direction="column">
-            <Typography>Email</Typography>
-            <TextField type="email" placeholder="johnsmith@me.com" />
-          </Flex>
-        </Flex>
-        <Flex css={{ mt: '$5' }} gap="3" justify="end">
-          <DialogClose asChild>
-            <Button colorScheme="red">Cancel</Button>
-          </DialogClose>
-          <Button onClick={() => alert('Woohoo! You submitted nothing!')}>Submit</Button>
-        </Flex>
-      </DialogContent>
-    </Dialog>
+    <Grid
+      css={{
+        placeItems: 'center',
+        height: 200,
+      }}
+    >
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button>Open Dialog</Button>
+        </DialogTrigger>
+        <DialogPortal>
+          <DialogOverlay />
+          <DialogContent>
+            <DialogClose asChild>
+              <IconButton css={{ br: '$round' }} size="1">
+                <RxCross1 />
+              </IconButton>
+            </DialogClose>
+            <DialogTitle asChild>
+              <Typography contrast="hiContrast" size="6" weight="6">
+                Dialog title
+              </Typography>
+            </DialogTitle>
+            <DialogDescription asChild>
+              <Typography css={{ width: '90%' }}>
+                Short description of the action required.
+              </Typography>
+            </DialogDescription>
+            <Flex css={{ mt: '$5' }} gap="3" direction="column">
+              <Flex gap="1" direction="column">
+                <Typography>Name</Typography>
+                <TextField type="text" placeholder="John Smith" />
+              </Flex>
+              <Flex gap="1" direction="column">
+                <Typography>Email</Typography>
+                <TextField type="email" placeholder="johnsmith@me.com" />
+              </Flex>
+            </Flex>
+            <Flex css={{ mt: '$8' }} gap="3" justify="end">
+              <Button colorScheme="green" onClick={() => alert('Woohoo! You submitted nothing!')}>
+                Save Changes
+              </Button>
+            </Flex>
+          </DialogContent>
+        </DialogPortal>
+      </Dialog>
+    </Grid>
   );
 };
