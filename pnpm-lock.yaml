@@ -208,6 +208,43 @@ importers:
       tsup: 5.11.7_typescript@4.7.4
       typescript: 4.7.4
 
+  packages/react:
+    specifiers:
+      '@aura-ui/button': workspace:*
+      '@aura-ui/checkbox': workspace:*
+      '@aura-ui/dialog': workspace:*
+      '@aura-ui/dropdown-menu': workspace:*
+      '@aura-ui/icon-button': workspace:*
+      '@aura-ui/input': workspace:*
+      '@aura-ui/label': workspace:*
+      '@aura-ui/layout': workspace:*
+      '@aura-ui/theme': workspace:*
+      '@aura-ui/typography': workspace:*
+      '@aura-ui/utils': workspace:*
+      '@types/react': 17.0.37
+      '@types/react-dom': 17.0.11
+      react: 17.0.2
+      tsup: 5.11.7
+      typescript: 4.7.4
+    dependencies:
+      '@aura-ui/button': link:../button
+      '@aura-ui/checkbox': link:../checkbox
+      '@aura-ui/dialog': link:../dialog
+      '@aura-ui/dropdown-menu': link:../dropdown-menu
+      '@aura-ui/icon-button': link:../icon-button
+      '@aura-ui/input': link:../input
+      '@aura-ui/label': link:../label
+      '@aura-ui/layout': link:../layout
+      '@aura-ui/theme': link:../theme
+      '@aura-ui/typography': link:../typography
+      '@aura-ui/utils': link:../utils
+    devDependencies:
+      '@types/react': 17.0.37
+      '@types/react-dom': 17.0.11
+      react: 17.0.2
+      tsup: 5.11.7_typescript@4.7.4
+      typescript: 4.7.4
+
   packages/theme:
     specifiers:
       '@radix-ui/colors': 0.1.8
