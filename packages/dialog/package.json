@@ -32,10 +32,8 @@
     "bootstrap": "npx pin-latest . --exact --write"
   },
   "dependencies": {
-    "@aura-ui/icon-button": "workspace:*",
     "@aura-ui/theme": "workspace:*",
-    "@radix-ui/react-dialog": "1.0.2",
-    "@radix-ui/react-icons": "1.1.1"
+    "@radix-ui/react-dialog": "1.0.2"
   },
   "devDependencies": {
     "@types/react": "17.0.37",

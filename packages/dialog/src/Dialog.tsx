@@ -1,10 +1,6 @@
 import * as React from 'react';
-import { CSS, keyframes, styled } from '@aura-ui/theme';
+import { keyframes, styled } from '@aura-ui/theme';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { IconButton } from '@aura-ui/icon-button';
-import { Cross1Icon } from '@radix-ui/react-icons';
-
-const StyledTrigger = styled(DialogPrimitive.Trigger);
 
 const overlayShow = keyframes({
   '0%': { opacity: 0 },
@@ -20,14 +16,6 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, {
     animation: `${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
   },
 });
-
-type DialogProps = React.ComponentProps<typeof DialogPrimitive.Root> & {
-  children: React.ReactNode;
-};
-
-export function Dialog({ children, ...props }: DialogProps) {
-  return <DialogPrimitive.Root {...props}>{children}</DialogPrimitive.Root>;
-}
 
 const StyledContent = styled(DialogPrimitive.Content, {
   br: '$3',
@@ -46,40 +34,33 @@ const StyledContent = styled(DialogPrimitive.Content, {
 });
 
 const StyledCloseButton = styled(DialogPrimitive.Close, {
-  position: 'absolute',
-  top: '$3',
-  right: '$3',
+  variants: {
+    pos: {
+      absolute: {
+        position: 'absolute',
+
+        top: '$3',
+        right: '$3',
+      },
+      relative: {
+        position: 'relative',
+
+        top: 0,
+        right: 0,
+      },
+    },
+  },
+
+  defaultVariants: {
+    pos: 'absolute',
+  },
 });
 
-type DialogContentProps = React.ComponentProps<typeof DialogPrimitive.Content> & {
-  css?: CSS;
-  closeButton?: boolean;
-  overlay?: boolean;
-};
-
-export const DialogContent = React.forwardRef<
-  React.ElementRef<typeof StyledContent>,
-  DialogContentProps
->(({ children, closeButton = true, overlay = true, ...props }, forwardedRef) => (
-  <DialogPrimitive.Portal>
-    {overlay && <StyledOverlay />}
-    {children}
-    <StyledContent {...props} ref={forwardedRef}>
-      {children}
-      {closeButton && (
-        <StyledCloseButton asChild>
-          <IconButton variant="ghost" size="1">
-            <Cross1Icon />
-          </IconButton>
-        </StyledCloseButton>
-      )}
-    </StyledContent>
-  </DialogPrimitive.Portal>
-));
-
-// export const Dialog = DialogPrimitive.Root;
+export const Dialog = DialogPrimitive.Root;
 export const DialogOverlay = StyledOverlay;
-export const DialogTrigger = StyledTrigger;
-export const DialogClose = styled(DialogPrimitive.Close);
+export const DialogPortal = DialogPrimitive.Portal;
+export const DialogTrigger = styled(DialogPrimitive.Trigger);
 export const DialogTitle = styled(DialogPrimitive.Title);
 export const DialogDescription = styled(DialogPrimitive.Description);
+export const DialogContent = StyledContent;
+export const DialogClose = StyledCloseButton;
