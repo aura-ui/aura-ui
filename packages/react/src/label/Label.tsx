@@ -43,5 +43,3 @@ const StyledLabel = styled(LabelPrimitive.Root, {
 });
 
 export const Label = StyledLabel;
-
-// For more information on usage, see https://www.radix-ui.com/docs/primitives/components/label
