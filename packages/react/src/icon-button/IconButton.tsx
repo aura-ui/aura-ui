@@ -1,10 +1,16 @@
 import * as React from 'react';
-import { ComponentProps, styled } from '../theme';
-import { ColorScheme, getContrastingColor, ariaAttr } from '../utils';
+import { ComponentProps, darkTheme, styled } from '../theme';
+import {
+  ariaAttr,
+  ColorScheme,
+  getContrastingColor,
+  PolymorphicComponentPropsWithRef,
+  PolymorphicRef,
+} from '../utils';
 
-type IconButtonBaseProps = ComponentProps<typeof IconButtonBase>;
+type BaseProps = ComponentProps<typeof Base>;
 
-const IconButtonBase = styled('button', {
+const Base = styled('button', {
   // Reset
   alignItems: 'center',
   justifyContent: 'center',
@@ -48,6 +54,12 @@ const IconButtonBase = styled('button', {
   $$bgActive: '$colors$slate5',
   $$borderActive: '$colors$slate8',
 
+  $$bgSubtle: '$colors$slate4',
+  $$bgSubtleHover: '$colors$slate5',
+  $$bgSubtleActive: '$colors$slate6',
+
+  $$focus: '$colors$slate8',
+
   // solid default styles
   $$bgSolid: '$colors$slate9',
   $$colorSolid: 'white',
@@ -88,14 +100,18 @@ const IconButtonBase = styled('button', {
     variant: {
       subtle: {
         color: '$$color',
-        backgroundColor: '$$bg',
+        backgroundColor: '$$bgSubtle',
 
         '&:hover': {
-          backgroundColor: '$$bgHover',
+          backgroundColor: '$$bgSubtleHover',
         },
 
         '&:active': {
-          backgroundColor: '$$bgActive',
+          backgroundColor: '$$bgSubtleActive',
+        },
+
+        '&:focus-visible': {
+          boxShadow: '0 0 0 2px $$focus',
         },
       },
       outline: {
@@ -111,6 +127,10 @@ const IconButtonBase = styled('button', {
           backgroundColor: '$$bgActive',
           boxShadow: 'inset 0 0 0 1px $$borderActive',
         },
+
+        '&:focus-visible': {
+          boxShadow: '0 0 0 2px $$focus',
+        },
       },
       solid: {
         backgroundColor: '$$bgSolid',
@@ -122,6 +142,13 @@ const IconButtonBase = styled('button', {
 
         '&:active': {
           backgroundColor: '$$bgSolidActive',
+        },
+
+        '&:focus-visible': {
+          boxShadow: '0 0 0 2px $colors$blue8',
+          [`.${darkTheme} &`]: {
+            boxShadow: '0 0 0 2px $colors$blue10',
+          },
         },
       },
       ghost: {
@@ -135,6 +162,10 @@ const IconButtonBase = styled('button', {
         '&:active': {
           backgroundColor: '$$bgActive',
         },
+
+        '&:focus-visible': {
+          boxShadow: '0 0 0 2px $$focus',
+        },
       },
     },
     border: {
@@ -146,11 +177,14 @@ const IconButtonBase = styled('button', {
       variant: 'subtle',
       border: true,
       css: {
+        backgroundColor: '$$bg',
         boxShadow: 'inset 0 0 0 1px $$border',
         '&:hover': {
+          backgroundColor: '$$bgHover',
           boxShadow: 'inset 0 0 0 1px $$borderHover',
         },
         '&:active': {
+          backgroundColor: '$$bgActive',
           boxShadow: 'inset 0 0 0 1px $$borderActive',
         },
       },
@@ -163,7 +197,7 @@ const IconButtonBase = styled('button', {
   },
 });
 
-export interface IconButtonProps extends IconButtonBaseProps {
+export interface ExtendedProps extends BaseProps {
   children: React.ReactNode;
 
   /**
@@ -177,25 +211,44 @@ export interface IconButtonProps extends IconButtonBaseProps {
   disabled?: boolean;
 }
 
-export const IconButton: React.FC<IconButtonProps & React.HTMLAttributes<HTMLButtonElement>> =
-  React.forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
-    const { children, colorScheme = 'slate', disabled, ...rest } = props;
+type IconButtonProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<
+  C,
+  ExtendedProps
+>;
+
+type IconButtonComponent = <C extends React.ElementType = typeof Base>(
+  props: IconButtonProps<C>
+) => React.ReactElement | null;
+
+export const IconButton: IconButtonComponent = React.forwardRef(
+  <C extends React.ElementType = typeof Base>(
+    { as, children, colorScheme = 'slate', disabled, variant, ...rest }: IconButtonProps<C>,
+    ref?: PolymorphicRef<C>
+  ) => {
+    const Component = as || Base;
     return (
-      <IconButtonBase
+      <Component
+        as={as}
         ref={ref}
         css={{
           // themed default styles
           $$bg: `$colors$${colorScheme}3`,
+          $$bgSubtle: `$colors$${colorScheme}4`,
           $$border: `$colors$${colorScheme}7`,
           $$color: `$colors$${colorScheme}11`,
 
           // themed hover styles
           $$bgHover: `$colors$${colorScheme}4`,
           $$borderHover: `$colors$${colorScheme}8`,
+          $$bgSubtleHover: `$colors$${colorScheme}5`,
 
           // themed active styles
           $$bgActive: `$colors$${colorScheme}5`,
           $$borderActive: `$colors$${colorScheme}8`,
+          $$bgSubtleActive: `$colors$${colorScheme}5`,
+
+          // focus
+          $$focus: `$colors$${colorScheme}8`,
 
           // themed solid default styles
           $$bgSolid: `$colors$${colorScheme}9`,
@@ -208,15 +261,17 @@ export const IconButton: React.FC<IconButtonProps & React.HTMLAttributes<HTMLBut
           //focus styling
           '&:focus:not(&[aria-disabled="true"])': {
             boxShadow:
-              props.variant === 'solid'
+              variant === 'solid'
                 ? 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8'
                 : `inset 0px 0px 0px 1px $colors$${colorScheme}8, 0px 0px 0px 1px $colors$${colorScheme}8`,
           },
         }}
+        variant={variant}
         aria-disabled={ariaAttr(disabled)}
         {...rest}
       >
         {children}
-      </IconButtonBase>
+      </Component>
     );
-  });
+  }
+);

@@ -1,53 +1,14 @@
 import * as React from 'react';
 import { styled, ComponentProps } from '../theme';
+import { PolymorphicComponentPropsWithRef, PolymorphicRef } from '../utils';
 
-type StyledGridProps = ComponentProps<typeof StyledGrid>;
-
-export interface GridProps extends StyledGridProps {
-  children: React.ReactNode;
-  /**
-   * Specifies the columns in a grid layout.
-   */
-  templateColumns?: string;
-  /**
-   * Specifies the rows in a grid layout.
-   */
-  templateRows?: string;
-  /**
-   * Specifies how items are size and placed across grid columns.
-   */
-  columnSpan?: string;
-  /**
-   * Specifies how items are size and placed across grid rows.
-   */
-  rowSpan?: string;
-  /**
-   * Specifies how items are auto-placed within a grid.
-   */
-  autoFlow?: string;
-  /**
-   * Specifies the size of implicitly-created grid columns.
-   */
-  autoColumns?: string;
-  /**
-   * Specifies the size of implicitly-created grid rows.
-   */
-  autoRows?: string;
-  /**
-   * Specifies the size of the gutters between rows.
-   */
-  gapX?: string | number;
-  /**
-   * Specifies the size of the gutters between columns.
-   */
-  gapY?: string | number;
-}
+type BaseProps = ComponentProps<typeof Base>;
 
 /**
  * Grid is a layout component with a default property of ```display: grid```.
  * It renders a HTML div element by default.
  */
-export const StyledGrid = styled('div', {
+export const Base = styled('div', {
   display: 'grid',
 
   variants: {
@@ -113,24 +74,75 @@ export const StyledGrid = styled('div', {
   },
 });
 
-export const Grid = ({ children, css, ...props }: GridProps) => {
-  return (
-    <StyledGrid
-      css={{
-        gridTemplateColumns: props.templateColumns,
-        gridTemplateRows: props.templateRows,
-        gridColumn: props.columnSpan,
-        gridRow: props.rowSpan,
-        gridAutoFlow: props.autoFlow,
-        gridAutoColumns: props.autoColumns,
-        gridAutoRows: props.autoRows,
-        rowGap: props.gapX,
-        columnGap: props.gapY,
-        ...css,
-      }}
-      {...props}
-    >
-      {children}
-    </StyledGrid>
-  );
-};
+export interface ExtendedProps extends BaseProps {
+  children: React.ReactNode;
+  /**
+   * Specifies the columns in a grid layout.
+   */
+  templateColumns?: string;
+  /**
+   * Specifies the rows in a grid layout.
+   */
+  templateRows?: string;
+  /**
+   * Specifies how items are size and placed across grid columns.
+   */
+  columnSpan?: string;
+  /**
+   * Specifies how items are size and placed across grid rows.
+   */
+  rowSpan?: string;
+  /**
+   * Specifies how items are auto-placed within a grid.
+   */
+  autoFlow?: string;
+  /**
+   * Specifies the size of implicitly-created grid columns.
+   */
+  autoColumns?: string;
+  /**
+   * Specifies the size of implicitly-created grid rows.
+   */
+  autoRows?: string;
+  /**
+   * Specifies the size of the gutters between rows.
+   */
+  gapX?: string | number;
+  /**
+   * Specifies the size of the gutters between columns.
+   */
+  gapY?: string | number;
+}
+
+type GridProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<C, ExtendedProps>;
+
+type GridComponent = <C extends React.ElementType = typeof Base>(
+  props: GridProps<C>
+) => React.ReactElement | null;
+
+export const Grid: GridComponent = React.forwardRef(
+  <C extends React.ElementType = typeof Base>(props: GridProps<C>, ref?: PolymorphicRef<C>) => {
+    const Component = props.as || Base;
+    return (
+      <Component
+        as={props.as}
+        ref={ref}
+        css={{
+          gridTemplateColumns: props.templateColumns,
+          gridTemplateRows: props.templateRows,
+          gridColumn: props.columnSpan,
+          gridRow: props.rowSpan,
+          gridAutoFlow: props.autoFlow,
+          gridAutoColumns: props.autoColumns,
+          gridAutoRows: props.autoRows,
+          rowGap: props.gapX,
+          columnGap: props.gapY,
+          ...props.css,
+        }}
+        {...props}
+      >
+        {props.children}
+      </Component>
+    );
+  }
+);
