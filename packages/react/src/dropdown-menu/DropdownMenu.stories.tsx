@@ -131,7 +131,7 @@ export const Default = ({
           </DropdownMenuSub>
           <DropdownMenuItem color="red">
             Delete
-            <DropdownMenuItemSlot>Ctrl+V</DropdownMenuItemSlot>
+            <DropdownMenuItemSlot>Ctrl+D</DropdownMenuItemSlot>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
