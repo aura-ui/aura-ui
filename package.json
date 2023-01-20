@@ -9,7 +9,7 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "prettier": "prettier --write '**/*.{json,md,js,ts,jsx,tsx,yml,css}'",
     "prestorybook": "pnpm clean && pnpm install",
-    "storybook": "SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "generate:package": "npx hygen package new",
     "version": "pnpm changeset version && pnpm install --lockfile-only",
