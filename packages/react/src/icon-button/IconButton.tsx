@@ -8,9 +8,9 @@ import {
   PolymorphicRef,
 } from '../utils';
 
-type BaseProps = ComponentProps<typeof Base>;
+type IconButtonBaseProps = ComponentProps<typeof IconButtonBase>;
 
-const Base = styled('button', {
+const IconButtonBase = styled('button', {
   // Reset
   alignItems: 'center',
   justifyContent: 'center',
@@ -197,7 +197,7 @@ const Base = styled('button', {
   },
 });
 
-export interface ExtendedProps extends BaseProps {
+export interface IconButtonExtendedProps extends IconButtonBaseProps {
   children: React.ReactNode;
 
   /**
@@ -213,19 +213,19 @@ export interface ExtendedProps extends BaseProps {
 
 type IconButtonProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<
   C,
-  ExtendedProps
+  IconButtonExtendedProps
 >;
 
-type IconButtonComponent = <C extends React.ElementType = typeof Base>(
+type IconButtonComponent = <C extends React.ElementType = typeof IconButtonBase>(
   props: IconButtonProps<C>
 ) => React.ReactElement | null;
 
 export const IconButton: IconButtonComponent = React.forwardRef(
-  <C extends React.ElementType = typeof Base>(
+  <C extends React.ElementType = typeof IconButtonBase>(
     { as, children, colorScheme = 'slate', disabled, variant, ...rest }: IconButtonProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
-    const Component = as || Base;
+    const Component = as || IconButtonBase;
     return (
       <Component
         as={as}
