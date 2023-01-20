@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { styled, keyframes } from '../theme';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 

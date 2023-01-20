@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { styled, ComponentProps } from '../theme';
 import * as LabelPrimitive from '@radix-ui/react-label';
 

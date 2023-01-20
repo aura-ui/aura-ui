@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { keyframes, styled } from '../theme';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
