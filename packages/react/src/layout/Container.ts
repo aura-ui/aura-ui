@@ -1,5 +1,4 @@
 import { styled } from '../theme';
-import * as React from 'react';
 
 /**
  * Container is a component intended for wrapping around other components and content alike.

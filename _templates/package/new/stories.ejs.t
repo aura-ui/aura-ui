@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.dasherize(name) %>/src/<%= h.changeCase.pascal(name) %>.stories.tsx
+to: packages/react/<%= h.dasherize(name) %>/src/<%= h.changeCase.pascal(name) %>.stories.tsx
 unless_exists: true
 ---
 

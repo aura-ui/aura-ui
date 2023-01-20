@@ -1,4 +1,3 @@
-import React from 'react';
 import { styled } from '../theme';
 import { Root } from '@radix-ui/react-separator';
 

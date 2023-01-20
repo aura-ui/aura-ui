@@ -3,7 +3,7 @@ to: packages/react/src/<%= h.changeCase.pascal(name) %>.tsx
 unless_exists: true
 ---
 import * as React from 'react';
-import { styled, ComponentProps } from '@aura-ui/theme';
+import { styled, ComponentProps } from '../theme';
 <% if(locals.packageType === 'component'){ -%>
 
 type <%= h.changeCase.pascal(name) %>BaseProps = ComponentProps<typeof <%= h.changeCase.pascal(name) %>Base>
