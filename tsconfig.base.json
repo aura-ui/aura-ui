@@ -24,6 +24,8 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true
   }
 }

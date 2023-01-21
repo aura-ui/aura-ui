@@ -18,14 +18,15 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aura-ui/aura-ui.git",
-    "directory": "packages/layout"
+    "directory": "packages/react"
   },
   "bugs": {
     "url": "https://github.com/aura-ui/aura-ui/issues"
   },
   "scripts": {
-    "build": "tsc -p . && tsup src/index.tsx --format esm,cjs --dts --external react",
+    "build": "pnpm run lint && tsup src/index.tsx --format esm,cjs --dts --external react",
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "lint": "tsc",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "version": "pnpm version"
   },
