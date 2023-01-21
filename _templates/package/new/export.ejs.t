@@ -1,5 +1,5 @@
 ---
-to: packages/react/<%= h.dasherize(name) %>/src/index.ts
+to: packages/react/src/<%= h.dasherize(name) %>/index.ts
 unless_exists: true
 ---
 
