@@ -6,6 +6,7 @@ export * from './icon-button';
 export * from './input';
 export * from './label';
 export * from './layout';
+export * from './switch';
 export * from './textarea';
 export * from './theme';
 export * from './typography';

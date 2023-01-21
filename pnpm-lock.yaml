@@ -43,6 +43,7 @@ importers:
       '@radix-ui/react-dropdown-menu': 2.0.1
       '@radix-ui/react-label': 2.0.0
       '@radix-ui/react-separator': 1.0.1
+      '@radix-ui/react-switch': 1.0.1
       '@stitches/react': 1.2.8
       '@types/react': 17.0.37
       '@types/react-dom': 17.0.11
@@ -57,6 +58,7 @@ importers:
       '@radix-ui/react-dropdown-menu': 2.0.1_z7w6vgz62d5pbxpnoxayoqdmly
       '@radix-ui/react-label': 2.0.0_react@17.0.2
       '@radix-ui/react-separator': 1.0.1_react@17.0.2
+      '@radix-ui/react-switch': 1.0.1_react@17.0.2
       '@stitches/react': 1.2.8_react@17.0.2
     devDependencies:
       '@types/react': 17.0.37
@@ -3197,6 +3199,23 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.7
       '@radix-ui/react-compose-refs': 1.0.0_react@17.0.2
+      react: 17.0.2
+    dev: false
+
+  /@radix-ui/react-switch/1.0.1_react@17.0.2:
+    resolution: {integrity: sha512-tTxGluMtwrc5ffgAiOSMrYIx0r3vSTcgM4Vl8rqfpXcHt6ryB9B0OlFKUOiDpKASXlhvzfHf4Y0AYKJdpzjL8w==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.20.7
+      '@radix-ui/primitive': 1.0.0
+      '@radix-ui/react-compose-refs': 1.0.0_react@17.0.2
+      '@radix-ui/react-context': 1.0.0_react@17.0.2
+      '@radix-ui/react-primitive': 1.0.1_react@17.0.2
+      '@radix-ui/react-use-controllable-state': 1.0.0_react@17.0.2
+      '@radix-ui/react-use-previous': 1.0.0_react@17.0.2
+      '@radix-ui/react-use-size': 1.0.0_react@17.0.2
       react: 17.0.2
     dev: false
 
