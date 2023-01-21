@@ -24,8 +24,8 @@ import { Button } from '@aura-ui/react';
 
 ## Contributing
 
-Contributions are more than welcome.
+See open issues for contribution opportunities!
 
-See [CONTRIBUTING.md](https://github.com/aura-ui/aura-ui/blob/main/CONTRIBUTING.md) for how to get started.
+Once we get to a more stable release, we'll ensure a more formal contribution process will be in place.
 
-Please also ensure you adher to this project's [CODE_OF_CONDUCT](https://github.com/aura-ui/aura-ui/blob/main/CODE_OF_CONDUCT.md)
+Please also ensure you adhere to this project's [CODE_OF_CONDUCT](https://github.com/aura-ui/aura-ui/blob/main/CODE_OF_CONDUCT.md)
