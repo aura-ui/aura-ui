@@ -141,3 +141,9 @@ export const WithIcon = () => {
     </Flex>
   );
 };
+
+export const LinkButton = () => (
+  <Button as="a" href="#">
+    Link
+  </Button>
+);

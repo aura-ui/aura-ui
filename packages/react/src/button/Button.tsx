@@ -31,7 +31,7 @@ const ButtonBase = styled('button', {
 
   // custom
   fontFamily: 'inherit',
-  fontWeight: '$6',
+  fontWeight: '$5',
   br: '$2',
 
   '&:disabled': {
@@ -236,12 +236,12 @@ export const Button: ButtonComponent = React.forwardRef(
     { as, children, colorScheme = 'slate', disabled, variant, ...rest }: ButtonProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
-    const Component = as || ButtonBase;
     return (
-      <Component
+      <ButtonBase
         as={as}
         ref={ref}
         css={{
+          cursor: as === 'a' ? 'pointer' : 'default',
           // themed default styles
           $$bg: `$colors$${colorScheme}3`,
           $$bgSubtle: `$colors$${colorScheme}4`,
@@ -256,7 +256,7 @@ export const Button: ButtonComponent = React.forwardRef(
           // themed active styles
           $$bgActive: `$colors$${colorScheme}5`,
           $$borderActive: `$colors$${colorScheme}8`,
-          $$bgSubtleActive: `$colors$${colorScheme}5`,
+          $$bgSubtleActive: `$colors$${colorScheme}6`,
 
           // focus
           $$focus: `$colors$${colorScheme}8`,
@@ -286,7 +286,7 @@ export const Button: ButtonComponent = React.forwardRef(
         {...rest}
       >
         {children}
-      </Component>
+      </ButtonBase>
     );
   }
 );
