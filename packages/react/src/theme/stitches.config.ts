@@ -312,7 +312,7 @@ export const { styled, css, config, theme, createTheme, reset, getCssText, globa
       light: '(prefers-color-scheme: light)',
     },
     utils: {
-      pd: (value: PropertyValue<'padding'>) => ({
+      p: (value: PropertyValue<'padding'>) => ({
         padding: value,
       }),
       pt: (value: PropertyValue<'paddingTop'>) => ({
