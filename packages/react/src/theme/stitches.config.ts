@@ -313,10 +313,10 @@ export const { styled, css, config, theme, createTheme, reset, getCssText, globa
     },
     utils: {
       p: (value: PropertyValue<'padding'>) => ({
-        paddingTop: value,
-        paddingBottom: value,
-        paddingLeft: value,
-        paddingRight: value,
+        padding: value,
+      }),
+      pd: (value: PropertyValue<'padding'>) => ({
+        padding: value,
       }),
       pt: (value: PropertyValue<'paddingTop'>) => ({
         paddingTop: value,
