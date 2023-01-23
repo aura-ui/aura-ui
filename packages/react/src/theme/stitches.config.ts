@@ -315,6 +315,9 @@ export const { styled, css, config, theme, createTheme, reset, getCssText, globa
       p: (value: PropertyValue<'padding'>) => ({
         padding: value,
       }),
+      pd: (value: PropertyValue<'padding'>) => ({
+        padding: value,
+      }),
       pt: (value: PropertyValue<'paddingTop'>) => ({
         paddingTop: value,
       }),
