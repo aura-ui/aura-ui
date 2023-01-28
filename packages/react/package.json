@@ -42,6 +42,7 @@
     "@stitches/react": "1.2.8"
   },
   "devDependencies": {
+    "@radix-ui/react-icons": "^1.1.1",
     "@types/react": "17.0.37",
     "@types/react-dom": "17.0.11",
     "react": "17.0.2",

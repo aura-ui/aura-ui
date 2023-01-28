@@ -41,6 +41,7 @@ importers:
       '@radix-ui/react-checkbox': 1.0.1
       '@radix-ui/react-dialog': 1.0.2
       '@radix-ui/react-dropdown-menu': 2.0.1
+      '@radix-ui/react-icons': ^1.1.1
       '@radix-ui/react-label': 2.0.0
       '@radix-ui/react-separator': 1.0.1
       '@radix-ui/react-switch': 1.0.1
@@ -61,6 +62,7 @@ importers:
       '@radix-ui/react-switch': 1.0.1_react@17.0.2
       '@stitches/react': 1.2.8_react@17.0.2
     devDependencies:
+      '@radix-ui/react-icons': 1.1.1_react@17.0.2
       '@types/react': 17.0.37
       '@types/react-dom': 17.0.11
       react: 17.0.2
@@ -3055,6 +3057,14 @@ packages:
       '@radix-ui/react-use-callback-ref': 1.0.0_react@17.0.2
       react: 17.0.2
     dev: false
+
+  /@radix-ui/react-icons/1.1.1_react@17.0.2:
+    resolution: {integrity: sha512-xc3wQC59rsFylVbSusQCrrM+6695ppF730Q6yqzhRdqDcRNWIm2R6ngpzBoSOQMcwnq4p805F+Gr7xo4fmtN1A==}
+    peerDependencies:
+      react: ^16.x || ^17.x || ^18.x
+    dependencies:
+      react: 17.0.2
+    dev: true
 
   /@radix-ui/react-id/1.0.0_react@17.0.2:
     resolution: {integrity: sha512-Q6iAB/U7Tq3NTolBBQbHTgclPmGWE3OlktGGqrClPozSw4vkQ1DfQAOtzgRPecKsMdJINE05iaoDUG8tRzCBjw==}
