@@ -320,50 +320,103 @@ export const { styled, css, config, theme, createTheme, reset, getCssText, globa
       }),
       pt: (value: PropertyValue<'paddingTop'>) => ({
         paddingTop: value,
+        'supports( padding-block-start: var(--space-1) )': {
+          paddingTop: 'unset',
+          paddingBlockStart: value,
+        },
       }),
       pr: (value: PropertyValue<'paddingRight'>) => ({
         paddingRight: value,
+        'supports( padding-inline-end: var(--space-1) )': {
+          paddingRight: 'unset',
+          paddingInlineEnd: value,
+        },
       }),
       pb: (value: PropertyValue<'paddingBottom'>) => ({
         paddingBottom: value,
+        'supports( padding-block-end: var(--space-1) )': {
+          paddingBottom: 'unset',
+          paddingBlockEnd: value,
+        },
       }),
       pl: (value: PropertyValue<'paddingLeft'>) => ({
         paddingLeft: value,
+        '@supports( padding-inline-start: var(--space-1) )': {
+          paddingLeft: 'unset',
+          paddingInlineStart: value,
+        },
       }),
       px: (value: PropertyValue<'paddingLeft'>) => ({
         paddingLeft: value,
         paddingRight: value,
+        'supports( padding-inline-start: var(--space-1) )': {
+          paddingLeft: 'unset',
+          paddingRight: 'unset',
+          paddingInlineStart: value,
+          paddingInlineEnd: value,
+        },
       }),
       py: (value: PropertyValue<'paddingTop'>) => ({
         paddingTop: value,
         paddingBottom: value,
+        'supports( padding-block-start: var(--space-1) )': {
+          paddingTop: 'unset',
+          paddingBottom: 'unset',
+          paddingBlockStart: value,
+          paddingBlockEnd: value,
+        },
       }),
 
       m: (value: PropertyValue<'margin'>) => ({
-        marginTop: value,
-        marginBottom: value,
-        marginLeft: value,
-        marginRight: value,
+        margin: value,
       }),
       mt: (value: PropertyValue<'marginTop'>) => ({
         marginTop: value,
+        'supports( margin-block-start: var(--space-1) )': {
+          marginTop: 'unset',
+          marginBlockStart: value,
+        },
       }),
       mr: (value: PropertyValue<'marginRight'>) => ({
         marginRight: value,
+        'supports( margin-inline-end: var(--space-1) )': {
+          marginRight: 'unset',
+          marginInlineEnd: value,
+        },
       }),
       mb: (value: PropertyValue<'marginBottom'>) => ({
         marginBottom: value,
+        'supports( margin-block-end: var(--space-1) )': {
+          marginBottom: 'unset',
+          marginBlockEnd: value,
+        },
       }),
       ml: (value: PropertyValue<'marginLeft'>) => ({
         marginLeft: value,
+        'supports( margin-inline-start: var(--space-1) )': {
+          marginLeft: 'unset',
+          marginInlineStart: value,
+        },
       }),
       mx: (value: PropertyValue<'marginLeft'>) => ({
         marginLeft: value,
         marginRight: value,
+        'supports( margin-inline-start: var(--space-1) )': {
+          marginLeft: 'unset',
+          marginRight: 'unset',
+          marginInlineStart: value,
+          marginInlineEnd: value,
+        },
       }),
       my: (value: PropertyValue<'marginTop'>) => ({
         marginTop: value,
         marginBottom: value,
+        'supports( margin-block-start: var(--space-1) )': {
+          marginTop: 'unset',
+          marginBottom: 'unset',
+          marginBlockStart: value,
+          marginBlockEnd: value,
+        },
       }),
       bg: (value: PropertyValue<'backgroundColor'>) => ({
         backgroundColor: value,
