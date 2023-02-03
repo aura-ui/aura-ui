@@ -48,6 +48,7 @@ importers:
       '@types/react': 17.0.37
       '@types/react-dom': 17.0.11
       react: 17.0.2
+      stitches-mixins: ^1.0.0
       tsup: 5.11.7
       typescript: 4.7.4
     dependencies:
@@ -60,6 +61,7 @@ importers:
       '@radix-ui/react-separator': 1.0.1_react@17.0.2
       '@radix-ui/react-switch': 1.0.1_react@17.0.2
       '@stitches/react': 1.2.8_react@17.0.2
+      stitches-mixins: 1.0.0_@stitches+react@1.2.8
     devDependencies:
       '@types/react': 17.0.37
       '@types/react-dom': 17.0.11
@@ -11857,6 +11859,20 @@ packages:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
     dev: true
+
+  /stitches-mixins/1.0.0_@stitches+react@1.2.8:
+    resolution: {integrity: sha512-h9sHAAZL3M+CrMeBm6C1u9ncvqtnV/+U0uNTYieYediGC1z9CiutbuFMsnzhXOTCQ0ygv1cscneR5na8sdmGvA==}
+    peerDependencies:
+      '@stitches/core': '>= 1.1.0'
+      '@stitches/react': '>= 1.1.0'
+    peerDependenciesMeta:
+      '@stitches/core':
+        optional: true
+      '@stitches/react':
+        optional: true
+    dependencies:
+      '@stitches/react': 1.2.8_react@17.0.2
+    dev: false
 
   /store2/2.14.2:
     resolution: {integrity: sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==}
