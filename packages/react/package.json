@@ -1,6 +1,6 @@
 {
   "name": "@aura-ui/react",
-  "version": "0.0.3-alpha.5",
+  "version": "0.0.4",
   "description": "A high quality, accessible and highly customizable React UI library",
   "author": "Greg Ogun <gregogun97@gmail.com>",
   "homepage": "https://github.com/aura-ui/aura-ui#readme",
