@@ -173,25 +173,28 @@ export const Compact = ({
           }}
           sideOffset={8}
         >
-          <DropdownMenuItem>
+          <DropdownMenuItem justify="start">
             <Pencil1Icon />
             Edit
           </DropdownMenuItem>
-          <DropdownMenuItem css={{ justifyContent: 'space-between' }}>
+          <DropdownMenuItem justify="start">
             <CopyIcon />
             Duplicate
           </DropdownMenuItem>
-          <DropdownMenuItem>
+          <DropdownMenuItem justify="start">
             <ArchiveIcon />
             Archive
           </DropdownMenuItem>
-          <DropdownMenuItem>
+          <DropdownMenuItem justify="start">
             <MoveIcon />
             Move
           </DropdownMenuItem>
           <DropdownMenuItem color="red">
-            <TrashIcon />
-            Delete
+            <Flex as="span" align="center" gap="2">
+              <TrashIcon />
+              Delete
+            </Flex>
+            <DropdownMenuItemSlot>Ctrl+D</DropdownMenuItemSlot>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

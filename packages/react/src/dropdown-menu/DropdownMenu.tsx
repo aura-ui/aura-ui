@@ -9,7 +9,7 @@ import { DotFilledIcon } from './DotFilledIcon';
 
 export const DropdownMenuItemSlot = styled('div', {
   marginLeft: 'auto',
-  color: 'inherit',
+  color: '$slate11',
   '[data-highlighted] > &': { color: 'inherit' },
   '[data-disabled] &': { color: '$slate8' },
 });
@@ -42,8 +42,6 @@ const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content, {
   overflow: 'hidden',
   display: 'flex',
   flexDirection: 'column',
-  gap: '$1',
-  p: '$1',
   '@media (prefers-reduced-motion: no-preference)': {
     animationDuration: '200ms',
     animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
@@ -64,15 +62,17 @@ const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content, {
 
   variants: {
     variant: {
-      default: {},
+      comfortable: {
+        p: '$1',
+        gap: '$1',
+      },
       compact: {
         gap: 0,
-        p: 0,
+        px: 0,
+        py: '$2',
         '& div[role=menuitem], div[role=menuitemcheckbox], div[role=menuitemradio]': {
-          justifyContent: 'start',
           gap: '$2',
           br: 0,
-          p: '$3',
         },
       },
     },
@@ -172,7 +172,7 @@ const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content, {
 
   defaultVariants: {
     size: '2',
-    variant: 'default',
+    variant: 'comfortable',
   },
 });
 
@@ -191,7 +191,7 @@ export const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, {
   gap: '$5',
   // position: 'relative',
   userSelect: 'none',
-  color: '$slate11',
+  color: '$slate12',
 
   '&:focus:not(:focus-visible)': {
     outline: 'none',
@@ -220,6 +220,20 @@ export const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, {
           backgroundColor: '$red4',
           color: '$red11',
         },
+      },
+    },
+    justify: {
+      start: {
+        justifyContent: 'flex-start',
+      },
+      center: {
+        justifyContent: 'center',
+      },
+      end: {
+        justifyContent: 'flex-end',
+      },
+      between: {
+        justifyContent: 'space-between',
       },
     },
   },
