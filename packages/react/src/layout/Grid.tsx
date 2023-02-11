@@ -121,27 +121,44 @@ type GridComponent = <C extends React.ElementType = typeof Base>(
 ) => React.ReactElement | null;
 
 export const Grid: GridComponent = React.forwardRef(
-  <C extends React.ElementType = typeof Base>(props: GridProps<C>, ref?: PolymorphicRef<C>) => {
-    const Component = props.as || Base;
+  <C extends React.ElementType = typeof Base>(
+    {
+      css,
+      as,
+      templateColumns,
+      templateRows,
+      columnSpan,
+      rowSpan,
+      autoFlow,
+      autoRows,
+      autoColumns,
+      gapX,
+      gapY,
+      children,
+      ...rest
+    }: GridProps<C>,
+    ref?: PolymorphicRef<C>
+  ) => {
+    const Component = as || Base;
     return (
       <Component
-        as={props.as}
+        as={as}
         ref={ref}
         css={{
-          gridTemplateColumns: props.templateColumns,
-          gridTemplateRows: props.templateRows,
-          gridColumn: props.columnSpan,
-          gridRow: props.rowSpan,
-          gridAutoFlow: props.autoFlow,
-          gridAutoColumns: props.autoColumns,
-          gridAutoRows: props.autoRows,
-          rowGap: props.gapX,
-          columnGap: props.gapY,
-          ...props.css,
+          gridTemplateColumns: templateColumns,
+          gridTemplateRows: templateRows,
+          gridColumn: columnSpan,
+          gridRow: rowSpan,
+          gridAutoFlow: autoFlow,
+          gridAutoColumns: autoColumns,
+          gridAutoRows: autoRows,
+          rowGap: gapX,
+          columnGap: gapY,
+          ...css,
         }}
-        {...props}
+        {...rest}
       >
-        {props.children}
+        {children}
       </Component>
     );
   }

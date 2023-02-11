@@ -12,6 +12,10 @@ export const Switch = styled(SwitchPrimitive.Root, {
   WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
   '&[data-state="checked"]': { backgroundColor: '$blue9' },
 
+  '&:focus-visible': {
+    boxShadow: 'inset 0 0 0 1px $colors$blue8, 0 0 0 1px $colors$blue8',
+  },
+
   variants: {
     size: {
       1: {
