@@ -33,10 +33,14 @@ export type AspectRatioProps = AspectRatioBaseProps & {
   maxWidth?: string | number;
 };
 
-export const AspectRatio = ({ children, maxWidth, ...props }: AspectRatioProps) => {
-  return (
-    <Container css={{ maxW: maxWidth }}>
-      <StyledAspectRation {...props}>{children}</StyledAspectRation>
-    </Container>
-  );
-};
+export const AspectRatio = React.forwardRef<HTMLDivElement, AspectRatioProps>(
+  ({ children, maxWidth, ...props }: AspectRatioProps, ref) => {
+    return (
+      <Container css={{ maxW: maxWidth }}>
+        <StyledAspectRation ref={ref} {...props}>
+          {children}
+        </StyledAspectRation>
+      </Container>
+    );
+  }
+);

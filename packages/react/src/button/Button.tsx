@@ -233,7 +233,7 @@ type ButtonComponent = <C extends React.ElementType = typeof ButtonBase>(
 
 export const Button: ButtonComponent = React.forwardRef(
   <C extends React.ElementType = typeof ButtonBase>(
-    { as, children, colorScheme = 'slate', disabled, variant, ...rest }: ButtonProps<C>,
+    { as, children, colorScheme = 'slate', disabled, variant, css, ...rest }: ButtonProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
     const Component = as || ButtonBase;
@@ -280,6 +280,7 @@ export const Button: ButtonComponent = React.forwardRef(
                 ? 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8'
                 : `inset 0px 0px 0px 1px $colors$${colorScheme}8, 0px 0px 0px 1px $colors$${colorScheme}8`,
           },
+          ...css,
         }}
         variant={variant}
         aria-disabled={ariaAttr(disabled)}
