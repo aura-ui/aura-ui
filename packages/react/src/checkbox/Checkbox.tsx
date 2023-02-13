@@ -122,34 +122,34 @@ export interface CheckboxProps extends CheckboxRootProps, StyledCheckboxProps {
   id?: string;
 }
 
-export const Checkbox: React.FC<CheckboxProps & React.HTMLAttributes<HTMLFormElement>> = (
-  props: CheckboxProps
-) => {
-  const { children, colorScheme = 'slate', id, ...rest } = props;
-
-  return (
-    <Flex align="center" gap="2">
-      <StyledCheckbox
-        id={id}
-        css={{
-          $$color: `$colors$${colorScheme}11`,
-          $$colorSolid: getContrastingColor(colorScheme),
-          $$bg: `$colors$${colorScheme}3`,
-          $$bgHover: `$colors$${colorScheme}4`,
-          $$bgSolid: `$colors$${colorScheme}9`,
-          $$bgSolidHover: `$colors$${colorScheme}11`,
-          $$border: `$colors$${colorScheme}8`,
-          $$borderHover: `$colors$${colorScheme}9`,
-        }}
-        aria-disabled={ariaAttr(props.disabled)}
-        {...rest}
-      >
-        <StyledIndicator>
-          {props.checked === 'indeterminate' && <HorizontalLineIcon />}
-          {props.checked !== 'indeterminate' && <CheckIcon />}
-        </StyledIndicator>
-      </StyledCheckbox>
-      <Label htmlFor={id}>{children}</Label>
-    </Flex>
-  );
-};
+export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
+  ({ children, colorScheme = 'slate', id, disabled, checked, css, ...rest }, ref) => {
+    return (
+      <Flex align="center" gap="2">
+        <StyledCheckbox
+          ref={ref}
+          id={id}
+          css={{
+            $$color: `$colors$${colorScheme}11`,
+            $$colorSolid: getContrastingColor(colorScheme),
+            $$bg: `$colors$${colorScheme}3`,
+            $$bgHover: `$colors$${colorScheme}4`,
+            $$bgSolid: `$colors$${colorScheme}9`,
+            $$bgSolidHover: `$colors$${colorScheme}11`,
+            $$border: `$colors$${colorScheme}8`,
+            $$borderHover: `$colors$${colorScheme}9`,
+            ...css,
+          }}
+          aria-disabled={ariaAttr(disabled)}
+          {...rest}
+        >
+          <StyledIndicator>
+            {checked === 'indeterminate' && <HorizontalLineIcon />}
+            {checked !== 'indeterminate' && <CheckIcon />}
+          </StyledIndicator>
+        </StyledCheckbox>
+        <Label htmlFor={id}>{children}</Label>
+      </Flex>
+    );
+  }
+);

@@ -222,7 +222,7 @@ type IconButtonComponent = <C extends React.ElementType = typeof IconButtonBase>
 
 export const IconButton: IconButtonComponent = React.forwardRef(
   <C extends React.ElementType = typeof IconButtonBase>(
-    { as, children, colorScheme = 'slate', disabled, variant, ...rest }: IconButtonProps<C>,
+    { as, children, colorScheme = 'slate', disabled, variant, css, ...rest }: IconButtonProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
     const Component = as || IconButtonBase;
@@ -265,6 +265,7 @@ export const IconButton: IconButtonComponent = React.forwardRef(
                 ? 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8'
                 : `inset 0px 0px 0px 1px $colors$${colorScheme}8, 0px 0px 0px 1px $colors$${colorScheme}8`,
           },
+          ...css,
         }}
         variant={variant}
         aria-disabled={ariaAttr(disabled)}

@@ -128,14 +128,15 @@ export interface TypographyProps extends TypographyBaseProps {
   colorScheme?: ColorScheme;
 }
 
-export const Typography = ({ colorScheme = 'slate', ...props }: TypographyProps) => {
+export const Typography = ({ colorScheme = 'slate', css, ...rest }: TypographyProps) => {
   return (
     <TypographyBase
       css={{
         $$loColor: `$colors$${colorScheme}11`,
         $$hiColor: `$colors$${colorScheme}12`,
+        ...css,
       }}
-      {...props}
+      {...rest}
     />
   );
 };
