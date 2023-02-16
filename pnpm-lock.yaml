@@ -38,6 +38,7 @@ importers:
     specifiers:
       '@radix-ui/colors': 0.1.8
       '@radix-ui/react-aspect-ratio': 1.0.1
+      '@radix-ui/react-avatar': 1.0.1
       '@radix-ui/react-checkbox': 1.0.1
       '@radix-ui/react-dialog': 1.0.2
       '@radix-ui/react-dropdown-menu': 2.0.1
@@ -55,6 +56,7 @@ importers:
     dependencies:
       '@radix-ui/colors': 0.1.8
       '@radix-ui/react-aspect-ratio': 1.0.1_react@17.0.2
+      '@radix-ui/react-avatar': 1.0.1_react@17.0.2
       '@radix-ui/react-checkbox': 1.0.1_react@17.0.2
       '@radix-ui/react-dialog': 1.0.2_z7w6vgz62d5pbxpnoxayoqdmly
       '@radix-ui/react-dropdown-menu': 2.0.1_z7w6vgz62d5pbxpnoxayoqdmly
@@ -2909,6 +2911,20 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.13
       '@radix-ui/react-primitive': 1.0.1_react@17.0.2
+      react: 17.0.2
+    dev: false
+
+  /@radix-ui/react-avatar/1.0.1_react@17.0.2:
+    resolution: {integrity: sha512-GfUgw4i/OWmb76bmM9qLnedYOsXhPvRXL6xaxyZzhiIVEwo2KbmxTaSQv5r1Oh8nNqBs1vfYPGuVmhEfpxpnvw==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@radix-ui/react-context': 1.0.0_react@17.0.2
+      '@radix-ui/react-primitive': 1.0.1_react@17.0.2
+      '@radix-ui/react-use-callback-ref': 1.0.0_react@17.0.2
+      '@radix-ui/react-use-layout-effect': 1.0.0_react@17.0.2
       react: 17.0.2
     dev: false
 
