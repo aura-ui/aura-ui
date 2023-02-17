@@ -12,22 +12,14 @@ type ButtonBaseProps = ComponentProps<typeof ButtonBase>;
 
 const ButtonBase = styled('button', {
   // resets
+  include: 'buttonReset',
   all: 'unset',
-  alignItems: 'center',
-  boxSizing: 'border-box',
-  userSelect: 'none',
   '&::before': {
     boxSizing: 'border-box',
   },
   '&::after': {
     boxSizing: 'border-box',
   },
-
-  // custom reset
-  display: 'inline-flex',
-  justifyContent: 'center',
-  lineHeight: '1',
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
   // custom
   fontFamily: 'inherit',

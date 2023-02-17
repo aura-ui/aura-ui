@@ -321,7 +321,17 @@ export const { styled, css, config, theme, createTheme, reset, getCssText, globa
       light: '(prefers-color-scheme: light)',
     },
     utils: {
-      include: mixins(),
+      include: mixins({
+        buttonReset: {
+          alignItems: 'center',
+          justifyContent: 'center',
+          boxSizing: 'border-box',
+          userSelect: 'none',
+          display: 'inline-flex',
+          lineHeight: 1,
+          webKitTapHighlightColor: 'transparent',
+        },
+      }),
       p: (value: PropertyValue<'padding'>) => ({
         padding: value,
       }),
