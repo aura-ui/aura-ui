@@ -1,4 +1,5 @@
 import { createStitches, PropertyValue, ScaleValue, CSS as StitchesCSS } from '@stitches/react';
+import { mixins } from 'stitches-mixins';
 
 import {
   gray,
@@ -320,6 +321,17 @@ export const { styled, css, config, theme, createTheme, reset, getCssText, globa
       light: '(prefers-color-scheme: light)',
     },
     utils: {
+      include: mixins({
+        buttonReset: {
+          alignItems: 'center',
+          justifyContent: 'center',
+          boxSizing: 'border-box',
+          userSelect: 'none',
+          display: 'inline-flex',
+          lineHeight: 1,
+          webKitTapHighlightColor: 'transparent',
+        },
+      }),
       p: (value: PropertyValue<'padding'>) => ({
         padding: value,
       }),

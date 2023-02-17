@@ -40,7 +40,8 @@
     "@radix-ui/react-radio-group": "1.1.1",
     "@radix-ui/react-separator": "1.0.1",
     "@radix-ui/react-switch": "1.0.1",
-    "@stitches/react": "1.2.8"
+    "@stitches/react": "1.2.8",
+    "stitches-mixins": "^1.0.0"
   },
   "devDependencies": {
     "@radix-ui/react-icons": "^1.1.1",

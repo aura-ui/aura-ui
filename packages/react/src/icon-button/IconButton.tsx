@@ -12,21 +12,13 @@ type IconButtonBaseProps = ComponentProps<typeof IconButtonBase>;
 
 const IconButtonBase = styled('button', {
   // Reset
-  alignItems: 'center',
-  justifyContent: 'center',
+  include: 'buttonReset',
   appearance: 'none',
   borderWidth: 0,
-  boxSizing: 'border-box',
   flexShrink: 0,
   outline: 'none',
   padding: 0,
   textDecoration: 'none',
-  userSelect: 'none',
-
-  // custom reset
-  display: 'inline-flex',
-  WebkitTapHighlightColor: 'transparent',
-  lineHeight: 1,
 
   //custom
   fontFamily: 'inherit',
