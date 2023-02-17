@@ -1,4 +1,5 @@
-import { keyframes, styled } from '../theme';
+import * as React from 'react';
+import { ComponentProps, keyframes, styled } from '../theme';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
 const overlayShow = keyframes({
@@ -16,21 +17,39 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, {
   },
 });
 
-const StyledContent = styled(DialogPrimitive.Content, {
+const StyledDialogContent = styled(DialogPrimitive.Content, {
   br: '$3',
   backgroundColor: '$slate1',
   boxShadow: '0px 0px 33px rgba(0, 0, 0, 0.08)',
   position: 'fixed',
-  top: '30%',
-  left: '47.5%',
-  transform: 'translate(-40%, -40%)',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
   width: '100%',
-  maxWidth: '550px',
+  maxWidth: 550,
   maxHeight: '85vh',
   overflow: 'hidden',
   '&:focus': { outline: 'none' },
   p: '$5',
 });
+
+export type DialogContentProps = ComponentProps<typeof StyledDialogContent> &
+  DialogPrimitive.PortalProps & {
+    portal?: boolean;
+  };
+
+export const DialogContent = React.forwardRef<HTMLDivElement, DialogContentProps>(
+  ({ children, portal = true, forceMount, container, ...props }, ref) => {
+    const Portal = portal ? DialogPrimitive.Portal : React.Fragment;
+    return (
+      <Portal forceMount={forceMount} container={container}>
+        <StyledDialogContent ref={ref} {...props}>
+          {children}
+        </StyledDialogContent>
+      </Portal>
+    );
+  }
+);
 
 const StyledCloseButton = styled(DialogPrimitive.Close, {
   variants: {
@@ -61,5 +80,4 @@ export const DialogPortal = DialogPrimitive.Portal;
 export const DialogTrigger = styled(DialogPrimitive.Trigger);
 export const DialogTitle = styled(DialogPrimitive.Title);
 export const DialogDescription = styled(DialogPrimitive.Description);
-export const DialogContent = StyledContent;
 export const DialogClose = StyledCloseButton;

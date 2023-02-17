@@ -300,7 +300,15 @@ export const { styled, css, config, theme, createTheme, reset, getCssText, globa
         100: '400px',
         120: '480px',
       },
-      shadows: {},
+      shadows: {
+        1: '0px 1px 2px rgba(0, 0, 0, 0.05)',
+        2: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+        3: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+        4: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+        5: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+        6: '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+        inner: 'box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+      },
     },
     media: {
       bp1: '(min-width: 520px)',
@@ -449,6 +457,10 @@ export const { styled, css, config, theme, createTheme, reset, getCssText, globa
       size: (value: PropertyValue<'width'>) => ({
         width: value,
         height: value,
+      }),
+
+      shadow: (value: PropertyValue<'boxShadow'>) => ({
+        boxShadow: value,
       }),
 
       userSelect: (value: PropertyValue<'userSelect'>) => ({
