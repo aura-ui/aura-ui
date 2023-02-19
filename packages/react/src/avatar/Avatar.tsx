@@ -5,10 +5,12 @@ import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { ColorScheme, getContrastingColor } from '../utils';
 import { Center, Flex } from '../layout';
 import { getValidChildren } from '../utils/react-children';
+import { compact } from '../utils/object-utils';
 
 export type AvatarProps = ComponentProps<typeof Avatar>;
 
 export const Avatar = styled(AvatarPrimitive.Root, {
+  position: 'relative',
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -151,8 +153,8 @@ export const AvatarFallback = React.forwardRef<HTMLSpanElement, AvatarFallbackPr
 type AvatarGroupProps = ComponentProps<typeof StyledAvatarGroup> &
   AvatarProps & {
     limit?: number;
-    avatarBorderWidth?: number | string;
-    avatarBorderColor?: string;
+    border?: boolean;
+    borderColor?: string;
   };
 
 const StyledAvatarGroup = styled('div', Flex, {
@@ -165,9 +167,11 @@ const StyledAvatarGroup = styled('div', Flex, {
       firstOnTop: {
         '& span': {
           '&:not(:first-of-type)': {
-            ml: '-$3',
+            mr: '-$3',
           },
         },
+        justifyContent: 'flex-end',
+        flexDirection: 'row-reverse',
       },
       lastOnTop: {
         '& span': {
@@ -175,9 +179,6 @@ const StyledAvatarGroup = styled('div', Flex, {
             mr: '-$3',
           },
         },
-
-        // justifyContent: 'flex-end',
-        flexDirection: 'row-reverse',
       },
     },
   },
@@ -189,7 +190,7 @@ const StyledAvatarGroup = styled('div', Flex, {
 
 export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
   (
-    { children, avatarBorderWidth = '3px', avatarBorderColor = 'inherit', limit, size, ...rest },
+    { children, border, borderColor = 'inherit', limit, size, stacking = 'firstOnTop', ...rest },
     ref
   ) => {
     const validChildren = getValidChildren(children);
@@ -198,16 +199,35 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
 
     const reversedChildren = childrenWithinLimit.reverse();
 
-    const _children = React.Children.map(reversedChildren, (child) => {
-      return React.cloneElement(child as React.ReactElement<AvatarProps>, {
-        css: { boxShadow: `0 0 0 ${avatarBorderWidth} $colors$slate1` },
+    const _children = reversedChildren.map((child, index) => {
+      const firstAvatar = index === 0;
+
+      const childProps = {
         size: size,
-      });
+        css: {
+          mr: firstAvatar ? 0 : '$3',
+          boxShadow: `0 0 0 3px $colors$slate1`,
+        },
+      };
+
+      return React.cloneElement(child, compact(childProps));
     });
+
+    // const _children = React.Children.map(reversedChildren, (child) => {
+    //   return React.cloneElement(child as React.ReactElement<AvatarProps>, {
+    //     css: { boxShadow: `0 0 0 3px $colors$slate1` },
+    //     size: size,
+    //   });
+    // });
     return (
       <StyledAvatarGroup role="group" ref={ref} {...rest}>
+        {stacking === 'firstOnTop' && limit && limit < validChildren.length && (
+          <Avatar size={size} data-avatar="fallback">
+            <AvatarFallback>+{validChildren.length - limit}</AvatarFallback>
+          </Avatar>
+        )}
         {_children}
-        {limit && limit < validChildren.length && (
+        {stacking === 'lastOnTop' && limit && limit < validChildren.length && (
           <Avatar size={size} data-avatar="fallback">
             <AvatarFallback>+{validChildren.length - limit}</AvatarFallback>
           </Avatar>

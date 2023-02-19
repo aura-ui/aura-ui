@@ -83,7 +83,10 @@ export const AvatarGroupDefault = () => (
       <AvatarImage src={AVATAR_URL} alt="" />
     </Avatar>
     <Avatar>
-      <AvatarImage src={AVATAR_URL} alt="" />
+      <AvatarImage
+        src={'https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=300&dpr=2&q=80'}
+        alt=""
+      />
     </Avatar>
     <Avatar>
       <AvatarImage src={AVATAR_URL} alt="" />
