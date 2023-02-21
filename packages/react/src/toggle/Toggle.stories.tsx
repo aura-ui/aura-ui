@@ -47,61 +47,61 @@ export const ColorSchemes = () => (
     }}
     gap="2"
   >
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="tomato">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="tomato">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="red">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="red">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="crimson">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="crimson">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="pink">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="pink">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="plum">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="plum">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="purple">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="purple">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="violet">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="violet">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="indigo">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="indigo">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="blue">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="blue">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="sky">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="sky">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="cyan">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="cyan">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="teal">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="teal">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="mint">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="mint">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="green">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="green">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="grass">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="grass">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="lime">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="lime">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="yellow">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="yellow">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="amber">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="amber">
       <Half2Icon />
     </Toggle>
-    <Toggle aria-labe="Toggle Color Scheme" colorScheme="orange">
+    <Toggle aria-label="Toggle Color Scheme" colorScheme="orange">
       <Half2Icon />
     </Toggle>
   </Flex>
