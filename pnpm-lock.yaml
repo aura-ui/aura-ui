@@ -46,6 +46,7 @@ importers:
       '@radix-ui/react-radio-group': 1.1.1
       '@radix-ui/react-separator': 1.0.1
       '@radix-ui/react-switch': 1.0.1
+      '@radix-ui/react-toast': 1.1.2
       '@stitches/react': 1.2.8
       '@types/react': 17.0.37
       '@types/react-dom': 17.0.11
@@ -62,6 +63,7 @@ importers:
       '@radix-ui/react-radio-group': 1.1.1_react@17.0.2
       '@radix-ui/react-separator': 1.0.1_react@17.0.2
       '@radix-ui/react-switch': 1.0.1_react@17.0.2
+      '@radix-ui/react-toast': 1.1.2_react@17.0.2
       '@stitches/react': 1.2.8_react@17.0.2
     devDependencies:
       '@radix-ui/react-icons': 1.1.1_react@17.0.2
@@ -3263,6 +3265,28 @@ packages:
       react: 17.0.2
     dev: false
 
+  /@radix-ui/react-toast/1.1.2_react@17.0.2:
+    resolution: {integrity: sha512-Kpr4BBYoP0O5A1UeDBmao87UnCMNdAKGNioQH5JzEm6OYTUVGhuDRbOwoZxPwOZ6vsjJHeIpdUrwbiHEB65CCw==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@radix-ui/primitive': 1.0.0
+      '@radix-ui/react-collection': 1.0.1_react@17.0.2
+      '@radix-ui/react-compose-refs': 1.0.0_react@17.0.2
+      '@radix-ui/react-context': 1.0.0_react@17.0.2
+      '@radix-ui/react-dismissable-layer': 1.0.2_react@17.0.2
+      '@radix-ui/react-portal': 1.0.1_react@17.0.2
+      '@radix-ui/react-presence': 1.0.0_react@17.0.2
+      '@radix-ui/react-primitive': 1.0.1_react@17.0.2
+      '@radix-ui/react-use-callback-ref': 1.0.0_react@17.0.2
+      '@radix-ui/react-use-controllable-state': 1.0.0_react@17.0.2
+      '@radix-ui/react-use-layout-effect': 1.0.0_react@17.0.2
+      '@radix-ui/react-visually-hidden': 1.0.1_react@17.0.2
+      react: 17.0.2
+    dev: false
+
   /@radix-ui/react-use-callback-ref/1.0.0_react@17.0.2:
     resolution: {integrity: sha512-GZtyzoHz95Rhs6S63D2t/eqvdFCm7I+yHMLVQheKM7nBD8mbZIt+ct1jz4536MDnaOGKIxynJ8eHTkVGVVkoTg==}
     peerDependencies:
@@ -3327,6 +3351,17 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.13
       '@radix-ui/react-use-layout-effect': 1.0.0_react@17.0.2
+      react: 17.0.2
+    dev: false
+
+  /@radix-ui/react-visually-hidden/1.0.1_react@17.0.2:
+    resolution: {integrity: sha512-K1hJcCMfWfiYUibRqf3V8r5Drpyf7rh44jnrwAbdvI5iCCijilBBeyQv9SKidYNZIopMdCyR9FnIjkHxHN0FcQ==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@radix-ui/react-primitive': 1.0.1_react@17.0.2
       react: 17.0.2
     dev: false
 
