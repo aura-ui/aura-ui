@@ -125,7 +125,7 @@ export const Toggle = React.forwardRef<HTMLButtonElement, ToggleProps>(
 
           // themed active styles
           $$bgSubtleActive: `$colors$${colorScheme}4`,
-          $$colorActive: `$colors$${colorScheme}11`,
+          $$colorActive: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}11`,
 
           // focus
           $$focus: `$colors$${colorScheme}8`,
