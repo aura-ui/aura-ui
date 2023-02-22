@@ -47,6 +47,7 @@ importers:
       '@radix-ui/react-separator': 1.0.1
       '@radix-ui/react-switch': 1.0.1
       '@radix-ui/react-toggle': 1.0.1
+      '@radix-ui/react-toggle-group': 1.0.2
       '@stitches/react': 1.2.8
       '@types/react': 17.0.37
       '@types/react-dom': 17.0.11
@@ -64,6 +65,7 @@ importers:
       '@radix-ui/react-separator': 1.0.1_react@17.0.2
       '@radix-ui/react-switch': 1.0.1_react@17.0.2
       '@radix-ui/react-toggle': 1.0.1_react@17.0.2
+      '@radix-ui/react-toggle-group': 1.0.2_react@17.0.2
       '@stitches/react': 1.2.8_react@17.0.2
     devDependencies:
       '@radix-ui/react-icons': 1.1.1_react@17.0.2
@@ -3262,6 +3264,23 @@ packages:
       '@radix-ui/react-use-controllable-state': 1.0.0_react@17.0.2
       '@radix-ui/react-use-previous': 1.0.0_react@17.0.2
       '@radix-ui/react-use-size': 1.0.0_react@17.0.2
+      react: 17.0.2
+    dev: false
+
+  /@radix-ui/react-toggle-group/1.0.2_react@17.0.2:
+    resolution: {integrity: sha512-Tm5Rn5pdgnr6uexI0cM3X3EZKqYfxlt4iTYx4tBbhSJHtgasgSyXezlHm3tJ5OfSK+1ZIQYD9xV4izifkLuuug==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@radix-ui/primitive': 1.0.0
+      '@radix-ui/react-context': 1.0.0_react@17.0.2
+      '@radix-ui/react-direction': 1.0.0_react@17.0.2
+      '@radix-ui/react-primitive': 1.0.1_react@17.0.2
+      '@radix-ui/react-roving-focus': 1.0.2_react@17.0.2
+      '@radix-ui/react-toggle': 1.0.1_react@17.0.2
+      '@radix-ui/react-use-controllable-state': 1.0.0_react@17.0.2
       react: 17.0.2
     dev: false
 
