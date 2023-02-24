@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled, ComponentProps, CSS } from '../theme';
 import { ColorScheme } from '../utils';
+import { VisuallyHidden } from '../visually-hidden';
 
 type StyledLinkProps = ComponentProps<typeof StyledLink>;
 
@@ -12,6 +13,18 @@ const StyledLink = styled('a', {
   textDecoration: 'none',
   position: 'relative',
   width: 'max-content',
+  alignSelf: 'center',
+  flexShrink: 0,
+  outline: 'none',
+
+  // local color tokens
+  $$loColor: '$colors$blue10',
+  $$hiColor: '$colors$blue11',
+
+  // local motion tokens
+  $$duration: '400ms',
+  $$timingFunction: 'cubic-bezier(.77,0,.175,1)',
+  $$delay: '',
 
   variants: {
     variant: {
@@ -103,9 +116,13 @@ const StyledLink = styled('a', {
     contrast: {
       lo: {
         color: '$$loColor',
+
+        '&:hover': {
+          color: '$$hiColor',
+        },
       },
       hi: {
-        color: '$$loColor',
+        color: '$$hiColor',
       },
     },
   },
@@ -176,7 +193,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
         css={{
           // local color tokens
           $$loColor: `$colors$${colorScheme}10`,
-          $$hiColor: `$colors$${colorScheme}11`,
+          $$hiColor: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}11`,
 
           // local motion properties
           $$duration: duration ? duration : '400ms',
@@ -194,6 +211,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
         {...rest}
       >
         {children}
+        {target === '_blank' && <VisuallyHidden>Opens in a new tab</VisuallyHidden>}
       </StyledLink>
     );
   }

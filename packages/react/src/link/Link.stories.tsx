@@ -51,7 +51,7 @@ export const WithCustomMotionProps = () => (
 );
 
 export const MotionPresets = () => (
-  <Flex direction="column" gap="3">
+  <Flex css={{ width: 'max-content' }} direction="column" gap="3">
     <Link motion={{ preset: 'slide' }} href="#">
       Start to End
     </Link>
