@@ -4,7 +4,9 @@ import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
 import { ariaAttr, ColorScheme, getContrastingColor } from '../utils';
 
 export type ToggleGroupProps = ComponentProps<typeof StyledToggleGroup> &
-  Pick<ToggleGroupItemProps, 'colorScheme' | 'size'>;
+  Pick<ToggleGroupItemProps, 'colorScheme' | 'size'> & {
+    itemVariant?: ToggleGroupItemVariants['variant'];
+  };
 
 export const StyledToggleGroup = styled(ToggleGroupPrimitive.Root, {
   display: 'inline-flex',
@@ -95,10 +97,11 @@ export const StyledToggleGroup = styled(ToggleGroupPrimitive.Root, {
 });
 
 export const ToggleGroup = React.forwardRef<HTMLDivElement, ToggleGroupProps>(
-  ({ size, colorScheme, children: _children, ...rest }, ref) => {
+  ({ size, colorScheme, itemVariant, children: _children, ...rest }, ref) => {
     // TODO - update using `getValidChildren` function once merged
     const children = React.Children.map(_children, (child) => {
       return React.cloneElement(child as React.ReactElement<ToggleGroupItemProps>, {
+        variant: itemVariant,
         colorScheme,
         size,
       });
@@ -211,6 +214,22 @@ const ToggleGroupItemBase = styled(ToggleGroupPrimitive.Item, {
           },
         },
       },
+      ghost: {
+        color: '$$color',
+        backgroundColor: 'transparent',
+
+        '&:hover': {
+          backgroundColor: '$$bgSubtleHover',
+        },
+
+        '&[data-state=on]': {
+          color: '$$ghostColorActive',
+        },
+
+        '&:focus-visible': {
+          boxShadow: '0 0 0 2px $$focus',
+        },
+      },
     },
   },
 
@@ -237,7 +256,8 @@ export const ToggleGroupItem = React.forwardRef<HTMLButtonElement, ToggleGroupIt
 
           // themed active styles
           $$bgSubtleActive: `$colors$${colorScheme}4`,
-          $$colorActive: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}11`,
+          $$colorActive: `$colors$${colorScheme}11`,
+          $$ghostColorActive: `$colors$${colorScheme}12`,
 
           // focus
           $$focus: `$colors$${colorScheme}8`,

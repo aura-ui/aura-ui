@@ -5,7 +5,8 @@ import {
   UnderlineIcon,
 } from '@radix-ui/react-icons';
 import * as React from 'react';
-import { Flex } from '../layout';
+import { Box, Flex } from '../layout';
+import { Typography } from '../typography';
 import { ToggleGroup, ToggleGroupItem } from './ToggleGroup';
 
 export default {
@@ -163,5 +164,63 @@ export const Sizes = () => (
         <UnderlineIcon />
       </ToggleGroupItem>
     </ToggleGroup>
+  </Flex>
+);
+
+export const ItemVariants = () => (
+  <Flex direction="column" gap="5">
+    <Box>
+      <Typography>Subtle</Typography>
+      <ToggleGroup itemVariant="subtle" size="2" type="multiple" aria-label="Toolbar">
+        <ToggleGroupItem value="bold" aria-label="Toggle bold">
+          <FontBoldIcon />
+        </ToggleGroupItem>
+        <ToggleGroupItem value="italic" aria-label="Toggle italic">
+          <FontItalicIcon />
+        </ToggleGroupItem>
+        <ToggleGroupItem value="strikethrough" aria-label="Toggle strikethrough">
+          <StrikethroughIcon />
+        </ToggleGroupItem>
+        <ToggleGroupItem value="underline" aria-label="Toggle underline">
+          <UnderlineIcon />
+        </ToggleGroupItem>
+      </ToggleGroup>
+    </Box>
+
+    <Box>
+      <Typography>Solid</Typography>
+      <ToggleGroup itemVariant="solid" size="2" type="multiple" aria-label="Toolbar">
+        <ToggleGroupItem value="bold" aria-label="Toggle bold">
+          <FontBoldIcon />
+        </ToggleGroupItem>
+        <ToggleGroupItem value="italic" aria-label="Toggle italic">
+          <FontItalicIcon />
+        </ToggleGroupItem>
+        <ToggleGroupItem value="strikethrough" aria-label="Toggle strikethrough">
+          <StrikethroughIcon />
+        </ToggleGroupItem>
+        <ToggleGroupItem value="underline" aria-label="Toggle underline">
+          <UnderlineIcon />
+        </ToggleGroupItem>
+      </ToggleGroup>
+    </Box>
+
+    <Box>
+      <Typography>Ghost</Typography>
+      <ToggleGroup itemVariant="ghost" type="multiple" aria-label="Toolbar">
+        <ToggleGroupItem value="bold" aria-label="Toggle bold">
+          <FontBoldIcon />
+        </ToggleGroupItem>
+        <ToggleGroupItem value="italic" aria-label="Toggle italic">
+          <FontItalicIcon />
+        </ToggleGroupItem>
+        <ToggleGroupItem value="strikethrough" aria-label="Toggle strikethrough">
+          <StrikethroughIcon />
+        </ToggleGroupItem>
+        <ToggleGroupItem value="underline" aria-label="Toggle underline">
+          <UnderlineIcon />
+        </ToggleGroupItem>
+      </ToggleGroup>
+    </Box>
   </Flex>
 );
