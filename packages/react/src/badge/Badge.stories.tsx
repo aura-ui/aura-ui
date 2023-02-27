@@ -39,6 +39,14 @@ export const Sizes = () => (
   </Flex>
 );
 
+export const Weights = () => (
+  <Flex gap="2">
+    <Badge weight="1">Weight 1</Badge>
+    <Badge weight="2">Weight 2</Badge>
+    <Badge weight="3">Weight 3</Badge>
+  </Flex>
+);
+
 export const ColorSchemeSubtle = () => (
   <Flex
     css={{

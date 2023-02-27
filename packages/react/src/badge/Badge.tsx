@@ -68,31 +68,13 @@ export const StyledBadge = styled('span', {
     },
     weight: {
       1: {
-        fontWeight: '$1',
-      },
-      2: {
-        fontWeight: '$2',
-      },
-      3: {
-        fontWeight: '$3',
-      },
-      4: {
         fontWeight: '$4',
       },
-      5: {
+      2: {
         fontWeight: '$5',
       },
-      6: {
+      3: {
         fontWeight: '$6',
-      },
-      7: {
-        fontWeight: '$7',
-      },
-      8: {
-        fontWeight: '$8',
-      },
-      9: {
-        fontWeight: '$9',
       },
     },
     allCaps: {
