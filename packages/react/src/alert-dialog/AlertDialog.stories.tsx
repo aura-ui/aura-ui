@@ -14,7 +14,7 @@ import {
 } from './AlertDialog';
 
 export default {
-  title: 'Components/AlertDialog',
+  title: 'Components/Overlay/AlertDialog',
   component: AlertDialog,
 };
 
