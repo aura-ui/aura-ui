@@ -35,7 +35,7 @@ export const NoUnderline = () => (
 );
 
 export const removeUnderlineWithMotionPreset = () => (
-  <Link variant="removeUnderlineOnHover" motion={{ preset: 'slide' }} href="#">
+  <Link variant="removeUnderlineOnHover" motion={{ preset: 'slideStartEnd' }} href="#">
     Remove underline on hover with motion
   </Link>
 );
@@ -43,7 +43,7 @@ export const removeUnderlineWithMotionPreset = () => (
 export const WithCustomMotionProps = () => (
   <Link
     variant="removeUnderlineOnHover"
-    motion={{ preset: 'slide', duration: 600, delay: 200 }}
+    motion={{ preset: 'slideStartEnd', duration: 600, delay: 200 }}
     href="#"
   >
     Remove underline on hover with motion
@@ -52,17 +52,17 @@ export const WithCustomMotionProps = () => (
 
 export const MotionPresets = () => (
   <Flex css={{ width: 'max-content' }} direction="column" gap="3">
-    <Link motion={{ preset: 'slide' }} href="#">
-      Start to End
+    <Link motion={{ preset: 'slideStartEnd' }} href="#">
+      Slide Start to End
     </Link>
-    <Link motion={{ preset: 'slideReverse' }} href="#">
-      End to Start
+    <Link motion={{ preset: 'slideEndStart' }} href="#">
+      Slide End to Start
     </Link>
-    <Link motion={{ preset: 'fade' }} href="#">
-      Fade
+    <Link motion={{ preset: 'fadeIn' }} href="#">
+      Fade in
     </Link>
-    <Link motion={{ preset: 'fadeReverse' }} href="#">
-      Fade reverse
+    <Link motion={{ preset: 'fadeOut' }} href="#">
+      Fade out
     </Link>
   </Flex>
 );

@@ -17,14 +17,19 @@ const StyledLink = styled('a', {
   flexShrink: 0,
   outline: 'none',
 
-  // local color tokens
+  // default local color tokens
   $$loColor: '$colors$blue10',
   $$hiColor: '$colors$blue11',
 
-  // local motion tokens
+  // default local motion tokens
   $$duration: '400ms',
   $$timingFunction: 'cubic-bezier(.77,0,.175,1)',
   $$delay: '',
+
+  '&:focus': {
+    outlineOffset: 4,
+    outline: '2px solid $colors$blue8',
+  },
 
   variants: {
     variant: {
@@ -76,7 +81,7 @@ const StyledLink = styled('a', {
     },
     // experimental variant
     motionPreset: {
-      slide: {
+      slideStartEnd: {
         '&:after': {
           transformOrigin: 'bottom left',
           transition: 'transform $$duration $$timingFunction $$delay',
@@ -85,7 +90,7 @@ const StyledLink = styled('a', {
           transformOrigin: 'bottom right',
         },
       },
-      slideReverse: {
+      slideEndStart: {
         '&:after': {
           transformOrigin: 'bottom right',
           transition: 'transform $$duration $$timingFunction $$delay',
@@ -94,7 +99,7 @@ const StyledLink = styled('a', {
           transformOrigin: 'bottom left',
         },
       },
-      fade: {
+      fadeIn: {
         '&:after': {
           opacity: 0,
           transition: 'opacity $$duration $$timingFunction $$delay',
@@ -103,7 +108,7 @@ const StyledLink = styled('a', {
           opacity: 1,
         },
       },
-      fadeReverse: {
+      fadeOut: {
         '&:after': {
           opacity: 1,
           transition: 'opacity $$duration $$timingFunction $$delay',
@@ -128,7 +133,7 @@ const StyledLink = styled('a', {
   },
   compoundVariants: [
     {
-      motionPreset: 'slide',
+      motionPreset: 'slideStartEnd',
       variant: 'static',
       css: {
         '&:hover::after': {
@@ -137,7 +142,7 @@ const StyledLink = styled('a', {
       },
     },
     {
-      motionPreset: 'slideReverse',
+      motionPreset: 'slideEndStart',
       variant: 'static',
       css: {
         '&:hover::after': {
