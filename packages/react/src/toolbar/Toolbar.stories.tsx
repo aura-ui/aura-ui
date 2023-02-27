@@ -1,4 +1,12 @@
-import { ViewGridIcon, ViewHorizontalIcon, ViewVerticalIcon } from '@radix-ui/react-icons';
+import {
+  FontBoldIcon,
+  FontItalicIcon,
+  StrikethroughIcon,
+  UnderlineIcon,
+  ViewGridIcon,
+  ViewHorizontalIcon,
+  ViewVerticalIcon,
+} from '@radix-ui/react-icons';
 import * as React from 'react';
 import { Button } from '../button';
 import { Link } from '../link';
@@ -21,20 +29,31 @@ export default {
 
 export const Default = ({ width }: { width: ToolbarProps['width'] }) => (
   <Toolbar width={width} css={{ border: '1px solid $colors$slate6' }}>
-    <Multiple />
+    <ToolbarToggleGroup type="multiple" aria-label="Toolbar">
+      <ToolbarToggleItem value="bold" aria-label="Toggle bold">
+        <FontBoldIcon />
+      </ToolbarToggleItem>
+      <ToolbarToggleItem value="italic" aria-label="Toggle italic">
+        <FontItalicIcon />
+      </ToolbarToggleItem>
+      <ToolbarToggleItem value="strikethrough" aria-label="Toggle strikethrough">
+        <StrikethroughIcon />
+      </ToolbarToggleItem>
+      <ToolbarToggleItem value="underline" aria-label="Toggle underline">
+        <UnderlineIcon />
+      </ToolbarToggleItem>
+    </ToolbarToggleGroup>
     <ToolbarSeparator />
-    <ToolbarToggleGroup type="single" asChild>
-      <ToggleGroup itemVariant="ghost" type="single" aria-label="View Controls">
-        <ToolbarToggleItem value="vertical">
-          <ViewVerticalIcon />
-        </ToolbarToggleItem>
-        <ToolbarToggleItem value="horizontal">
-          <ViewHorizontalIcon />
-        </ToolbarToggleItem>
-        <ToolbarToggleItem value="grid">
-          <ViewGridIcon />
-        </ToolbarToggleItem>
-      </ToggleGroup>
+    <ToolbarToggleGroup itemVariant="ghost" type="single" aria-label="View Controls">
+      <ToolbarToggleItem value="vertical">
+        <ViewVerticalIcon />
+      </ToolbarToggleItem>
+      <ToolbarToggleItem value="horizontal">
+        <ViewHorizontalIcon />
+      </ToolbarToggleItem>
+      <ToolbarToggleItem value="grid">
+        <ViewGridIcon />
+      </ToolbarToggleItem>
     </ToolbarToggleGroup>
     <ToolbarSeparator />
     <ToolbarLink asChild>

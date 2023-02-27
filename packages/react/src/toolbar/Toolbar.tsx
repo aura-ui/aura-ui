@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { styled, ComponentProps, darkTheme } from '../theme';
 import * as ToolbarPrimitive from '@radix-ui/react-toolbar';
-import { ToggleGroup } from '../toggle-group';
-import { ariaAttr, ColorScheme, getContrastingColor } from '../utils';
+import {
+  ariaAttr,
+  ColorScheme,
+  getContrastingColor,
+  toggleGroupStyles,
+  toggleItemStyles,
+} from '../utils';
 
 export type ToolbarProps = ComponentProps<typeof Toolbar>;
 export const Toolbar = styled(ToolbarPrimitive.Root, {
@@ -39,130 +44,39 @@ export const Toolbar = styled(ToolbarPrimitive.Root, {
   },
 });
 
-export type ToolbarToggleGroupProps = ComponentProps<typeof ToolbarToggleGroup>;
-export const ToolbarToggleGroup = styled(ToolbarPrimitive.ToggleGroup);
+export type ToolbarToggleGroupProps = ComponentProps<typeof StyledToolbarToggleGroup> &
+  Pick<ToolbarToggleItemProps, 'colorScheme' | 'size'> & {
+    itemVariant?: ToolbarToggleItemProps['variant'];
+  };
+
+export const StyledToolbarToggleGroup = styled(ToolbarPrimitive.ToggleGroup, {
+  ...toggleGroupStyles,
+});
+
+export const ToolbarToggleGroup = React.forwardRef<HTMLDivElement, ToolbarToggleGroupProps>(
+  ({ size, colorScheme, itemVariant, children: _children, ...rest }, ref) => {
+    // TODO - update using `getValidChildren` function once merged
+    const children = React.Children.map(_children, (child) => {
+      return React.cloneElement(child as React.ReactElement<ToolbarToggleItemProps>, {
+        variant: itemVariant,
+        colorScheme,
+        size,
+      });
+    });
+    return (
+      <StyledToolbarToggleGroup ref={ref} {...rest}>
+        {children}
+      </StyledToolbarToggleGroup>
+    );
+  }
+);
 
 export type ToolbarToggleItemProps = ComponentProps<typeof StyledToolbarToggleItem> & {
   colorScheme?: ColorScheme;
 };
 
 const StyledToolbarToggleItem = styled(ToolbarPrimitive.ToggleItem, {
-  alignItems: 'center',
-  justifyContent: 'center',
-  appearance: 'none',
-  borderWidth: 0,
-  boxSizing: 'border-box',
-  flexShrink: 0,
-  outline: 'none',
-  padding: 0,
-  textDecoration: 'none',
-  userSelect: 'none',
-
-  // custom reset
-  display: 'inline-flex',
-  WebkitTapHighlightColor: 'transparent',
-  lineHeight: 1,
-  br: '$2',
-  ml: 1,
-
-  //custom
-  fontFamily: 'inherit',
-
-  '&[aria-disabled="true"]': {
-    pointerEvents: 'none',
-    opacity: '50%',
-  },
-
-  // --------------------------------------------
-
-  variants: {
-    size: {
-      1: {
-        width: '$7',
-        height: '$7',
-        fontSize: '$1',
-        '& svg': {
-          size: '$3',
-        },
-      },
-      2: {
-        width: '$9',
-        height: '$9',
-        fontSize: '$3',
-        '& svg': {
-          size: '$4',
-        },
-      },
-      3: {
-        width: '$11',
-        height: '$11',
-        fontSize: '$5',
-        '& svg': {
-          size: '$4',
-        },
-      },
-    },
-    variant: {
-      subtle: {
-        color: '$$color',
-        backgroundColor: 'transparent',
-
-        '&:hover': {
-          backgroundColor: '$$bgSubtleHover',
-        },
-
-        '&[data-state=on]': {
-          backgroundColor: '$$bgSubtleActive',
-          color: '$$colorActive',
-        },
-
-        '&:focus-visible': {
-          boxShadow: '0 0 0 2px $$focus',
-        },
-      },
-      solid: {
-        backgroundColor: 'transparent',
-        color: '$$colorSolid',
-
-        '&:hover': {
-          backgroundColor: '$$bgSolidHover',
-        },
-
-        '&[data-state=on]': {
-          backgroundColor: '$$bgSolidActive',
-          color: '$$colorSolidActive',
-        },
-
-        '&:focus-visible': {
-          boxShadow: '0 0 0 2px $colors$blue8',
-          [`.${darkTheme} &`]: {
-            boxShadow: '0 0 0 2px $colors$blue10',
-          },
-        },
-      },
-      ghost: {
-        color: '$$color',
-        backgroundColor: 'transparent',
-
-        '&:hover': {
-          backgroundColor: '$$bgSubtleHover',
-        },
-
-        '&[data-state=on]': {
-          color: '$$ghostColorActive',
-        },
-
-        '&:focus-visible': {
-          boxShadow: '0 0 0 2px $$focus',
-        },
-      },
-    },
-  },
-
-  defaultVariants: {
-    size: '2',
-    variant: 'subtle',
-  },
+  ...toggleItemStyles,
 });
 
 export const ToolbarToggleItem = React.forwardRef<HTMLButtonElement, ToolbarToggleItemProps>(
@@ -178,11 +92,11 @@ export const ToolbarToggleItem = React.forwardRef<HTMLButtonElement, ToolbarTogg
 
           // themed hover styles
           $$bgHover: `$colors$${colorScheme}4`,
-          $$bgSubtleHover: `$colors$${colorScheme}3`,
+          $$bgSubtleHover: `$colors$${colorScheme}4`,
 
           // themed active styles
-          $$bgSubtleActive: `$colors$${colorScheme}4`,
-          $$colorActive: `$colors$${colorScheme}11`,
+          $$bgSubtleActive: `$colors$${colorScheme}3`,
+          $$colorActive: colorScheme === 'slate' ? `$colors$slate12` : `$colors$${colorScheme}11`,
           $$ghostColorActive: `$colors$${colorScheme}12`,
 
           // focus

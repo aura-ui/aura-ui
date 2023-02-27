@@ -1,117 +1,19 @@
 import * as React from 'react';
 import { styled, ComponentProps, darkTheme } from '../theme';
 import * as TogglePrimitive from '@radix-ui/react-toggle';
-import { ColorScheme, ariaAttr, getContrastingColor } from '../utils';
+import { ColorScheme, ariaAttr, getContrastingColor, toggleItemStyles } from '../utils';
 
-export type ToggleProps = ComponentProps<typeof ToggleBase> & {
+export type ToggleProps = ComponentProps<typeof StyledToggle> & {
   colorScheme?: ColorScheme;
 };
-const ToggleBase = styled(TogglePrimitive.Root, {
-  alignItems: 'center',
-  justifyContent: 'center',
-  appearance: 'none',
-  borderWidth: 0,
-  boxSizing: 'border-box',
-  flexShrink: 0,
-  outline: 'none',
-  padding: 0,
-  textDecoration: 'none',
-  userSelect: 'none',
-
-  // custom reset
-  display: 'inline-flex',
-  WebkitTapHighlightColor: 'transparent',
-  lineHeight: 1,
-
-  //custom
-  fontFamily: 'inherit',
-  br: '$2',
-
-  '&[aria-disabled="true"]': {
-    pointerEvents: 'none',
-    opacity: '50%',
-  },
-
-  // --------------------------------------------
-
-  variants: {
-    size: {
-      1: {
-        width: '$7',
-        height: '$7',
-        fontSize: '$1',
-        '& svg': {
-          size: '$3',
-        },
-      },
-      2: {
-        width: '$9',
-        height: '$9',
-        fontSize: '$3',
-        '& svg': {
-          size: '$4',
-        },
-      },
-      3: {
-        width: '$11',
-        height: '$11',
-        fontSize: '$5',
-        '& svg': {
-          size: '$4',
-        },
-      },
-    },
-    variant: {
-      subtle: {
-        color: '$$color',
-        backgroundColor: 'transparent',
-
-        '&:hover': {
-          backgroundColor: '$$bgSubtleHover',
-        },
-
-        '&[data-state=on]': {
-          backgroundColor: '$$bgSubtleActive',
-          color: '$$colorActive',
-        },
-
-        '&:focus-visible': {
-          boxShadow: '0 0 0 2px $$focus',
-        },
-      },
-      solid: {
-        backgroundColor: 'transparent',
-        color: '$$colorSolid',
-
-        '&:hover': {
-          backgroundColor: '$$bgSolidHover',
-        },
-
-        '&[data-state=on]': {
-          backgroundColor: '$$bgSolidActive',
-          color: '$$colorSolidActive',
-        },
-
-        '&:focus-visible': {
-          boxShadow: '0 0 0 2px $colors$blue8',
-          [`.${darkTheme} &`]: {
-            boxShadow: '0 0 0 2px $colors$blue10',
-          },
-        },
-      },
-    },
-  },
-
-  defaultVariants: {
-    size: '2',
-    variant: 'subtle',
-  },
+const StyledToggle = styled(TogglePrimitive.Root, {
+  ...toggleItemStyles,
 });
 
 export const Toggle = React.forwardRef<HTMLButtonElement, ToggleProps>(
   ({ children, colorScheme = 'slate', css, variant, disabled, ...rest }, ref) => {
     return (
-      <ToggleBase
+      <StyledToggle
         ref={ref}
         css={{
           // themed default styles
@@ -151,7 +53,7 @@ export const Toggle = React.forwardRef<HTMLButtonElement, ToggleProps>(
         {...rest}
       >
         {children}
-      </ToggleBase>
+      </StyledToggle>
     );
   }
 );
