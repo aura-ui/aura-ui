@@ -37,6 +37,7 @@ importers:
   packages/react:
     specifiers:
       '@radix-ui/colors': 0.1.8
+      '@radix-ui/react-alert-dialog': 1.0.2
       '@radix-ui/react-aspect-ratio': 1.0.1
       '@radix-ui/react-checkbox': 1.0.1
       '@radix-ui/react-dialog': 1.0.2
@@ -59,6 +60,7 @@ importers:
       typescript: 4.7.4
     dependencies:
       '@radix-ui/colors': 0.1.8
+      '@radix-ui/react-alert-dialog': 1.0.2_z7w6vgz62d5pbxpnoxayoqdmly
       '@radix-ui/react-aspect-ratio': 1.0.1_react@17.0.2
       '@radix-ui/react-checkbox': 1.0.1_react@17.0.2
       '@radix-ui/react-dialog': 1.0.2_z7w6vgz62d5pbxpnoxayoqdmly
@@ -2898,6 +2900,24 @@ packages:
     resolution: {integrity: sha512-3e7rn8FDMin4CgeL7Z/49smCA3rFYY3Ha2rUQ7HRWFadS5iCRw08ZgVT1LaNTCNqgvrUiyczLflrVrF0SRQtNA==}
     dependencies:
       '@babel/runtime': 7.20.13
+    dev: false
+
+  /@radix-ui/react-alert-dialog/1.0.2_z7w6vgz62d5pbxpnoxayoqdmly:
+    resolution: {integrity: sha512-0MtxV53FaEEBOKRgyLnEqHZKKDS5BldQ9oUBsKVXWI5FHbl2jp35qs+0aJET+K5hJDsc40kQUzP7g+wC7tqrqA==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@radix-ui/primitive': 1.0.0
+      '@radix-ui/react-compose-refs': 1.0.0_react@17.0.2
+      '@radix-ui/react-context': 1.0.0_react@17.0.2
+      '@radix-ui/react-dialog': 1.0.2_z7w6vgz62d5pbxpnoxayoqdmly
+      '@radix-ui/react-primitive': 1.0.1_react@17.0.2
+      '@radix-ui/react-slot': 1.0.1_react@17.0.2
+      react: 17.0.2
+    transitivePeerDependencies:
+      - '@types/react'
     dev: false
 
   /@radix-ui/react-arrow/1.0.1_react@17.0.2:
