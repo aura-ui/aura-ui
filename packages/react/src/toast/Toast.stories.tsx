@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Button } from '../button';
-import { Toast, ToastProvider, ToastViewport } from './Toast';
+import { Flex } from '../layout';
+import { ToastProvider } from './Provider';
+import { Toast, ToastProps } from './Toast';
 
 export default {
   title: 'Components/Feedback/Toast',
@@ -24,7 +26,6 @@ export const Default = () => {
         title="Account created"
         description="We've created your account for you."
       />
-      <ToastViewport />
     </Provider>
   );
 };
@@ -44,7 +45,6 @@ export const WithColorScheme = () => {
         colorScheme="green"
         variant="solid"
       />
-      <ToastViewport />
     </Provider>
   );
 };
@@ -68,7 +68,46 @@ export const WithAction = () => {
           Undo
         </Button>
       </Toast>
-      <ToastViewport />
     </Provider>
   );
 };
+
+const ToastWithPlacement = ({
+  placement,
+  children,
+}: Pick<ToastProps, 'placement' | 'children'>) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <Provider>
+      <Button css={{ alignSelf: 'start' }} onClick={() => setIsOpen(true)}>
+        {children}
+      </Button>
+
+      <Toast
+        placement={placement}
+        open={isOpen}
+        onOpenChange={setIsOpen}
+        title="Event created"
+        description="Tuesday, February 21st at 4.00pm"
+        colorScheme="green"
+        actionAltText="Undo create event"
+      >
+        <Button colorScheme="green" size="1">
+          Undo
+        </Button>
+      </Toast>
+    </Provider>
+  );
+};
+
+export const Placement = () => (
+  <Flex direction="column" gap="3">
+    <ToastWithPlacement placement="topLeft">Top Left</ToastWithPlacement>
+    <ToastWithPlacement placement="topCenter">Top Center</ToastWithPlacement>
+    <ToastWithPlacement placement="topRight">Top Right</ToastWithPlacement>
+    <ToastWithPlacement placement="bottomRight">Bottom Right</ToastWithPlacement>
+    <ToastWithPlacement placement="bottomCenter">Bottom Center</ToastWithPlacement>
+    <ToastWithPlacement placement="bottomLeft">Bottom Left</ToastWithPlacement>
+  </Flex>
+);
