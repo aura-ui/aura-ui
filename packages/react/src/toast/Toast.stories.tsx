@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from '../button';
-import { Flex } from '../layout';
+import { Center, Flex } from '../layout';
 import { ToastProvider } from './Provider';
 import { Toast, ToastProps } from './Toast';
 
@@ -80,7 +80,7 @@ const ToastWithPlacement = ({
 
   return (
     <Provider>
-      <Button css={{ alignSelf: 'start' }} onClick={() => setIsOpen(true)}>
+      <Button css={{ alignSelf: 'center' }} onClick={() => setIsOpen(true)}>
         {children}
       </Button>
 
@@ -102,12 +102,14 @@ const ToastWithPlacement = ({
 };
 
 export const Placement = () => (
-  <Flex direction="column" gap="3">
-    <ToastWithPlacement placement="topLeft">Top Left</ToastWithPlacement>
-    <ToastWithPlacement placement="topCenter">Top Center</ToastWithPlacement>
-    <ToastWithPlacement placement="topRight">Top Right</ToastWithPlacement>
-    <ToastWithPlacement placement="bottomRight">Bottom Right</ToastWithPlacement>
-    <ToastWithPlacement placement="bottomCenter">Bottom Center</ToastWithPlacement>
-    <ToastWithPlacement placement="bottomLeft">Bottom Left</ToastWithPlacement>
-  </Flex>
+  <Center css={{ height: '100%' }}>
+    <Flex direction="column" gap="3">
+      <ToastWithPlacement placement="topLeft">Top Left</ToastWithPlacement>
+      <ToastWithPlacement placement="topCenter">Top Center</ToastWithPlacement>
+      <ToastWithPlacement placement="topRight">Top Right</ToastWithPlacement>
+      <ToastWithPlacement placement="bottomRight">Bottom Right</ToastWithPlacement>
+      <ToastWithPlacement placement="bottomCenter">Bottom Center</ToastWithPlacement>
+      <ToastWithPlacement placement="bottomLeft">Bottom Left</ToastWithPlacement>
+    </Flex>
+  </Center>
 );
