@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Flex } from '../layout';
-import { Avatar, AvatarFallback, AvatarImage, AvatarGroup } from './Avatar';
+import { Typography } from '../typography';
+import { Avatar, AvatarFallback, AvatarImage, AvatarGroup, AvatarGroupProps } from './Avatar';
 
 export default {
   title: 'Components/Media/Avatar',
@@ -71,8 +72,44 @@ export const FallbackSizes = () => (
   </Flex>
 );
 
-export const AvatarGroupDefault = () => (
-  <AvatarGroup limit={4}>
+export const AvatarGroupDefault = ({ stacking }: Pick<AvatarGroupProps, 'stacking'>) => (
+  <AvatarGroup stacking={stacking} limit={4}>
+    <Avatar>
+      <AvatarImage src={AVATAR_URL} alt="" />
+    </Avatar>
+    <Avatar>
+      <AvatarImage src={AVATAR_URL} alt="" />
+    </Avatar>
+    <Avatar>
+      <AvatarImage src={AVATAR_URL} alt="" />
+    </Avatar>
+    <Avatar>
+      <AvatarImage
+        src={'https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=300&dpr=2&q=80'}
+        alt=""
+      />
+    </Avatar>
+    <Avatar>
+      <AvatarImage src={AVATAR_URL} alt="" />
+    </Avatar>
+  </AvatarGroup>
+);
+
+export const Stacking = () => (
+  <Flex direction="column" gap="10">
+    <Flex direction="column" gap="1">
+      <Typography>First on top</Typography>
+      <AvatarGroupDefault />
+    </Flex>
+    <Flex direction="column" gap="1">
+      <Typography>Last on top</Typography>
+      <AvatarGroupDefault stacking="lastOnTop" />
+    </Flex>
+  </Flex>
+);
+
+export const InteractiveIndicator = () => (
+  <AvatarGroup indicatorOnClick={() => alert('Hello, world!')} indicatorInteractive limit={4}>
     <Avatar>
       <AvatarImage src={AVATAR_URL} alt="" />
     </Avatar>

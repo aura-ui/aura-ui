@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { styled, ComponentProps } from '../theme';
+import { styled, ComponentProps, css } from '../theme';
 
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { ColorScheme, getContrastingColor } from '../utils';
-import { Center, Flex } from '../layout';
+import { Flex } from '../layout';
 import { getValidChildren } from '../utils/react-children';
 import { compact } from '../utils/object-utils';
 
@@ -97,14 +97,19 @@ type AvatarFallbackProps = ComponentProps<typeof StyledFallback> & {
   colorScheme?: ColorScheme;
 };
 
-const StyledFallback = styled(AvatarPrimitive.Fallback, {
+const avatarFallbackStyles = css({
+  userSelect: 'none',
   width: '100%',
   height: '100%',
+  fontFamily: 'inherit',
 
   $$subtleBg: '$colors$slate3',
   $$subtleColor: '$colors$slate11',
+  $$subtleBgHover: '$colors$slate4',
+  $$subtleBgActive: '$colors$slate5',
 
   $$solidBg: '$colors$slate9',
+  $$solidBgHover: '$colors$slate10',
   $$solidColor: 'white',
 
   variants: {
@@ -122,11 +127,39 @@ const StyledFallback = styled(AvatarPrimitive.Fallback, {
         placeItems: 'center',
       },
     },
+    interactive: {
+      true: {},
+    },
   },
+  compoundVariants: [
+    {
+      variant: 'subtle',
+      interactive: true,
+      css: {
+        '&:hover': {
+          backgroundColor: '$$subtleBgHover',
+        },
+        '&:active': {
+          backgroundColor: '$$subtleBgActive',
+        },
+      },
+    },
+    {
+      variant: 'solid',
+      interactive: true,
+      css: {
+        '&:hover': {
+          backgroundColor: '$$solidBgHover',
+        },
+      },
+    },
+  ],
   defaultVariants: {
     variant: 'subtle',
   },
 });
+
+const StyledFallback = styled(AvatarPrimitive.Fallback, avatarFallbackStyles);
 
 export const AvatarFallback = React.forwardRef<HTMLSpanElement, AvatarFallbackProps>(
   ({ colorScheme = 'slate', css, children, ...rest }, ref) => {
@@ -137,8 +170,11 @@ export const AvatarFallback = React.forwardRef<HTMLSpanElement, AvatarFallbackPr
         css={{
           $$subtleBg: `$colors$${colorScheme}3`,
           $$subtleColor: `$colors$${colorScheme}11`,
+          $$subtleBgHover: `$colors$${colorScheme}4`,
+          $$subtleBgActive: `$colors$${colorScheme}5`,
 
           $$solidBg: `$colors$${colorScheme}9`,
+          $$solidBgHover: `$colors$${colorScheme}10`,
           $$solidColor: getContrastingColor(colorScheme),
           ...css,
         }}
@@ -149,13 +185,6 @@ export const AvatarFallback = React.forwardRef<HTMLSpanElement, AvatarFallbackPr
     );
   }
 );
-
-type AvatarGroupProps = ComponentProps<typeof StyledAvatarGroup> &
-  AvatarProps & {
-    limit?: number;
-    border?: boolean;
-    borderColor?: string;
-  };
 
 const StyledAvatarGroup = styled('div', Flex, {
   //resets
@@ -188,48 +217,109 @@ const StyledAvatarGroup = styled('div', Flex, {
   },
 });
 
+export type AvatarGroupProps = ComponentProps<typeof StyledAvatarGroup> &
+  AvatarProps & {
+    limit?: number;
+    border?: boolean;
+    borderColor?: string;
+    borderWidth?: string | number;
+    indicator?: boolean;
+    indicatorVariant?: AvatarFallbackProps['variant'];
+    indicatorColorScheme?: ColorScheme;
+    indicatorOnClick?: () => void;
+    indicatorInteractive?: boolean;
+  };
+
 export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
   (
-    { children, border, borderColor = 'inherit', limit, size, stacking = 'firstOnTop', ...rest },
+    {
+      children,
+      border,
+      borderColor = '$colors$slate1',
+      borderWidth = 2,
+      indicator = true,
+      indicatorVariant = 'subtle',
+      indicatorColorScheme = 'slate',
+      indicatorInteractive,
+      indicatorOnClick,
+      limit,
+      size,
+      stacking = 'firstOnTop',
+      ...rest
+    },
     ref
   ) => {
     const validChildren = getValidChildren(children);
 
     const childrenWithinLimit = limit ? validChildren.slice(0, limit) : validChildren;
 
-    const reversedChildren = childrenWithinLimit.reverse();
+    const reversedChildren =
+      stacking === 'firstOnTop' ? childrenWithinLimit.reverse() : childrenWithinLimit;
 
     const _children = reversedChildren.map((child, index) => {
       const firstAvatar = index === 0;
+
+      const _borderWidth =
+        typeof borderWidth === 'number' ? String(borderWidth) + 'px' : borderWidth;
 
       const childProps = {
         size: size,
         css: {
           mr: firstAvatar ? 0 : '$3',
-          boxShadow: `0 0 0 3px $colors$slate1`,
+          boxShadow: `0 0 0 ${_borderWidth} ${borderColor}`,
         },
       };
 
       return React.cloneElement(child, compact(childProps));
     });
 
-    // const _children = React.Children.map(reversedChildren, (child) => {
-    //   return React.cloneElement(child as React.ReactElement<AvatarProps>, {
-    //     css: { boxShadow: `0 0 0 3px $colors$slate1` },
-    //     size: size,
-    //   });
-    // });
     return (
-      <StyledAvatarGroup role="group" ref={ref} {...rest}>
-        {stacking === 'firstOnTop' && limit && limit < validChildren.length && (
+      <StyledAvatarGroup stacking={stacking} role="group" ref={ref} {...rest}>
+        {stacking === 'firstOnTop' && indicator && limit && limit < validChildren.length && (
           <Avatar size={size} data-avatar="fallback">
-            <AvatarFallback>+{validChildren.length - limit}</AvatarFallback>
+            <StyledFallback
+              as={indicatorInteractive ? 'button' : undefined}
+              onClick={indicatorOnClick}
+              interactive={indicatorInteractive}
+              variant={indicatorVariant}
+              css={{
+                border: 'none',
+                $$subtleBg: `$colors$${indicatorColorScheme}3`,
+                $$subtleColor: `$colors$${indicatorColorScheme}11`,
+                $$subtleBgHover: `$colors$${indicatorColorScheme}4`,
+                $$subtleBgActive: `$colors$${indicatorColorScheme}5`,
+
+                $$solidBg: `$colors$${indicatorColorScheme}9`,
+                $$solidBgHover: `$colors$${indicatorColorScheme}10`,
+                $$solidColor: getContrastingColor(indicatorColorScheme),
+              }}
+            >
+              +{validChildren.length - limit}
+            </StyledFallback>
           </Avatar>
         )}
         {_children}
-        {stacking === 'lastOnTop' && limit && limit < validChildren.length && (
+        {stacking === 'lastOnTop' && indicator && limit && limit < validChildren.length && (
           <Avatar size={size} data-avatar="fallback">
-            <AvatarFallback>+{validChildren.length - limit}</AvatarFallback>
+            <StyledFallback
+              as={indicatorInteractive ? 'button' : undefined}
+              onClick={indicatorOnClick}
+              interactive={indicatorInteractive}
+              variant={indicatorVariant}
+              css={{
+                border: 'none',
+                $$subtleBg: `$colors$${indicatorColorScheme}3`,
+                $$subtleColor: `$colors$${indicatorColorScheme}11`,
+                $$subtleBgHover: `$colors$${indicatorColorScheme}4`,
+                $$subtleBgActive: `$colors$${indicatorColorScheme}5`,
+
+                $$solidBg: `$colors$${indicatorColorScheme}9`,
+                $$solidBgHover: `$colors$${indicatorColorScheme}10`,
+                $$solidColor: getContrastingColor(indicatorColorScheme),
+              }}
+            >
+              +{validChildren.length - limit}
+            </StyledFallback>
           </Avatar>
         )}
       </StyledAvatarGroup>
