@@ -11,6 +11,12 @@ export const Kbd = styled('kbd', {
   justifyContent: 'center',
   userSelect: 'none',
 
+  '&:has(kbd)': {
+    backgroundColor: 'transparent',
+    p: 0,
+    gap: '$1',
+  },
+
   variants: {
     size: {
       1: {
@@ -23,7 +29,7 @@ export const Kbd = styled('kbd', {
       },
       2: {
         fontSize: '$2',
-        lineHeight: '$2',
+        lineHeight: '$1',
         width: 'max-content',
         py: '$1',
         px: '$2',
@@ -50,14 +56,16 @@ export const Kbd = styled('kbd', {
     shadow: {
       1: {
         shadow: '$1',
-        border: '1px solid $slate6',
       },
       2: {
         shadow: '$2',
-        border: '1px solid $slate6',
       },
       3: {
         shadow: '$3',
+      },
+    },
+    border: {
+      true: {
         border: '1px solid $slate6',
       },
     },
@@ -65,16 +73,16 @@ export const Kbd = styled('kbd', {
   compoundVariants: [
     {
       variant: 'ghost',
-      size: '2',
+      size: '1',
       css: {
-        p: 2,
+        p: 0,
       },
     },
     {
       variant: 'ghost',
       size: '2',
       css: {
-        p: 2,
+        p: 0,
       },
     },
   ],

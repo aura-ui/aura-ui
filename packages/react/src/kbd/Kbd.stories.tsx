@@ -3,7 +3,7 @@ import { Flex } from '../layout';
 import { Kbd } from './Kbd';
 
 export default {
-  title: 'Components/Kbd',
+  title: 'Components/Layout/Kbd',
   component: Kbd,
 };
 
@@ -42,22 +42,56 @@ export const Variants = () => (
   </Flex>
 );
 
+export const WithBorder = () => (
+  <Flex gap="2">
+    <Kbd border>⌘</Kbd>
+    <Kbd border>Alt</Kbd>
+  </Flex>
+);
+
 export const WithShadows = () => (
-  <Flex direction="column" gap="2">
-    <Flex gap="2">
+  <Flex direction="column" gap="5">
+    <Flex gap="2" align="center">
       Shadow 1<Kbd shadow="1">⌘</Kbd>
-      <Kbd shadow="1">⇧</Kbd>
-      <Kbd shadow="1">A</Kbd>
+      <Kbd border shadow="1">
+        ⇧
+      </Kbd>
+      <Kbd border shadow="1">
+        A
+      </Kbd>
     </Flex>
-    <Flex gap="2">
+    <Flex gap="2" align="center">
       Shadow 2<Kbd shadow="2">⌘</Kbd>
-      <Kbd shadow="2">⇧</Kbd>
-      <Kbd shadow="2">A</Kbd>
+      <Kbd border shadow="2">
+        ⇧
+      </Kbd>
+      <Kbd border shadow="2">
+        A
+      </Kbd>
     </Flex>
-    <Flex gap="2">
+    <Flex gap="2" align="center">
       Shadow 3<Kbd shadow="3">⌘</Kbd>
-      <Kbd shadow="3">⇧</Kbd>
-      <Kbd shadow="3">A</Kbd>
+      <Kbd border shadow="3">
+        ⇧
+      </Kbd>
+      <Kbd border shadow="3">
+        A
+      </Kbd>
     </Flex>
+  </Flex>
+);
+
+export const NestedKbd = () => (
+  <Flex direction="column" gap="5">
+    <Kbd>
+      <Kbd variant="ghost">M</Kbd>
+      then
+      <Kbd variant="ghost">B</Kbd>
+    </Kbd>
+    <Kbd>
+      <Kbd>M</Kbd>
+      then
+      <Kbd>B</Kbd>
+    </Kbd>
   </Flex>
 );
