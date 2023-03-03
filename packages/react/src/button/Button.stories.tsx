@@ -144,6 +144,6 @@ export const WithIcon = () => {
 
 export const LinkButton = () => (
   <Button as="a" href="#">
-    Link
+    Link Button
   </Button>
 );
