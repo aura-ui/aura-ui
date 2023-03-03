@@ -91,3 +91,20 @@ export const WithCustomRadiusFlushed = () => (
     <Button>Button</Button>
   </ButtonGroup>
 );
+
+export const Direction = () => (
+  <Flex direction="column" gap="5">
+    <ButtonGroup>
+      <Button>Row</Button>
+      <Button>Row</Button>
+      <Button>Row</Button>
+      <Button>Row</Button>
+    </ButtonGroup>
+    <ButtonGroup direction="column">
+      <Button>Column</Button>
+      <Button>Column</Button>
+      <Button>Column</Button>
+      <Button>Column</Button>
+    </ButtonGroup>
+  </Flex>
+);

@@ -159,7 +159,7 @@ const ButtonBase = styled('button', {
         },
 
         '&:focus-visible': {
-          boxShadow: '0 0 0 2px $$focusSolid',
+          boxShadow: '0 0 0 2px $$focus',
         },
       },
       ghost: {
@@ -270,10 +270,6 @@ export const Button: ButtonComponent = React.forwardRef(
           // themed solid active styles
           $$bgSolidActive: `$colors$${colorScheme}10`,
 
-          '&:focus-visible': {
-            boxShadow: '0 0 0 2px $$focus',
-          },
-
           //focus styling
           '&:focus:not(&[aria-disabled="true"])': {
             boxShadow:
@@ -301,18 +297,17 @@ export type ButtonGroupProps = ComponentProps<typeof StyledButtonGroup> & {
 };
 export const StyledButtonGroup = styled('div', {
   display: 'flex',
-  alignItems: 'center',
-  zIndex: 0,
-
   $$radius: '$2',
 
   variants: {
     direction: {
       row: {
         flexDirection: 'row',
+        alignItems: 'center',
       },
       column: {
         flexDirection: 'column',
+        alignItems: 'start',
       },
     },
     flushed: {
@@ -326,8 +321,9 @@ export const StyledButtonGroup = styled('div', {
 
         '& button': {
           br: 0,
+          zIndex: 0,
 
-          '&:focus': {
+          '&:focus-visible': {
             zIndex: 1,
             boxShadow: 'inset 0 0 0 1px $$focus, 0 0 0 1px $$focus',
           },
@@ -340,7 +336,7 @@ export const StyledButtonGroup = styled('div', {
                 '-1px 0 $$borderHover, inset 0 1px $$borderHover, inset -1px 0 $$borderHover, inset 0 -1px $$borderHover',
             },
 
-            '&:focus': {
+            '&:focus-visible': {
               zIndex: 1,
               boxShadow: 'inset 0 0 0 1px $$focus, 0 0 0 1px $$focus',
             },
@@ -357,7 +353,7 @@ export const StyledButtonGroup = styled('div', {
                 boxShadow: 'inset 0 0 0 1px $$borderHover',
               },
 
-              '&:focus': {
+              '&:focus-visible': {
                 zIndex: 1,
                 boxShadow: 'inset 0 0 0 1px $$focus, 0 0 0 1px $$focus',
               },
