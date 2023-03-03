@@ -225,12 +225,12 @@ export const IconButton: IconButtonComponent = React.forwardRef(
     { as, children, colorScheme = 'slate', disabled, variant, css, ...rest }: IconButtonProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
-    const Component = as || IconButtonBase;
     return (
-      <Component
+      <IconButtonBase
         as={as}
         ref={ref}
         css={{
+          cursor: as === 'a' ? 'pointer' : 'default',
           // themed default styles
           $$bg: `$colors$${colorScheme}3`,
           $$bgSubtle: `$colors$${colorScheme}4`,
@@ -245,7 +245,7 @@ export const IconButton: IconButtonComponent = React.forwardRef(
           // themed active styles
           $$bgActive: `$colors$${colorScheme}5`,
           $$borderActive: `$colors$${colorScheme}8`,
-          $$bgSubtleActive: `$colors$${colorScheme}5`,
+          $$bgSubtleActive: `$colors$${colorScheme}6`,
 
           // focus
           $$focus: `$colors$${colorScheme}8`,
@@ -272,7 +272,7 @@ export const IconButton: IconButtonComponent = React.forwardRef(
         {...rest}
       >
         {children}
-      </Component>
+      </IconButtonBase>
     );
   }
 );

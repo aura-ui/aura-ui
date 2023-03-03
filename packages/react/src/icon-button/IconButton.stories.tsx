@@ -126,3 +126,9 @@ export const Disabled = () => (
     <HiArrowUp />
   </IconButton>
 );
+
+export const LinkIconButton = () => (
+  <IconButton as="a" href="#">
+    <HiArrowUp />
+  </IconButton>
+);

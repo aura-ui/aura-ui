@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, ComponentProps, darkTheme } from '../theme';
+import { styled, ComponentProps, darkTheme, CSS, theme } from '../theme';
 import {
   ariaAttr,
   ColorScheme,
@@ -31,7 +31,7 @@ const ButtonBase = styled('button', {
 
   // custom
   fontFamily: 'inherit',
-  fontWeight: '$6',
+  fontWeight: '$5',
   br: '$2',
 
   '&:disabled': {
@@ -65,7 +65,7 @@ const ButtonBase = styled('button', {
   $$bgSubtleHover: '$colors$slate5',
   $$bgSubtleActive: '$colors$slate6',
 
-  $$focus: '$colors$slate8',
+  $$focus: '$colors$blue8',
 
   // solid default styles
   $$bgSolid: '$colors$slate9',
@@ -159,7 +159,7 @@ const ButtonBase = styled('button', {
         },
 
         '&:focus-visible': {
-          boxShadow: '0 0 0 2px $$focusSolid',
+          boxShadow: '0 0 0 2px $$focus',
         },
       },
       ghost: {
@@ -236,12 +236,13 @@ export const Button: ButtonComponent = React.forwardRef(
     { as, children, colorScheme = 'slate', disabled, variant, css, ...rest }: ButtonProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
-    const Component = as || ButtonBase;
     return (
-      <Component
+      <ButtonBase
+        data-variant={variant}
         as={as}
         ref={ref}
         css={{
+          cursor: as === 'a' ? 'pointer' : 'default',
           // themed default styles
           $$bg: `$colors$${colorScheme}3`,
           $$bgSubtle: `$colors$${colorScheme}4`,
@@ -256,7 +257,7 @@ export const Button: ButtonComponent = React.forwardRef(
           // themed active styles
           $$bgActive: `$colors$${colorScheme}5`,
           $$borderActive: `$colors$${colorScheme}8`,
-          $$bgSubtleActive: `$colors$${colorScheme}5`,
+          $$bgSubtleActive: `$colors$${colorScheme}6`,
 
           // focus
           $$focus: `$colors$${colorScheme}8`,
@@ -268,10 +269,6 @@ export const Button: ButtonComponent = React.forwardRef(
           $$bgSolidHover: `$colors$${colorScheme}10`,
           // themed solid active styles
           $$bgSolidActive: `$colors$${colorScheme}10`,
-
-          '&:focus-visible': {
-            boxShadow: '0 0 0 2px $$focus',
-          },
 
           //focus styling
           '&:focus:not(&[aria-disabled="true"])': {
@@ -287,7 +284,136 @@ export const Button: ButtonComponent = React.forwardRef(
         {...rest}
       >
         {children}
-      </Component>
+      </ButtonBase>
+    );
+  }
+);
+
+export type ButtonGroupProps = ComponentProps<typeof StyledButtonGroup> & {
+  colorScheme?: ColorScheme;
+  variant?: ButtonExtendedProps['variant'];
+  size?: ButtonExtendedProps['size'];
+  gap?: CSS['gap'];
+  radius?: keyof typeof theme.radii;
+};
+export const StyledButtonGroup = styled('div', {
+  display: 'flex',
+  $$radius: '$2',
+
+  variants: {
+    direction: {
+      row: {
+        flexDirection: 'row',
+        alignItems: 'center',
+      },
+      column: {
+        flexDirection: 'column',
+        alignItems: 'start',
+      },
+    },
+    flushed: {
+      true: {
+        flexDirection: 'row',
+        ml: 1,
+        gap: 0,
+
+        // ensure button group and children does not affect normal stacking order
+        position: 'relative',
+
+        '& button': {
+          br: 0,
+          zIndex: 0,
+
+          '&:focus-visible': {
+            zIndex: 1,
+            boxShadow: 'inset 0 0 0 1px $$focus, 0 0 0 1px $$focus',
+          },
+
+          '&[data-variant="outline"]': {
+            boxShadow: 'inset 0 1px $$border, inset -1px 0 $$border, inset 0 -1px $$border',
+
+            '&:hover': {
+              boxShadow:
+                '-1px 0 $$borderHover, inset 0 1px $$borderHover, inset -1px 0 $$borderHover, inset 0 -1px $$borderHover',
+            },
+
+            '&:focus-visible': {
+              zIndex: 1,
+              boxShadow: 'inset 0 0 0 1px $$focus, 0 0 0 1px $$focus',
+            },
+          },
+
+          '&:first-child': {
+            btlr: '$$radius',
+            bblr: '$$radius',
+
+            '&[data-variant="outline"]': {
+              boxShadow: 'inset 0 0 0 1px $$border',
+
+              '&:hover': {
+                boxShadow: 'inset 0 0 0 1px $$borderHover',
+              },
+
+              '&:focus-visible': {
+                zIndex: 1,
+                boxShadow: 'inset 0 0 0 1px $$focus, 0 0 0 1px $$focus',
+              },
+            },
+          },
+
+          '&:last-child': {
+            btrr: '$$radius',
+            bbrr: '$$radius',
+          },
+        },
+      },
+    },
+  },
+
+  defaultVariants: {
+    direction: 'row',
+  },
+});
+
+export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
+  (
+    {
+      flushed = false,
+      radius = '2',
+      gap = '$3',
+      size,
+      variant,
+      colorScheme,
+      children: _children,
+      css,
+      ...rest
+    },
+    ref
+  ) => {
+    const children = React.Children.map(_children, (child) => {
+      return React.cloneElement(child as React.ReactElement<ButtonExtendedProps>, {
+        variant,
+        size,
+        css: {
+          br: flushed ? undefined : `$${radius}`,
+        },
+      });
+    });
+    const _gap = flushed ? undefined : gap;
+    return (
+      <StyledButtonGroup
+        flushed={flushed}
+        css={{
+          $$radius: `$radii$${radius}`,
+          gap: _gap,
+          ...css,
+        }}
+        role="group"
+        ref={ref}
+        {...rest}
+      >
+        {children}
+      </StyledButtonGroup>
     );
   }
 );
