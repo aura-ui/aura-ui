@@ -74,7 +74,7 @@ export const StyledGrid = styled('div', {
   },
 });
 
-export interface ExtendedProps extends StyledGridProps {
+export interface GridExtendedProps extends StyledGridProps {
   children: React.ReactNode;
   /**
    * Specifies the columns in a grid layout.
@@ -114,7 +114,10 @@ export interface ExtendedProps extends StyledGridProps {
   gapY?: CSS['columnGap'];
 }
 
-type GridProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<C, ExtendedProps>;
+type GridProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<
+  C,
+  GridExtendedProps
+>;
 
 type GridComponent = <C extends React.ElementType = typeof StyledGrid>(
   props: GridProps<C>

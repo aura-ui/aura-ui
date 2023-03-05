@@ -125,13 +125,13 @@ const StyledTypography = styled('p', {
   },
 });
 
-export interface ExtendedProps extends StyledTypographyProps {
+export interface TypographyExtendedProps extends StyledTypographyProps {
   colorScheme?: ColorScheme;
 }
 
 type TypographyProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<
   C,
-  ExtendedProps
+  TypographyExtendedProps
 >;
 
 type TypographyComponent = <C extends React.ElementType = typeof StyledTypography>(
