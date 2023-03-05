@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { styled, ComponentProps } from '../theme';
-import { ColorScheme } from '../utils';
+import { ColorScheme, PolymorphicComponentPropsWithRef, PolymorphicRef } from '../utils';
 
-type TypographyBaseProps = ComponentProps<typeof TypographyBase>;
+type StyledTypographyProps = ComponentProps<typeof StyledTypography>;
 
-const TypographyBase = styled('p', {
+const StyledTypography = styled('p', {
   // resets
   margin: 0,
+  fontVariantNumeric: 'tabular-nums',
 
   // custom
   fontFamily: 'inherit',
@@ -124,19 +125,35 @@ const TypographyBase = styled('p', {
   },
 });
 
-export interface TypographyProps extends TypographyBaseProps {
+export interface ExtendedProps extends StyledTypographyProps {
   colorScheme?: ColorScheme;
 }
 
-export const Typography = ({ colorScheme = 'slate', css, ...rest }: TypographyProps) => {
-  return (
-    <TypographyBase
-      css={{
-        $$loColor: `$colors$${colorScheme}11`,
-        $$hiColor: `$colors$${colorScheme}12`,
-        ...css,
-      }}
-      {...rest}
-    />
-  );
-};
+type TypographyProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<
+  C,
+  ExtendedProps
+>;
+
+type TypographyComponent = <C extends React.ElementType = typeof StyledTypography>(
+  props: TypographyProps<C>
+) => React.ReactElement | null;
+
+export const Typography: TypographyComponent = React.forwardRef(
+  <C extends React.ElementType = typeof StyledTypography>(
+    { as, colorScheme, css, ...rest }: TypographyProps<C>,
+    ref?: PolymorphicRef<C>
+  ) => {
+    return (
+      <StyledTypography
+        as={as}
+        ref={ref}
+        css={{
+          $$loColor: `$colors$${colorScheme}11`,
+          $$hiColor: `$colors$${colorScheme}12`,
+          ...css,
+        }}
+        {...rest}
+      />
+    );
+  }
+);
