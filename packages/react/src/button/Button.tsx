@@ -271,7 +271,7 @@ export const Button: ButtonComponent = React.forwardRef(
           $$bgSolidActive: `$colors$${colorScheme}10`,
 
           //focus styling
-          '&:focus:not(&[aria-disabled="true"])': {
+          '&:focus-visible': {
             boxShadow:
               variant === 'solid'
                 ? 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8'
@@ -299,6 +299,7 @@ export type ButtonGroupProps = ComponentProps<typeof StyledButtonGroup> & {
 export const StyledButtonGroup = styled('div', {
   display: 'flex',
   $$radius: '$2',
+  zIndex: 0,
 
   variants: {
     direction: {
@@ -322,7 +323,6 @@ export const StyledButtonGroup = styled('div', {
 
         '& button': {
           br: 0,
-          zIndex: 0,
 
           '&:focus-visible': {
             zIndex: 1,

@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { styled, ComponentProps } from '../theme';
+import { styled, ComponentProps, CSS } from '../theme';
 import { PolymorphicComponentPropsWithRef, PolymorphicRef } from '../utils';
 
-type BaseProps = ComponentProps<typeof Base>;
+type StyledGridProps = ComponentProps<typeof StyledGrid>;
 
 /**
  * Grid is a layout component with a default property of ```display: grid```.
  * It renders a HTML div element by default.
  */
-export const Base = styled('div', {
+export const StyledGrid = styled('div', {
   display: 'grid',
 
   variants: {
@@ -74,54 +74,57 @@ export const Base = styled('div', {
   },
 });
 
-export interface ExtendedProps extends BaseProps {
+export interface GridExtendedProps extends StyledGridProps {
   children: React.ReactNode;
   /**
    * Specifies the columns in a grid layout.
    */
-  templateColumns?: string;
+  templateColumns?: CSS['gridTemplateColumns'];
   /**
    * Specifies the rows in a grid layout.
    */
-  templateRows?: string;
+  templateRows?: CSS['gridTemplateRows'];
   /**
    * Specifies how items are size and placed across grid columns.
    */
-  columnSpan?: string;
+  columnSpan?: CSS['columnSpan'];
   /**
    * Specifies how items are size and placed across grid rows.
    */
-  rowSpan?: string;
+  rowSpan?: CSS['gridRow'];
   /**
    * Specifies how items are auto-placed within a grid.
    */
-  autoFlow?: string;
+  autoFlow?: CSS['gridAutoFlow'];
   /**
    * Specifies the size of implicitly-created grid columns.
    */
-  autoColumns?: string;
+  autoColumns?: CSS['gridAutoColumns'];
   /**
    * Specifies the size of implicitly-created grid rows.
    */
-  autoRows?: string;
+  autoRows?: CSS['gridAutoRows'];
   /**
    * Specifies the size of the gutters between rows.
    */
-  gapX?: string | number;
+  gapX?: CSS['rowGap'];
   /**
    * Specifies the size of the gutters between columns.
    */
-  gapY?: string | number;
+  gapY?: CSS['columnGap'];
 }
 
-type GridProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<C, ExtendedProps>;
+type GridProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<
+  C,
+  GridExtendedProps
+>;
 
-type GridComponent = <C extends React.ElementType = typeof Base>(
+type GridComponent = <C extends React.ElementType = typeof StyledGrid>(
   props: GridProps<C>
 ) => React.ReactElement | null;
 
 export const Grid: GridComponent = React.forwardRef(
-  <C extends React.ElementType = typeof Base>(
+  <C extends React.ElementType = typeof StyledGrid>(
     {
       css,
       as,
@@ -139,9 +142,8 @@ export const Grid: GridComponent = React.forwardRef(
     }: GridProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
-    const Component = as || Base;
     return (
-      <Component
+      <StyledGrid
         as={as}
         ref={ref}
         css={{
@@ -159,7 +161,7 @@ export const Grid: GridComponent = React.forwardRef(
         {...rest}
       >
         {children}
-      </Component>
+      </StyledGrid>
     );
   }
 );
