@@ -40,3 +40,7 @@ yarn-error.log
 
 # turbo
 .turbo
+
+#arweave
+wallet.json
+keyfile.json
