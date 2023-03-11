@@ -140,7 +140,7 @@ type TypographyComponent = <C extends React.ElementType = typeof StyledTypograph
 
 export const Typography: TypographyComponent = React.forwardRef(
   <C extends React.ElementType = typeof StyledTypography>(
-    { as, colorScheme, css, ...rest }: TypographyProps<C>,
+    { as, colorScheme = 'slate', css, ...rest }: TypographyProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
     return (
