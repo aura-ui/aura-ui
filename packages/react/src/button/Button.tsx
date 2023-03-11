@@ -272,10 +272,7 @@ export const Button: ButtonComponent = React.forwardRef(
 
           //focus styling
           '&:focus-visible': {
-            boxShadow:
-              variant === 'solid'
-                ? 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8'
-                : `inset 0px 0px 0px 1px $colors$${colorScheme}8, 0px 0px 0px 1px $colors$${colorScheme}8`,
+            $$focus: variant === 'solid' ? '$colors$blue8' : `$colors$${colorScheme}8`,
           },
           ...css,
         }}

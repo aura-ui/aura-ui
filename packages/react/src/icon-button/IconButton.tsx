@@ -259,11 +259,8 @@ export const IconButton: IconButtonComponent = React.forwardRef(
           $$bgSolidActive: `$colors$${colorScheme}10`,
 
           //focus styling
-          '&:focus:not(&[aria-disabled="true"])': {
-            boxShadow:
-              variant === 'solid'
-                ? 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8'
-                : `inset 0px 0px 0px 1px $colors$${colorScheme}8, 0px 0px 0px 1px $colors$${colorScheme}8`,
+          '&:focus-visible': {
+            $$focus: variant === 'solid' ? '$colors$blue8' : `$colors$${colorScheme}8`,
           },
           ...css,
         }}
