@@ -55,59 +55,23 @@ export const IndicatorSizes = () => (
 
 export const ColorScheme = () => (
   <RadioGroup gap="2">
-    <Radio colorScheme="tomato" value="tomato">
-      Tomato
-    </Radio>
     <Radio colorScheme="red" value="red">
       Red
     </Radio>
     <Radio colorScheme="crimson" value="crimson">
       Crimson
     </Radio>
-    <Radio colorScheme="pink" value="pink">
-      Pink
-    </Radio>
-    <Radio colorScheme="plum" value="plum">
-      Plum
-    </Radio>
-    <Radio colorScheme="purple" value="purple">
-      Purple
-    </Radio>
     <Radio colorScheme="violet" value="violet">
       Violet
-    </Radio>
-    <Radio colorScheme="indigo" value="indigo">
-      Indigo
     </Radio>
     <Radio colorScheme="blue" value="blue">
       Blue
     </Radio>
-    <Radio colorScheme="sky" value="sky">
-      Sky
-    </Radio>
-    <Radio colorScheme="cyan" value="cyan">
-      Cyan
-    </Radio>
-    <Radio colorScheme="teal" value="teal">
-      Teal
-    </Radio>
-    <Radio colorScheme="mint" value="mint">
-      Mint
-    </Radio>
     <Radio colorScheme="green" value="green">
       Green
     </Radio>
-    <Radio colorScheme="grass" value="grass">
-      Grass
-    </Radio>
-    <Radio colorScheme="lime" value="lime">
-      Lime
-    </Radio>
     <Radio colorScheme="yellow" value="yellow">
       Yellow
-    </Radio>
-    <Radio colorScheme="amber" value="amber">
-      Amber
     </Radio>
     <Radio colorScheme="orange" value="orange">
       Orange

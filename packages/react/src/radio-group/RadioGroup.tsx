@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { styled, ComponentProps, VariantProps } from '../theme';
+import { styled, ComponentProps, VariantProps, ColorScheme, getContrastingColor } from '../theme';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
-import { ColorScheme, getContrastingColor } from '../utils';
 import { Label } from '../label';
 import { Flex } from '../layout';
 
@@ -181,8 +180,10 @@ export const Radio = React.forwardRef<HTMLButtonElement, RadioProps>(
 
             $$inactiveBackground: '$colors$slate3',
             $$inactiveBackgroundHover: '$colors$slate3',
-            $$activeBackground: `$colors$${colorScheme}9`,
-            $$activeColor: getContrastingColor(colorScheme),
+            $$activeBackground:
+              colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}9`,
+            $$activeColor:
+              colorScheme === 'slate' ? '$colors$slate1' : getContrastingColor(colorScheme),
             ...css,
           }}
           ref={ref}

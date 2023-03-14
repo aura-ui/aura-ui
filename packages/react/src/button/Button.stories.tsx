@@ -42,61 +42,25 @@ export const ColorScheme = () => {
       }}
       gap="2"
     >
-      <Button border colorScheme="tomato">
-        Tomato
-      </Button>
-      <Button border colorScheme="red">
+      <Button variant="solid" border colorScheme="red">
         Red
       </Button>
-      <Button border colorScheme="crimson">
+      <Button variant="solid" border colorScheme="crimson">
         Crimson
       </Button>
-      <Button border colorScheme="pink">
-        Pink
-      </Button>
-      <Button border colorScheme="plum">
-        Plum
-      </Button>
-      <Button border colorScheme="purple">
-        Purple
-      </Button>
-      <Button border colorScheme="violet">
+      <Button variant="solid" border colorScheme="violet">
         Violet
       </Button>
-      <Button border colorScheme="indigo">
-        Indigo
-      </Button>
-      <Button border colorScheme="blue">
+      <Button variant="solid" border colorScheme="blue">
         Blue
       </Button>
-      <Button border colorScheme="sky">
-        Sky
-      </Button>
-      <Button border colorScheme="cyan">
-        Cyan
-      </Button>
-      <Button border colorScheme="teal">
-        Teal
-      </Button>
-      <Button border colorScheme="mint">
-        Mint
-      </Button>
-      <Button border colorScheme="green">
+      <Button variant="solid" border colorScheme="green">
         Green
       </Button>
-      <Button border colorScheme="grass">
-        Grass
-      </Button>
-      <Button border colorScheme="lime">
-        Lime
-      </Button>
-      <Button border colorScheme="yellow">
+      <Button variant="solid" border colorScheme="yellow">
         Yellow
       </Button>
-      <Button border colorScheme="amber">
-        Amber
-      </Button>
-      <Button border colorScheme="orange">
+      <Button variant="solid" border colorScheme="orange">
         Orange
       </Button>
     </Flex>
@@ -125,14 +89,6 @@ export const WithIcon = () => {
       <Button variant="solid" colorScheme="green">
         <FaSpotify />
         Spotify
-      </Button>
-      <Button colorScheme="pink">
-        <FaDribbble />
-        Dribbble
-      </Button>
-      <Button variant="solid" colorScheme="amber">
-        <FaAmazon />
-        Amazon
       </Button>
       <Button variant="outline" colorScheme="violet">
         <FaTwitch />

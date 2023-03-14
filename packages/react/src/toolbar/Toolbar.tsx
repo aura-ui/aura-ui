@@ -1,13 +1,7 @@
 import * as React from 'react';
-import { styled, ComponentProps, darkTheme } from '../theme';
+import { styled, ComponentProps, ColorScheme, getContrastingColor } from '../theme';
 import * as ToolbarPrimitive from '@radix-ui/react-toolbar';
-import {
-  ariaAttr,
-  ColorScheme,
-  getContrastingColor,
-  toggleGroupStyles,
-  toggleItemStyles,
-} from '../utils';
+import { ariaAttr, toggleGroupStyles, toggleItemStyles } from '../utils';
 
 export type ToolbarProps = ComponentProps<typeof Toolbar>;
 export const Toolbar = styled(ToolbarPrimitive.Root, {
@@ -92,29 +86,23 @@ export const ToolbarToggleItem = React.forwardRef<HTMLButtonElement, ToolbarTogg
 
           // themed hover styles
           $$bgHover: `$colors$${colorScheme}4`,
-          $$bgSubtleHover: `$colors$${colorScheme}4`,
+          $$bgSubtleHover: `$colors$${colorScheme}3`,
 
           // themed active styles
-          $$bgSubtleActive: `$colors$${colorScheme}3`,
-          $$colorActive: colorScheme === 'slate' ? `$colors$slate12` : `$colors$${colorScheme}11`,
-          $$ghostColorActive: `$colors$${colorScheme}12`,
-
-          // focus
-          $$focus: `$colors$${colorScheme}8`,
+          $$bgSubtleActive: `$colors$${colorScheme}4`,
+          $$colorActive: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}11`,
 
           $$colorSolid: '$$color',
           // themed solid hover styles
           $$bgSolidHover: `$$bgSubtleHover`,
           // themed solid active styles
-          $$bgSolidActive: `$colors$${colorScheme}10`,
-          $$colorSolidActive: getContrastingColor(colorScheme),
+          $$bgSolidActive: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}10`,
+          $$colorSolidActive:
+            colorScheme === 'slate' ? '$colors$slate1' : getContrastingColor(colorScheme),
 
           //focus styling
-          '&:focus:not(&[aria-disabled="true"])': {
-            boxShadow:
-              variant === 'solid'
-                ? 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8'
-                : `inset 0px 0px 0px 1px $colors$${colorScheme}8, 0px 0px 0px 1px $colors$${colorScheme}8`,
+          '&:focus-visible': {
+            $$focus: variant === 'solid' ? '$colors$focus' : `$colors$${colorScheme}8`,
           },
           ...css,
         }}

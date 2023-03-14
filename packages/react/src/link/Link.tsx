@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { styled, ComponentProps, CSS } from '../theme';
-import { ColorScheme } from '../utils';
+import { styled, ComponentProps, CSS, ColorScheme } from '../theme';
 import { VisuallyHidden } from '../visually-hidden';
 
 type StyledLinkProps = ComponentProps<typeof StyledLink>;

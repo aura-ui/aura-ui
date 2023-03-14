@@ -1,12 +1,6 @@
 import * as React from 'react';
-import { ComponentProps, darkTheme, styled } from '../theme';
-import {
-  ariaAttr,
-  ColorScheme,
-  getContrastingColor,
-  PolymorphicComponentPropsWithRef,
-  PolymorphicRef,
-} from '../utils';
+import { ComponentProps, darkTheme, styled, ColorScheme, getContrastingColor } from '../theme';
+import { ariaAttr, PolymorphicComponentPropsWithRef, PolymorphicRef } from '../utils';
 
 type IconButtonBaseProps = ComponentProps<typeof IconButtonBase>;
 
@@ -58,7 +52,7 @@ const IconButtonBase = styled('button', {
   $$bgSubtleHover: '$colors$slate5',
   $$bgSubtleActive: '$colors$slate6',
 
-  $$focus: '$colors$slate8',
+  $$focus: '$colors$focus',
 
   // solid default styles
   $$bgSolid: '$colors$slate9',
@@ -247,20 +241,20 @@ export const IconButton: IconButtonComponent = React.forwardRef(
           $$borderActive: `$colors$${colorScheme}8`,
           $$bgSubtleActive: `$colors$${colorScheme}6`,
 
-          // focus
-          $$focus: `$colors$${colorScheme}8`,
-
           // themed solid default styles
-          $$bgSolid: `$colors$${colorScheme}9`,
-          $$colorSolid: getContrastingColor(colorScheme),
+          $$bgSolid: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}9`,
+          $$colorSolid:
+            colorScheme === 'slate' ? '$colors$slate1' : getContrastingColor(colorScheme),
           // themed solid hover styles
-          $$bgSolidHover: `$colors$${colorScheme}10`,
+          $$bgSolidHover:
+            colorScheme === 'slate' ? '$colors$slateSolidHover' : `$colors$${colorScheme}10`,
           // themed solid active styles
-          $$bgSolidActive: `$colors$${colorScheme}10`,
+          $$bgSolidActive:
+            colorScheme === 'slate' ? '$colors$slateSolidActive' : `$colors$${colorScheme}10`,
 
           //focus styling
           '&:focus-visible': {
-            $$focus: variant === 'solid' ? '$colors$blue8' : `$colors$${colorScheme}8`,
+            $$focus: variant === 'solid' ? '$colors$focus' : `$colors$${colorScheme}8`,
           },
           ...css,
         }}

@@ -16,8 +16,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuLabel,
 } from './DropdownMenu';
-import { HiCheck, HiChevronDown, HiChevronRight } from 'react-icons/hi';
-import { RxDotFilled } from 'react-icons/rx';
+import { HiChevronDown, HiChevronRight } from 'react-icons/hi';
 import { Button } from '../button';
 import { Box, Flex, Grid } from '../layout';
 import { ArchiveIcon, CopyIcon, MoveIcon, Pencil1Icon, TrashIcon } from '@radix-ui/react-icons';

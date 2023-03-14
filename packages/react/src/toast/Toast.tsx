@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { styled, ComponentProps, keyframes, config, CSS } from '../theme';
+import { styled, ComponentProps, keyframes, CSS, ColorScheme, getContrastingColor } from '../theme';
 import * as ToastPrimitive from '@radix-ui/react-toast';
-import { ColorScheme, getContrastingColor } from '../utils';
 import { IconButton } from '../icon-button';
 import { Cross2Icon } from './Cross2Icon';
 import { useToast } from './Provider';
@@ -342,8 +341,9 @@ export const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
             $$color:
               colorScheme === 'slate' ? `$colors$${colorScheme}12` : `$colors$${colorScheme}11`,
             $$border: `$colors$${colorScheme}5`,
-            $$bgSolid: `$colors$${colorScheme}9`,
-            $$colorSolid: getContrastingColor(colorScheme),
+            $$bgSolid: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}9`,
+            $$colorSolid:
+              colorScheme === 'slate' ? '$colors$slate1' : getContrastingColor(colorScheme),
             ...css,
           }}
           variant={variant}

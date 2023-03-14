@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { styled, ComponentProps } from '../theme';
-import { ColorScheme, PolymorphicComponentPropsWithRef, PolymorphicRef } from '../utils';
+import { styled, ComponentProps, ColorScheme } from '../theme';
+import { PolymorphicComponentPropsWithRef, PolymorphicRef } from '../utils';
 
 type StyledTypographyProps = ComponentProps<typeof StyledTypography>;
 

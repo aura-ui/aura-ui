@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import { styled, ComponentProps } from '../theme';
-import { getContrastingColor, ColorScheme, ariaAttr } from '../utils';
+import { styled, ComponentProps, getContrastingColor, ColorScheme } from '../theme';
+import { ariaAttr } from '../utils';
 import { Label } from '../label';
 import { CheckIcon } from './CheckIcon';
 import { HorizontalLineIcon } from './HorizontalLineIcon';
@@ -134,8 +134,9 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
             $$colorSolid: getContrastingColor(colorScheme),
             $$bg: `$colors$${colorScheme}3`,
             $$bgHover: `$colors$${colorScheme}4`,
-            $$bgSolid: `$colors$${colorScheme}9`,
-            $$bgSolidHover: `$colors$${colorScheme}11`,
+            $$bgSolid: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}9`,
+            $$bgSolidHover:
+              colorScheme === 'slate' ? '$colors$slateSolidHover' : `$colors$${colorScheme}10`,
             $$border: `$colors$${colorScheme}8`,
             $$borderHover: `$colors$${colorScheme}9`,
             ...css,
