@@ -1,13 +1,7 @@
 import * as React from 'react';
-import { styled, ComponentProps, darkTheme, VariantProps } from '../theme';
+import { styled, ComponentProps, ColorScheme, getContrastingColor, VariantProps } from '../theme';
 import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
-import {
-  ariaAttr,
-  ColorScheme,
-  getContrastingColor,
-  toggleGroupStyles,
-  toggleItemStyles,
-} from '../utils';
+import { ariaAttr, toggleGroupStyles, toggleItemStyles } from '../utils';
 
 export type ToggleGroupProps = ComponentProps<typeof StyledToggleGroup> &
   Pick<ToggleGroupItemProps, 'colorScheme' | 'size'> & {

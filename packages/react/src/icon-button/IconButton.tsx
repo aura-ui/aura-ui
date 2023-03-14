@@ -1,12 +1,6 @@
 import * as React from 'react';
-import { ComponentProps, darkTheme, styled } from '../theme';
-import {
-  ariaAttr,
-  ColorScheme,
-  getContrastingColor,
-  PolymorphicComponentPropsWithRef,
-  PolymorphicRef,
-} from '../utils';
+import { ComponentProps, darkTheme, styled, ColorScheme, getContrastingColor } from '../theme';
+import { ariaAttr, PolymorphicComponentPropsWithRef, PolymorphicRef } from '../utils';
 
 type IconButtonBaseProps = ComponentProps<typeof IconButtonBase>;
 

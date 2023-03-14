@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { styled, ComponentProps, VariantProps } from '../theme';
+import { styled, ComponentProps, VariantProps, ColorScheme, getContrastingColor } from '../theme';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
-import { ColorScheme, getContrastingColor } from '../utils';
 import { Label } from '../label';
 import { Flex } from '../layout';
 

@@ -1,13 +1,7 @@
 import * as React from 'react';
-import { styled, ComponentProps, darkTheme } from '../theme';
+import { styled, ComponentProps, ColorScheme, getContrastingColor } from '../theme';
 import * as ToolbarPrimitive from '@radix-ui/react-toolbar';
-import {
-  ariaAttr,
-  ColorScheme,
-  getContrastingColor,
-  toggleGroupStyles,
-  toggleItemStyles,
-} from '../utils';
+import { ariaAttr, toggleGroupStyles, toggleItemStyles } from '../utils';
 
 export type ToolbarProps = ComponentProps<typeof Toolbar>;
 export const Toolbar = styled(ToolbarPrimitive.Root, {

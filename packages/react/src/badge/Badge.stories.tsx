@@ -55,24 +55,12 @@ export const ColorSchemeSubtle = () => (
     }}
     gap="2"
   >
-    <Badge colorScheme="tomato">Tomato</Badge>
     <Badge colorScheme="red">Red</Badge>
     <Badge colorScheme="crimson">Crimson</Badge>
-    <Badge colorScheme="pink">Pink</Badge>
-    <Badge colorScheme="plum">Plum</Badge>
-    <Badge colorScheme="purple">Purple</Badge>
     <Badge colorScheme="violet">Violet</Badge>
-    <Badge colorScheme="indigo">Indigo</Badge>
     <Badge colorScheme="blue">Blue</Badge>
-    <Badge colorScheme="sky">Sky</Badge>
-    <Badge colorScheme="cyan">Cyan</Badge>
-    <Badge colorScheme="teal">Teal</Badge>
-    <Badge colorScheme="mint">Mint</Badge>
     <Badge colorScheme="green">Green</Badge>
-    <Badge colorScheme="grass">Grass</Badge>
-    <Badge colorScheme="lime">Lime</Badge>
     <Badge colorScheme="yellow">Yellow</Badge>
-    <Badge colorScheme="amber">Amber</Badge>
     <Badge colorScheme="orange">Orange</Badge>
   </Flex>
 );
@@ -85,59 +73,23 @@ export const ColorSchemeOutline = () => (
     }}
     gap="2"
   >
-    <Badge variant="outline" colorScheme="tomato">
-      Tomato
-    </Badge>
     <Badge variant="outline" colorScheme="red">
       Red
     </Badge>
     <Badge variant="outline" colorScheme="crimson">
       Crimson
     </Badge>
-    <Badge variant="outline" colorScheme="pink">
-      Pink
-    </Badge>
-    <Badge variant="outline" colorScheme="plum">
-      Plum
-    </Badge>
-    <Badge variant="outline" colorScheme="purple">
-      Purple
-    </Badge>
     <Badge variant="outline" colorScheme="violet">
       Violet
-    </Badge>
-    <Badge variant="outline" colorScheme="indigo">
-      Indigo
     </Badge>
     <Badge variant="outline" colorScheme="blue">
       Blue
     </Badge>
-    <Badge variant="outline" colorScheme="sky">
-      Sky
-    </Badge>
-    <Badge variant="outline" colorScheme="cyan">
-      Cyan
-    </Badge>
-    <Badge variant="outline" colorScheme="teal">
-      Teal
-    </Badge>
-    <Badge variant="outline" colorScheme="mint">
-      Mint
-    </Badge>
     <Badge variant="outline" colorScheme="green">
       Green
     </Badge>
-    <Badge variant="outline" colorScheme="grass">
-      Grass
-    </Badge>
-    <Badge variant="outline" colorScheme="lime">
-      Lime
-    </Badge>
     <Badge variant="outline" colorScheme="yellow">
       Yellow
-    </Badge>
-    <Badge variant="outline" colorScheme="amber">
-      Amber
     </Badge>
     <Badge variant="outline" colorScheme="orange">
       Orange
@@ -153,59 +105,24 @@ export const ColorSchemeSolid = () => (
     }}
     gap="2"
   >
-    <Badge variant="solid" colorScheme="tomato">
-      Tomato
-    </Badge>
     <Badge variant="solid" colorScheme="red">
       Red
     </Badge>
     <Badge variant="solid" colorScheme="crimson">
       Crimson
     </Badge>
-    <Badge variant="solid" colorScheme="pink">
-      Pink
-    </Badge>
-    <Badge variant="solid" colorScheme="plum">
-      Plum
-    </Badge>
-    <Badge variant="solid" colorScheme="purple">
-      Purple
-    </Badge>
     <Badge variant="solid" colorScheme="violet">
       Violet
-    </Badge>
-    <Badge variant="solid" colorScheme="indigo">
-      Indigo
     </Badge>
     <Badge variant="solid" colorScheme="blue">
       Blue
     </Badge>
-    <Badge variant="solid" colorScheme="sky">
-      Sky
-    </Badge>
-    <Badge variant="solid" colorScheme="cyan">
-      Cyan
-    </Badge>
-    <Badge variant="solid" colorScheme="teal">
-      Teal
-    </Badge>
-    <Badge variant="solid" colorScheme="mint">
-      Mint
-    </Badge>
     <Badge variant="solid" colorScheme="green">
       Green
     </Badge>
-    <Badge variant="solid" colorScheme="grass">
-      Grass
-    </Badge>
-    <Badge variant="solid" colorScheme="lime">
-      Lime
-    </Badge>
+
     <Badge variant="solid" colorScheme="yellow">
       Yellow
-    </Badge>
-    <Badge variant="solid" colorScheme="amber">
-      Amber
     </Badge>
     <Badge variant="solid" colorScheme="orange">
       Orange

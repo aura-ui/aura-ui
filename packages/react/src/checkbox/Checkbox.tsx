@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import { styled, ComponentProps } from '../theme';
-import { getContrastingColor, ColorScheme, ariaAttr } from '../utils';
+import { styled, ComponentProps, getContrastingColor, ColorScheme } from '../theme';
+import { ariaAttr } from '../utils';
 import { Label } from '../label';
 import { CheckIcon } from './CheckIcon';
 import { HorizontalLineIcon } from './HorizontalLineIcon';

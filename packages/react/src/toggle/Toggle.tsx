@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { styled, ComponentProps, darkTheme } from '../theme';
+import { styled, ComponentProps, ColorScheme, getContrastingColor } from '../theme';
 import * as TogglePrimitive from '@radix-ui/react-toggle';
-import { ColorScheme, ariaAttr, getContrastingColor, toggleItemStyles } from '../utils';
+import { ariaAttr, toggleItemStyles } from '../utils';
 
 export type ToggleProps = ComponentProps<typeof StyledToggle> & {
   colorScheme?: ColorScheme;

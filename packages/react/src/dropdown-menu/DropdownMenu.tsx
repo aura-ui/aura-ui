@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { styled, keyframes, ComponentProps, theme } from '../theme';
+import { styled, keyframes, ComponentProps, ColorScheme, getContrastingColor } from '../theme';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { CheckIcon } from '../checkbox/CheckIcon';
-import { ColorScheme, getContrastingColor } from '../utils';
 import { HorizontalLineIcon } from '../checkbox/HorizontalLineIcon';
 import { DotIcon } from './DotIcon';
 import { DotFilledIcon } from './DotFilledIcon';

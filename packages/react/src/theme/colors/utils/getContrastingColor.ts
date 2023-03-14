@@ -1,4 +1,4 @@
-import { ColorScheme, ColorSchemeBlackText } from './colorScheme';
+import { ColorScheme, ColorSchemeBlackText } from '../../types';
 
 function isOfColorSchemeBlackTextType(value: string): value is ColorSchemeBlackText {
   return ['sky', 'mint', 'lime', 'yellow', 'amber'].includes(value);

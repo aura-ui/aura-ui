@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { styled, ComponentProps, css } from '../theme';
-
+import { styled, ComponentProps, css, ColorScheme, getContrastingColor } from '../theme';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
-import { ColorScheme, getContrastingColor } from '../utils';
 import { Flex } from '../layout';
 import { getValidChildren } from '../utils/react-children';
 import { compact } from '../utils/object-utils';

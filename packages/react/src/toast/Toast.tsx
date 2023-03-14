@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { styled, ComponentProps, keyframes, config, CSS } from '../theme';
+import { styled, ComponentProps, keyframes, CSS, ColorScheme, getContrastingColor } from '../theme';
 import * as ToastPrimitive from '@radix-ui/react-toast';
-import { ColorScheme, getContrastingColor } from '../utils';
 import { IconButton } from '../icon-button';
 import { Cross2Icon } from './Cross2Icon';
 import { useToast } from './Provider';

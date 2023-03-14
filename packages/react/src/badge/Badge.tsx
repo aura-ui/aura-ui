@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { styled, ComponentProps } from '../theme';
-import { ColorScheme, getContrastingColor } from '../utils';
+import { styled, ComponentProps, ColorScheme, getContrastingColor } from '../theme';
 
 type StyledBadgeProps = ComponentProps<typeof StyledBadge>;
 

@@ -1,12 +1,6 @@
 import * as React from 'react';
-import { styled, ComponentProps, darkTheme, CSS, theme } from '../theme';
-import {
-  ariaAttr,
-  ColorScheme,
-  getContrastingColor,
-  PolymorphicComponentPropsWithRef,
-  PolymorphicRef,
-} from '../utils';
+import { styled, ComponentProps, CSS, theme, ColorScheme, getContrastingColor } from '../theme';
+import { ariaAttr, PolymorphicComponentPropsWithRef, PolymorphicRef } from '../utils';
 
 type ButtonBaseProps = ComponentProps<typeof ButtonBase>;
 

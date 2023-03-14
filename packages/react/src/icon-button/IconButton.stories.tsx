@@ -60,58 +60,22 @@ export const ColorScheme = () => {
       }}
       gap="2"
     >
-      <IconButton colorScheme="tomato">
-        <HiArrowUp />
-      </IconButton>
       <IconButton colorScheme="red">
         <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="crimson">
         <HiArrowUp />
       </IconButton>
-      <IconButton colorScheme="pink">
-        <HiArrowUp />
-      </IconButton>
-      <IconButton colorScheme="plum">
-        <HiArrowUp />
-      </IconButton>
-      <IconButton colorScheme="purple">
-        <HiArrowUp />
-      </IconButton>
       <IconButton colorScheme="violet">
-        <HiArrowUp />
-      </IconButton>
-      <IconButton colorScheme="indigo">
         <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="blue">
         <HiArrowUp />
       </IconButton>
-      <IconButton colorScheme="sky">
-        <HiArrowUp />
-      </IconButton>
-      <IconButton colorScheme="cyan">
-        <HiArrowUp />
-      </IconButton>
-      <IconButton colorScheme="teal">
-        <HiArrowUp />
-      </IconButton>
-      <IconButton colorScheme="mint">
-        <HiArrowUp />
-      </IconButton>
       <IconButton colorScheme="green">
         <HiArrowUp />
       </IconButton>
-      <IconButton colorScheme="grass">
-        <HiArrowUp />
-      </IconButton>
-      <IconButton colorScheme="lime">
-        <HiArrowUp />
-      </IconButton>
       <IconButton colorScheme="yellow">
-        <HiArrowUp />
-      </IconButton>
-      <IconButton colorScheme="amber">
         <HiArrowUp />
       </IconButton>
       <IconButton colorScheme="orange">

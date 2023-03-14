@@ -47,24 +47,12 @@ export const Weights = () => {
 export const Colors = () => {
   return (
     <Flex direction="column">
-      <Typography colorScheme="tomato">Tomato</Typography>
       <Typography colorScheme="red">Red</Typography>
       <Typography colorScheme="crimson">Crimson</Typography>
-      <Typography colorScheme="pink">Pink</Typography>
-      <Typography colorScheme="plum">Plum</Typography>
-      <Typography colorScheme="purple">Purple</Typography>
       <Typography colorScheme="violet">Violet</Typography>
-      <Typography colorScheme="indigo">Indigo</Typography>
       <Typography colorScheme="blue">Blue</Typography>
-      <Typography colorScheme="sky">Sky</Typography>
-      <Typography colorScheme="cyan">Cyan</Typography>
-      <Typography colorScheme="teal">Teal</Typography>
-      <Typography colorScheme="mint">Mint</Typography>
       <Typography colorScheme="green">Green</Typography>
-      <Typography colorScheme="grass">Grass</Typography>
-      <Typography colorScheme="lime">Lime</Typography>
       <Typography colorScheme="yellow">Yellow</Typography>
-      <Typography colorScheme="amber">Amber</Typography>
       <Typography colorScheme="orange">Orange</Typography>
     </Flex>
   );
