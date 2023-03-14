@@ -341,8 +341,9 @@ export const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
             $$color:
               colorScheme === 'slate' ? `$colors$${colorScheme}12` : `$colors$${colorScheme}11`,
             $$border: `$colors$${colorScheme}5`,
-            $$bgSolid: `$colors$${colorScheme}9`,
-            $$colorSolid: getContrastingColor(colorScheme),
+            $$bgSolid: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}9`,
+            $$colorSolid:
+              colorScheme === 'slate' ? '$colors$slate1' : getContrastingColor(colorScheme),
             ...css,
           }}
           variant={variant}

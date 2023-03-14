@@ -119,8 +119,9 @@ export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
         css={{
           $$subtleBg: `$colors$${colorScheme}3`,
           $$subtleColor: `$colors$${colorScheme}11`,
-          $$solidBg: `$colors$${colorScheme}9`,
-          $$solidColor: getContrastingColor(colorScheme),
+          $$solidBg: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}9`,
+          $$solidColor:
+            colorScheme === 'slate' ? '$colors$slate1' : getContrastingColor(colorScheme),
           $$border: `$colors$${colorScheme}6`,
           ...css,
         }}

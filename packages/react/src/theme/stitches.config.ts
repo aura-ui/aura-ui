@@ -38,6 +38,11 @@ export const { styled, css, config, theme, createTheme, reset, getCssText, globa
         // overlays
         ...blackA,
         ...whiteA,
+
+        // custom
+        focus: '$colors$blue8',
+        slateSolidHover: 'hsl(206, 6.0%, 30.5%)',
+        slateSolidActive: 'hsl(206, 6.0%, 40.5%)',
       },
       fonts: {
         body: 'ui-sans-serif,system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
@@ -343,6 +348,11 @@ const darkModeConfig = {
 
     // for black text
     ...yellowDark,
+
+    // custom
+    focus: '$colors$blue10',
+    slateSolidHover: 'hsl(206, 6.0%, 85.0%)',
+    slateSolidActive: 'hsl(206, 6.0%, 75.0%)',
   },
 };
 

@@ -42,25 +42,25 @@ export const ColorScheme = () => {
       }}
       gap="2"
     >
-      <Button border colorScheme="red">
+      <Button variant="solid" border colorScheme="red">
         Red
       </Button>
-      <Button border colorScheme="crimson">
+      <Button variant="solid" border colorScheme="crimson">
         Crimson
       </Button>
-      <Button border colorScheme="violet">
+      <Button variant="solid" border colorScheme="violet">
         Violet
       </Button>
-      <Button border colorScheme="blue">
+      <Button variant="solid" border colorScheme="blue">
         Blue
       </Button>
-      <Button border colorScheme="green">
+      <Button variant="solid" border colorScheme="green">
         Green
       </Button>
-      <Button border colorScheme="yellow">
+      <Button variant="solid" border colorScheme="yellow">
         Yellow
       </Button>
-      <Button border colorScheme="orange">
+      <Button variant="solid" border colorScheme="orange">
         Orange
       </Button>
     </Flex>

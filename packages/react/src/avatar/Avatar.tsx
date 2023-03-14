@@ -171,9 +171,11 @@ export const AvatarFallback = React.forwardRef<HTMLSpanElement, AvatarFallbackPr
           $$subtleBgHover: `$colors$${colorScheme}4`,
           $$subtleBgActive: `$colors$${colorScheme}5`,
 
-          $$solidBg: `$colors$${colorScheme}9`,
-          $$solidBgHover: `$colors$${colorScheme}10`,
-          $$solidColor: getContrastingColor(colorScheme),
+          $$solidBg: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}9`,
+          $$bgSolidActive:
+            colorScheme === 'slate' ? '$colors$slateSolidActive' : `$colors$${colorScheme}10`,
+          $$solidColor:
+            colorScheme === 'slate' ? '$colors$slate1' : getContrastingColor(colorScheme),
           ...css,
         }}
         {...rest}
@@ -287,9 +289,18 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
                 $$subtleBgHover: `$colors$${indicatorColorScheme}4`,
                 $$subtleBgActive: `$colors$${indicatorColorScheme}5`,
 
-                $$solidBg: `$colors$${indicatorColorScheme}9`,
-                $$solidBgHover: `$colors$${indicatorColorScheme}10`,
-                $$solidColor: getContrastingColor(indicatorColorScheme),
+                $$solidBg:
+                  indicatorColorScheme === 'slate'
+                    ? '$colors$slate12'
+                    : `$colors$${indicatorColorScheme}9`,
+                $$bgSolidHover:
+                  indicatorColorScheme === 'slate'
+                    ? '$colors$slateSolidHover'
+                    : `$colors$${indicatorColorScheme}10`,
+                $$solidColor:
+                  indicatorColorScheme === 'slate'
+                    ? '$colors$slate1'
+                    : getContrastingColor(indicatorColorScheme),
               }}
             >
               +{validChildren.length - limit}

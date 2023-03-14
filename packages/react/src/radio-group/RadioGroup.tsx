@@ -180,8 +180,10 @@ export const Radio = React.forwardRef<HTMLButtonElement, RadioProps>(
 
             $$inactiveBackground: '$colors$slate3',
             $$inactiveBackgroundHover: '$colors$slate3',
-            $$activeBackground: `$colors$${colorScheme}9`,
-            $$activeColor: getContrastingColor(colorScheme),
+            $$activeBackground:
+              colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}9`,
+            $$activeColor:
+              colorScheme === 'slate' ? '$colors$slate1' : getContrastingColor(colorScheme),
             ...css,
           }}
           ref={ref}
