@@ -167,7 +167,7 @@ export const { styled, css, config, theme, createTheme, reset, getCssText, globa
     },
     media: {
       bp1: '(min-width: 520px)',
-      bp2: '(min-width: 900px)',
+      bp2: '(min-width: 700px)',
       bp3: '(min-width: 1200px)',
       bp4: '(min-width: 1800px)',
       reducedMotion: '(prefers-reduced-motion)',

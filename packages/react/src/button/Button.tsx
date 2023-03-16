@@ -1,8 +1,17 @@
 import * as React from 'react';
-import { styled, ComponentProps, CSS, theme, ColorScheme, getContrastingColor } from '../theme';
+import {
+  styled,
+  ComponentProps,
+  CSS,
+  theme,
+  ColorScheme,
+  getContrastingColor,
+  VariantProps,
+} from '../theme';
 import { ariaAttr, PolymorphicComponentPropsWithRef, PolymorphicRef } from '../utils';
 
 type ButtonBaseProps = ComponentProps<typeof ButtonBase>;
+type ButtonVariantProps = VariantProps<typeof ButtonBase>;
 
 const ButtonBase = styled('button', {
   // resets
@@ -202,7 +211,7 @@ const ButtonBase = styled('button', {
   },
 });
 
-export interface ButtonExtendedProps extends ButtonBaseProps {
+export interface ButtonProps extends ButtonBaseProps {
   children: React.ReactNode;
 
   /**
@@ -214,20 +223,48 @@ export interface ButtonExtendedProps extends ButtonBaseProps {
    * Overrides the default `disabled` prop to prefer `aria-disabled` for screen readers.
    */
   disabled?: boolean;
+  /**
+   * The variant of the button.
+   * @default "subtle"
+   */
+  variant?: ButtonVariantProps['variant'];
+  /**
+   * The size of the button.
+   * @default "2"
+   */
+  size?: ButtonVariantProps['size'];
+  /**
+   * Add a border that will be visible when using the `subtle` variant.
+   * @default false
+   */
+  border?: boolean;
+  /**
+   * Add custom styling.
+   */
+  css?: CSS;
 }
 
-type ButtonProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<
+type ButtonCompProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<
   C,
-  ButtonExtendedProps
+  ButtonProps
 >;
 
 type ButtonComponent = <C extends React.ElementType = typeof ButtonBase>(
-  props: ButtonProps<C>
+  props: ButtonCompProps<C>
 ) => React.ReactElement | null;
 
 export const Button: ButtonComponent = React.forwardRef(
   <C extends React.ElementType = typeof ButtonBase>(
-    { as, children, colorScheme = 'slate', disabled, variant, css, ...rest }: ButtonProps<C>,
+    {
+      as,
+      children,
+      colorScheme = 'slate',
+      disabled,
+      variant,
+      css,
+      border,
+      ...rest
+    }: ButtonCompProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
     return (
@@ -271,6 +308,7 @@ export const Button: ButtonComponent = React.forwardRef(
           ...css,
         }}
         variant={variant}
+        border={border}
         aria-disabled={ariaAttr(disabled)}
         {...rest}
       >
@@ -282,8 +320,8 @@ export const Button: ButtonComponent = React.forwardRef(
 
 export type ButtonGroupProps = ComponentProps<typeof StyledButtonGroup> & {
   colorScheme?: ColorScheme;
-  variant?: ButtonExtendedProps['variant'];
-  size?: ButtonExtendedProps['size'];
+  variant?: ButtonProps['variant'];
+  size?: ButtonProps['size'];
   gap?: CSS['gap'];
   radius?: keyof typeof theme.radii;
 };
@@ -382,7 +420,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
     ref
   ) => {
     const children = React.Children.map(_children, (child) => {
-      return React.cloneElement(child as React.ReactElement<ButtonExtendedProps>, {
+      return React.cloneElement(child as React.ReactElement<ButtonProps>, {
         variant,
         size,
         css: {
