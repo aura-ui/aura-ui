@@ -131,7 +131,8 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
           id={id}
           css={{
             $$color: `$colors$${colorScheme}11`,
-            $$colorSolid: getContrastingColor(colorScheme),
+            $$colorSolid:
+              colorScheme === 'slate' ? '$colors$slate1' : getContrastingColor(colorScheme),
             $$bg: `$colors$${colorScheme}3`,
             $$bgHover: `$colors$${colorScheme}4`,
             $$bgSolid: colorScheme === 'slate' ? '$colors$slate12' : `$colors$${colorScheme}9`,
