@@ -25,31 +25,13 @@ export default {
       options: ['1', '2', '3'] as ButtonProps['size'][],
       control: false,
     },
-    colorScheme: {
-      control: false,
-    },
-    border: {
-      control: false,
-    },
-    ref: {
-      control: false,
-    },
-    as: {
-      control: false,
-    },
-    css: {
-      control: false,
-    },
-    disabled: {
-      control: false,
-    },
   },
-  // args: {
-  //   disabled: false,
-  //   variant: 'subtle',
-  //   size: '2',
-  //   colorScheme: 'slate',
-  // },
+  args: {
+    disabled: false,
+    variant: 'subtle',
+    size: '2',
+    colorScheme: 'slate',
+  },
   parameters: {
     docs: {
       description: {
