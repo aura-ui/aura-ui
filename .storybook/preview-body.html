@@ -1,8 +1,8 @@
 <style>
   body {
-    color: var(--colors-slate11);
+    font-family: var(--fonts-body);
   }
-  span {
+  span.css-ks2jcn {
     color: var(--colors-slate11);
   }
   h1.sbdocs-title.css-z9ai3 {
@@ -32,9 +32,16 @@
   button.docblock-code-toggle.css-3ltsna {
     background-color: var(--colors-slate4);
     color: var(--colors-slate12);
+    font-weight: 500;
+    font-family: inherit;
   }
   button.docblock-code-toggle.css-3ltsna:hover {
     background-color: var(--colors-slate5);
+  }
+  /* show more button */
+  button.css-1ln04v9 {
+    color: var(--colors-violet11);
+    border-color: var(--colors-violet11);
   }
   div.css-qyimxq {
     background-color: var(--colors-slate3);
@@ -52,12 +59,16 @@
     box-shadow: none;
   }
 
+  table {
+    color: var(--colors-slate11) !important;
+  }
+
   td {
     background-color: var(--colors-slate2) !important;
   }
 
-  th {
-    color: var(--colors-slate11);
+  th span {
+    color: var(--colors-slate11) !important;
   }
 
   tr {
