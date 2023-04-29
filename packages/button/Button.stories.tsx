@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Meta, ComponentMeta, ComponentStory } from '@storybook/react';
 import { Button, ButtonProps } from './Button';
-import { Flex } from '../layout/Flex';
+import { Flex } from '../react/src/layout';
 import {
   FaAirbnb,
   FaTwitter,
@@ -104,27 +104,27 @@ Variants.parameters = {
   },
 };
 
-export const ColorScheme = () => {
-  return (
-    <Flex gap="2">
-      <Button colorScheme="red">Red</Button>
-      <Button colorScheme="crimson">Crimson</Button>
-      <Button colorScheme="violet">Violet</Button>
-      <Button colorScheme="blue">Blue</Button>
-      <Button colorScheme="green">Green</Button>
-      <Button colorScheme="yellow">Yellow</Button>
-      <Button colorScheme="orange">Orange</Button>
-    </Flex>
-  );
-};
-ColorScheme.parameters = {
-  docs: {
-    description: {
-      story:
-        'Use the `colorScheme` prop to switch between color schemes. The available color schemes are `slate`, `red`, `crimson`, `violet`, `blue`, `green`, `yellow` and `orange`. Defaults to `slate`.',
-    },
-  },
-};
+// export const ColorScheme = () => {
+//   return (
+//     <Flex gap="2">
+//       <Button colorScheme="red">Red</Button>
+//       <Button colorScheme="crimson">Crimson</Button>
+//       <Button colorScheme="violet">Violet</Button>
+//       <Button colorScheme="blue">Blue</Button>
+//       <Button colorScheme="green">Green</Button>
+//       <Button colorScheme="yellow">Yellow</Button>
+//       <Button colorScheme="orange">Orange</Button>
+//     </Flex>
+//   );
+// };
+// ColorScheme.parameters = {
+//   docs: {
+//     description: {
+//       story:
+//         'Use the `colorScheme` prop to switch between color schemes. The available color schemes are `slate`, `red`, `crimson`, `violet`, `blue`, `green`, `yellow` and `orange`. Defaults to `slate`.',
+//     },
+//   },
+// };
 
 export const Disabled = () => <Button disabled>Disabled</Button>;
 Disabled.parameters = {
@@ -136,47 +136,47 @@ Disabled.parameters = {
   },
 };
 
-export const WithIcon = () => {
-  return (
-    <Flex gap="2">
-      <Button variant="outline" colorScheme="red">
-        <FaAirbnb />
-        Airbnb
-      </Button>
-      <Button variant="subtle" colorScheme="crimson">
-        <FaDribbble />
-        Dribbble
-      </Button>
-      <Button variant="solid" colorScheme="violet">
-        <FaTwitch />
-        Twitch
-      </Button>
-      <Button variant="ghost" colorScheme="blue">
-        <FaTwitter />
-        Twitter
-      </Button>
-      <Button variant="outline" colorScheme="green">
-        <FaSpotify />
-        Spotify
-      </Button>
-      <Button variant="solid" colorScheme="yellow">
-        <FaAmazon />
-        Amazon
-      </Button>
-      <Button variant="ghost" colorScheme="orange">
-        <FaSoundcloud />
-        Soundcloud
-      </Button>
-    </Flex>
-  );
-};
-WithIcon.parameters = {
-  docs: {
-    description: {
-      story: 'Usage example of a button with icon and text.',
-    },
-  },
-};
+// export const WithIcon = () => {
+//   return (
+//     <Flex gap="2">
+//       <Button variant="outline" colorScheme="red">
+//         <FaAirbnb />
+//         Airbnb
+//       </Button>
+//       <Button variant="subtle" colorScheme="crimson">
+//         <FaDribbble />
+//         Dribbble
+//       </Button>
+//       <Button variant="solid" colorScheme="violet">
+//         <FaTwitch />
+//         Twitch
+//       </Button>
+//       <Button variant="ghost" colorScheme="blue">
+//         <FaTwitter />
+//         Twitter
+//       </Button>
+//       <Button variant="outline" colorScheme="green">
+//         <FaSpotify />
+//         Spotify
+//       </Button>
+//       <Button variant="solid" colorScheme="yellow">
+//         <FaAmazon />
+//         Amazon
+//       </Button>
+//       <Button variant="ghost" colorScheme="orange">
+//         <FaSoundcloud />
+//         Soundcloud
+//       </Button>
+//     </Flex>
+//   );
+// };
+// WithIcon.parameters = {
+//   docs: {
+//     description: {
+//       story: 'Usage example of a button with icon and text.',
+//     },
+//   },
+// };
 
 export const LinkButton = () => (
   <Button as="a" href="#">
