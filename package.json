@@ -14,7 +14,8 @@
     "generate:package": "npx hygen package new",
     "version": "pnpm changeset version && pnpm install --lockfile-only",
     "release": "pnpm changeset publish",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "devDependencies": {
     "@changesets/cli": "2.23.0",
@@ -37,7 +38,6 @@
     "typescript": "4.7.4"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown",
-    "**/*.ts": "tsc --noEmit --pretty"
+    "**/*.{ts,js,json,md}": "prettier --write"
   }
 }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Meta, ComponentMeta, ComponentStory } from '@storybook/react';
 import { Button, ButtonProps } from './Button';
-import { Flex } from '../react/src/layout';
+import { Flex } from '../../react/src/layout';
 import {
   FaAirbnb,
   FaTwitter,

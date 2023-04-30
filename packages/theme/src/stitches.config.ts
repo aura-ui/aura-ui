@@ -4,4 +4,6 @@ import { styled, css, config, getCssText, globalCss, keyframes } from './stitche
 
 export { styled, css, config, getCssText, globalCss, keyframes };
 
-export type CSS = StitchesCSS<typeof config>;
+type CSS = StitchesCSS<typeof config>;
+
+export type { CSS };
