@@ -14,8 +14,7 @@
     "generate:package": "npx hygen package new",
     "version": "pnpm changeset version && pnpm install --lockfile-only",
     "release": "pnpm changeset publish",
-    "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@changesets/cli": "2.23.0",
@@ -36,6 +35,11 @@
     "storybook-dark-mode": "2.1.1",
     "turbo": "1.4.7",
     "typescript": "4.7.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "turbo run lint && lint-staged"
+    }
   },
   "lint-staged": {
     "**/*.{ts,js,json,md}": "prettier --write"
